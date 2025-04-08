@@ -1,0 +1,164 @@
+{
+  "jobs": [
+    {
+      "id": 1,
+      "title": "Senior Game Developer",
+      "companyId": 1,
+      "location": "İstanbul, Turkey",
+      "type": "Full-time",
+      "experience": "Senior",
+      "salary": "$80k - $120k",
+      "postedAt": "2024-03-20T10:00:00Z",
+      "description": "We are looking for a Senior Game Developer to join our team and help create the next generation of mobile games...",
+      "requirements": [
+        {
+          "id": 1,
+          "title": "Unity Experience",
+          "description": "5+ years of experience with Unity game development",
+          "required": true
+        }
+      ],
+      "responsibilities": [
+        "Design and implement game features",
+        "Optimize game performance",
+        "Mentor junior developers"
+      ],
+      "requiredTestIds": [1, 2],
+      "requiredCertificationIds": [1],
+      "skills": [
+        { "name": "Unity", "level": 90 },
+        { "name": "C#", "level": 85 }
+      ],
+      "benefits": ["Competitive salary", "Health insurance", "Annual bonus"],
+      "status": "active"
+    },
+    {
+      "id": 2,
+      "title": "Unity Developer",
+      "companyId": 2,
+      "location": "Ankara, Turkey",
+      "type": "Full-time",
+      "experience": "Mid-level",
+      "salary": "$60k - $90k",
+      "postedAt": "2024-03-18T15:30:00Z",
+      "description": "Join our dynamic game studio as a Unity Developer and help bring our mobile games to life!",
+      "requirements": [
+        {
+          "id": 2,
+          "title": "C# Proficiency",
+          "description": "3+ years of experience in C# and Unity development",
+          "required": true
+        }
+      ],
+      "responsibilities": [
+        "Develop game mechanics using Unity",
+        "Collaborate with designers and artists",
+        "Maintain code quality and performance"
+      ],
+      "requiredTestIds": [3],
+      "requiredCertificationIds": [],
+      "skills": [
+        { "name": "Unity", "level": 80 },
+        { "name": "C#", "level": 75 }
+      ],
+      "benefits": ["Flexible working hours", "Remote work option", "Stock options"],
+      "status": "active"
+    },
+    {
+      "id": 3,
+      "title": "Machine Learning Engineer",
+      "companyId": 3,
+      "location": "San Francisco, USA",
+      "type": "Full-time",
+      "experience": "Senior",
+      "salary": "$120k - $160k",
+      "postedAt": "2024-03-22T08:45:00Z",
+      "description": "We are seeking a Machine Learning Engineer to develop state-of-the-art AI solutions for our products.",
+      "requirements": [
+        {
+          "id": 3,
+          "title": "Deep Learning Experience",
+          "description": "Expertise in TensorFlow or PyTorch with 4+ years of experience",
+          "required": true
+        }
+      ],
+      "responsibilities": [
+        "Develop and optimize machine learning models",
+        "Work with large datasets to extract insights",
+        "Collaborate with software engineers to deploy AI solutions"
+      ],
+      "requiredTestIds": [4, 5],
+      "requiredCertificationIds": [2],
+      "skills": [
+        { "name": "Python", "level": 85 },
+        { "name": "TensorFlow", "level": 90 }
+      ],
+      "benefits": ["Remote work", "401k matching", "Health & dental insurance"],
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "title": "Data Scientist",
+      "companyId": 4,
+      "location": "London, UK",
+      "type": "Full-time",
+      "experience": "Mid-level",
+      "salary": "$90k - $130k",
+      "postedAt": "2024-03-21T14:20:00Z",
+      "description": "Looking for a Data Scientist to analyze large datasets and provide business insights.",
+      "requirements": [
+        {
+          "id": 4,
+          "title": "Data Analysis",
+          "description": "Experience with SQL and Python for data processing",
+          "required": true
+        }
+      ],
+      "responsibilities": [
+        "Analyze structured and unstructured data",
+        "Build predictive models",
+        "Work with stakeholders to define business goals"
+      ],
+      "requiredTestIds": [6],
+      "requiredCertificationIds": [],
+      "skills": [
+        { "name": "Python", "level": 80 },
+        { "name": "SQL", "level": 85 }
+      ],
+      "benefits": ["Flexible hours", "Remote work", "Professional development budget"],
+      "status": "active"
+    },
+    {
+      "id": 5,
+      "title": "Cybersecurity Analyst",
+      "companyId": 5,
+      "location": "New York, USA",
+      "type": "Full-time",
+      "experience": "Junior",
+      "salary": "$70k - $100k",
+      "postedAt": "2024-03-19T12:10:00Z",
+      "description": "Join our security team as a Cybersecurity Analyst to protect our digital infrastructure.",
+      "requirements": [
+        {
+          "id": 5,
+          "title": "Security Certification",
+          "description": "CompTIA Security+ or equivalent certification",
+          "required": true
+        }
+      ],
+      "responsibilities": [
+        "Monitor and analyze security threats",
+        "Implement security best practices",
+        "Work with IT teams to ensure system security"
+      ],
+      "requiredTestIds": [7],
+      "requiredCertificationIds": [3],
+      "skills": [
+        { "name": "Network Security", "level": 75 },
+        { "name": "Python", "level": 65 }
+      ],
+      "benefits": ["Paid training", "Health insurance", "401k"],
+      "status": "active"
+    }
+  ]
+}

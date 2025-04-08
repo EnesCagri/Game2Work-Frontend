@@ -1,0 +1,13 @@
+{
+  "certifications": [
+    {
+      "id": 1,
+      "name": "Unity Certified Professional",
+      "issuer": "Unity",
+      "level": "Advanced",
+      "validityPeriod": "2 years",
+      "description": "Professional level certification for Unity developers",
+      "skills": ["Unity", "C#", "Game Development"]
+    }
+  ]
+}

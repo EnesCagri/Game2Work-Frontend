@@ -1,0 +1,20 @@
+{
+  "tests": [
+    {
+      "id": 1,
+      "title": "Unity Technical Assessment",
+      "description": "A practical test to evaluate your Unity development skills",
+      "duration": "2 hours",
+      "passScore": 80,
+      "questions": [
+        {
+          "id": 1,
+          "type": "multiple_choice",
+          "question": "What is the correct way to...",
+          "options": ["A", "B", "C", "D"],
+          "correctAnswer": "B"
+        }
+      ]
+    }
+  ]
+}
