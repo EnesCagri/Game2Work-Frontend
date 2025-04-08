@@ -1,0 +1,100 @@
+{
+  "kickstarts": [
+    {
+      "id": 1,
+      "title": "Project Nexus: Next-Gen Gaming Engine",
+      "description": "A revolutionary game engine built for the next generation of indie developers. Features include real-time ray tracing, advanced physics simulation, and an intuitive visual scripting system.",
+      "image": "/images/kickstarts/game-engine.jpg",
+      "status": "Active",
+      "category": "Software",
+      "currentFunding": 850000,
+      "goal": 1000000,
+      "backers": 3240,
+      "endDate": "2024-06-30"
+    },
+    {
+      "id": 2,
+      "title": "Cyberpunk Chronicles: The Virtual Reality Experience",
+      "description": "Immerse yourself in a dystopian cyberpunk world with our cutting-edge VR game. Features include full body tracking, neural feedback, and multiplayer support.",
+      "image": "/images/kickstarts/vr-game.jpg",
+      "status": "Active",
+      "category": "Game",
+      "currentFunding": 250000,
+      "goal": 500000,
+      "backers": 1850,
+      "endDate": "2024-05-15"
+    },
+    {
+      "id": 3,
+      "title": "GamePad Pro: Ultimate Gaming Controller",
+      "description": "Professional-grade gaming controller with customizable buttons, adjustable triggers, and wireless charging. Perfect for esports and competitive gaming.",
+      "image": "/images/kickstarts/controller.jpg",
+      "status": "Upcoming",
+      "category": "Hardware",
+      "currentFunding": 0,
+      "goal": 150000,
+      "backers": 0,
+      "endDate": "2024-07-01"
+    },
+    {
+      "id": 4,
+      "title": "Pixel Quest: Retro RPG Adventure",
+      "description": "A nostalgic 16-bit RPG with modern gameplay mechanics. Explore a vast world, battle unique monsters, and uncover an epic story.",
+      "image": "/images/kickstarts/pixel-rpg.jpg",
+      "status": "Active",
+      "category": "Game",
+      "currentFunding": 75000,
+      "goal": 100000,
+      "backers": 2100,
+      "endDate": "2024-04-30"
+    },
+    {
+      "id": 5,
+      "title": "StreamDeck: AI-Powered Streaming Assistant",
+      "description": "Revolutionary software that uses AI to enhance your streaming experience. Features include automatic highlight creation, chat moderation, and stream optimization.",
+      "image": "/images/kickstarts/streaming-software.jpg",
+      "status": "Completed",
+      "category": "Software",
+      "currentFunding": 200000,
+      "goal": 150000,
+      "backers": 4500,
+      "endDate": "2024-02-15"
+    },
+    {
+      "id": 6,
+      "title": "EsportsArena: Mobile Gaming Tournament Platform",
+      "description": "A comprehensive mobile app for organizing and participating in esports tournaments. Features include automated matchmaking, prize pool management, and live streaming integration.",
+      "image": "/images/kickstarts/esports-platform.jpg",
+      "status": "Active",
+      "category": "Software",
+      "currentFunding": 120000,
+      "goal": 300000,
+      "backers": 890,
+      "endDate": "2024-06-15"
+    },
+    {
+      "id": 7,
+      "title": "GameDev Academy: Interactive Learning Platform",
+      "description": "Learn game development through interactive courses, real-time mentoring, and hands-on projects. Perfect for aspiring game developers of all skill levels.",
+      "image": "/images/kickstarts/gamedev-academy.jpg",
+      "status": "Upcoming",
+      "category": "Other",
+      "currentFunding": 0,
+      "goal": 200000,
+      "backers": 0,
+      "endDate": "2024-07-15"
+    },
+    {
+      "id": 8,
+      "title": "Project Sandbox: Multiplayer Creation Platform",
+      "description": "A revolutionary platform that allows players to create, share, and play multiplayer games in real-time. Features include visual scripting, asset marketplace, and cross-platform support.",
+      "image": "/images/kickstarts/sandbox-platform.jpg",
+      "status": "Active",
+      "category": "Game",
+      "currentFunding": 450000,
+      "goal": 800000,
+      "backers": 2800,
+      "endDate": "2024-05-30"
+    }
+  ]
+}
