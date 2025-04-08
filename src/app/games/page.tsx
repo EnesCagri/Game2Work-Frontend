@@ -191,6 +191,9 @@ export default function GamesLibrary() {
             </p>
           </div>
         )}
+
+        {/* Loading Indicator */}
+        {loading && <div>Loading...</div>}
       </div>
     </div>
   );

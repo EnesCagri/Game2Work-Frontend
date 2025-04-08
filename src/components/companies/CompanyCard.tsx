@@ -4,6 +4,7 @@ import { Building2, MapPin, Users, Globe, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import type { Company } from "@/types";
+import Image from 'next/image';
 
 const industryColors = {
   Gaming: "from-purple-500 to-pink-500",
@@ -39,10 +40,12 @@ export function CompanyCard({ company }: CompanyCardProps) {
         <div className="flex items-start gap-6 mb-6">
           <div className="w-24 h-24 bg-gray-800 rounded-xl flex-shrink-0 overflow-hidden">
             {company.logo ? (
-              <img
+              <Image
                 src={company.logo}
-                alt={`${company.name} logo`}
-                className="w-full h-full object-cover"
+                alt={company.name}
+                width={64}
+                height={64}
+                className="rounded-lg"
               />
             ) : (
               <div
