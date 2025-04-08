@@ -29,6 +29,40 @@ export interface Job {
   }[];
 }
 
+export interface Certification {
+  id: number;
+  name: string;
+  issuer: string;
+  level: "Basic" | "Intermediate" | "Advanced";
+  required: boolean;
+}
+
+export interface DetailedJob extends Job {
+  description: string;
+  requirements: {
+    id: number;
+    title: string;
+    description: string;
+    required: boolean;
+  }[];
+  responsibilities: string[];
+  tests: {
+    id: number;
+    title: string;
+    description: string;
+    duration: string;
+    passScore: number;
+  }[];
+  certifications: Certification[];
+  applicationProcess: string[];
+  benefits: string[];
+  skills: {
+    name: string;
+    level: number;
+  }[];
+  companyLogo?: string;
+}
+
 export interface Company {
   id: number;
   name: string;
@@ -43,7 +77,11 @@ export interface Company {
   socialMedia: {
     linkedin?: string;
     twitter?: string;
+    github?: string;
   };
+  benefits?: string[];
+  techStack?: string[];
+  openPositions: number;
 }
 
 export interface Game {

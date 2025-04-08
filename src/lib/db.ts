@@ -27,7 +27,7 @@ export interface DbService {
   ) => Promise<(typeof companies.companies)[0] | undefined>;
 
   // Users
-  getUserById: (id: number) => Promise<(typeof users.users)[0] | undefined>;
+  getUserById: (id: number) => Promise<(typeof users.jobs)[0] | undefined>;
   getUserApplications: (
     userId: number
   ) => Promise<typeof applications.applications>;
@@ -89,7 +89,7 @@ export class MockDbService implements DbService {
   }
 
   async getUserById(id: number) {
-    return users.users.find((user) => user.id === id);
+    return users.jobs.find((job) => job.id === id);
   }
 
   async getUserApplications(userId: number) {

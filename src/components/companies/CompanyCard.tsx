@@ -3,8 +3,8 @@
 import { Building2, MapPin, Users, Globe, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import type { Company } from "@/types";
-import Image from 'next/image';
 
 const industryColors = {
   Gaming: "from-purple-500 to-pink-500",
@@ -43,9 +43,9 @@ export function CompanyCard({ company }: CompanyCardProps) {
               <Image
                 src={company.logo}
                 alt={company.name}
-                width={64}
-                height={64}
-                className="rounded-lg"
+                width={96}
+                height={96}
+                className="w-full h-full object-cover"
               />
             ) : (
               <div

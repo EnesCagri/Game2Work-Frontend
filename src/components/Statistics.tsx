@@ -48,8 +48,8 @@ const Statistics = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold mb-4">Rakamlarla GameToWork</h2>
-          <p className="text-gray-400 text-lg">
-            Türkiye&apos;nin en büyük oyun geliştirici topluluğu
+          <p className="text-gray-400">
+            Join our growing community of gamers and professionals
           </p>
         </div>
 

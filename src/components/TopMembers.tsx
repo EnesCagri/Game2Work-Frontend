@@ -142,6 +142,9 @@ const TopMembers = () => {
             Game2Work'te öne çıkan oyun şirketleri, geliştiriciler ve
             yatırımcılarla tanışın.
           </p>
+          <p className="text-gray-400">
+            Meet our most active and skilled members
+          </p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">

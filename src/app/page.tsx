@@ -23,6 +23,10 @@ export default function Home() {
               Yeteneğini dünyaya göster, projelerini sergile ve oyun dünyasında
               fark yarat!
             </p>
+            <p className="text-gray-400">
+              Discover innovative companies and explore exciting career
+              opportunities
+            </p>
             <p className="text-lg md:text-xl text-gray-400 italic mb-8">
               "Bağımsız geliştiriciler için, bağımsız ruhlarla..."
             </p>

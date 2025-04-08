@@ -2,18 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import {
-  Building2,
-  MapPin,
-  Clock,
-  Briefcase,
-  ChevronLeft,
-  ChevronRight,
-} from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { SearchBar } from "@/components/ui/SearchBar";
 import { FilterDrawer } from "@/components/ui/FilterDrawer";
 import { JobCard } from "@/components/jobs/JobCard";
-import Link from "next/link";
 import { db } from "@/lib/db";
 import type { Job, JobType, ExperienceLevel } from "@/types";
 
@@ -42,14 +34,20 @@ const JobsList = () => {
       try {
         setLoading(true);
         const jobsData = await db.getJobs();
+        const companies = await db.getCompanies();
 
-        // Set jobs directly without company fetching for now
+        // Set jobs with company data
         setJobs(
-          jobsData.map((job) => ({
-            ...job,
-            company: job.company || "Unknown Company",
-            logo: job.logo || "",
-          }))
+          jobsData.map((job) => {
+            const company = companies.find((c) => c.id === job.companyId);
+            return {
+              ...job,
+              type: job.type as JobType,
+              experience: job.experience as ExperienceLevel,
+              company: company?.name || "Unknown Company",
+              logo: company?.logo || "",
+            };
+          })
         );
 
         setError(null);
@@ -115,7 +113,8 @@ const JobsList = () => {
     const experienceMatch =
       filters.experience.length === 0 ||
       filters.experience.includes(job.experience);
-    const remoteMatch = !filters.remote || job.type === "Remote";
+    const remoteMatch =
+      !filters.remote || job.benefits?.includes("Remote work");
 
     return searchMatch && typeMatch && experienceMatch && remoteMatch;
   });
@@ -238,3 +237,5 @@ const JobsList = () => {
 };
 
 export default JobsList;
+
+// TODO: Add pagination to the jobs list

@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
-  UserIcon,
+  //UserIcon,
   LogOutIcon,
   MenuIcon,
   XIcon,
@@ -14,13 +14,13 @@ import {
   BuildingIcon,
   GraduationCapIcon,
   UsersIcon,
-  BookOpenIcon,
+  //BookOpenIcon,
   RocketIcon,
   CodeIcon,
   DollarSignIcon,
   ChevronDown,
   ChevronRight,
-  MessageSquareIcon,
+  //MessageSquareIcon,
   NewspaperIcon,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -116,9 +116,11 @@ const groupedLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [openCollapsibles, setOpenCollapsibles] = useState({});
+  const [openCollapsibles, setOpenCollapsibles] = useState<
+    Record<string, boolean>
+  >({});
 
-  const toggleCollapsible = (groupName) => {
+  const toggleCollapsible = (groupName: string) => {
     setOpenCollapsibles((prev) => ({
       ...prev,
       [groupName]: !prev[groupName],

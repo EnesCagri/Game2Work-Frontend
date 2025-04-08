@@ -1,21 +1,28 @@
 "use client";
 
-import { Card } from "@/components/ui/card";
+//import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
+//import { Button } from "@/components/ui/button";
+//import { Badge } from "@/components/ui/badge";
 import {
   Clock,
   Rocket,
   BarChart3,
+  Wallet,
   Globe2,
   Users,
   Lightbulb,
   TrendingUp,
-  Wallet,
-  GamepadIcon,
-  BriefcaseIcon,
-  Target,
-  Sparkles,
 } from "lucide-react";
+// import { RocketIcon, UsersIcon, GraduationCapIcon } from "lucide-react";
+import { Card } from "@/components/ui/card";
+
+interface Feature {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  color: string;
+}
 
 const features = [
   {

@@ -108,7 +108,6 @@ export default function GamePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.1}
             className="bg-gray-800 rounded-lg p-6 flex items-center gap-4"
           >
             <ClockIcon className="w-8 h-8 text-blue-500" />
@@ -123,7 +122,6 @@ export default function GamePage() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            delay={0.2}
             className="bg-gray-800 rounded-lg p-6 flex items-center gap-4"
           >
             <UsersIcon className="w-8 h-8 text-green-500" />

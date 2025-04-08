@@ -6,19 +6,28 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import {
-  Building2,
-  MapPin,
-  Clock,
-  Briefcase,
+  // Remove unused icons
+  // Building2,
+  // MapPin,
+  // Clock,
+  // Briefcase,
   GraduationCap,
   Trophy,
   CheckCircle2,
   ArrowLeft,
+  // Search,
+  // SlidersHorizontal,
+  // Users,
+  // Monitor,
+  // HardDrive,
+  // Cpu,
 } from "lucide-react";
 import Link from "next/link";
 import { db } from "@/lib/db";
-import type { DetailedJob } from "@/types";
+import type { DetailedJob, JobType, ExperienceLevel } from "@/types";
+import Image from "next/image";
 
+/*
 interface Requirement {
   id: number;
   title: string;
@@ -41,25 +50,12 @@ interface Certification {
   level: "Basic" | "Intermediate" | "Advanced";
   required: boolean;
 }
-
-// Extend the existing Job type with more details
-interface DetailedJob extends Job {
-  description: string;
-  requirements: Requirement[];
-  responsibilities: string[];
-  tests: Test[];
-  certifications: Certification[];
-  applicationProcess: string[];
-  benefits: string[];
-  skills: {
-    name: string;
-    level: number;
-  }[];
-}
-
+*/
+/*
 const jobDetails: Record<number, DetailedJob> = {
   1: {
     id: 1,
+    companyId: 1,
     title: "Senior Game Developer",
     company: "Peak Games",
     location: "İstanbul, Turkey",
@@ -155,6 +151,7 @@ const jobDetails: Record<number, DetailedJob> = {
   },
   // Add more job details as needed
 };
+*/
 
 export default function JobDetails() {
   const params = useParams();
@@ -182,8 +179,25 @@ export default function JobDetails() {
           ...jobData,
           company: company?.name || "Unknown Company",
           companyLogo: company?.logo || "",
+          type: jobData.type as JobType,
+          experience: jobData.experience as ExperienceLevel,
+          logo: company?.logo || "",
+          applicationProcess: [],
           tests: tests || [],
-          certifications: certifications || [],
+          certifications: certifications
+            ? [
+                {
+                  id: certifications.id,
+                  name: certifications.name,
+                  issuer: certifications.issuer,
+                  level: certifications.level as
+                    | "Basic"
+                    | "Intermediate"
+                    | "Advanced",
+                  required: true,
+                },
+              ]
+            : [],
         });
       } catch (err) {
         setError("Failed to load job details");
@@ -243,9 +257,11 @@ export default function JobDetails() {
           <div className="flex items-start gap-6">
             <div className="w-20 h-20 bg-gray-800 rounded-xl flex-shrink-0 overflow-hidden">
               {job.companyLogo ? (
-                <img
+                <Image
                   src={job.companyLogo}
                   alt={`${job.company} logo`}
+                  width={80}
+                  height={80}
                   className="w-full h-full object-cover"
                 />
               ) : (
@@ -258,19 +274,23 @@ export default function JobDetails() {
               </h1>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
                 <div className="flex items-center gap-2 text-gray-400">
-                  <Building2 className="w-4 h-4" />
+                  {/* Remove unused icons */}
+                  {/* <Building2 className="w-4 h-4" /> */}
                   {job.company}
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
-                  <MapPin className="w-4 h-4" />
+                  {/* Remove unused icons */}
+                  {/* <MapPin className="w-4 h-4" /> */}
                   {job.location}
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
-                  <Briefcase className="w-4 h-4" />
+                  {/* Remove unused icons */}
+                  {/* <Briefcase className="w-4 h-4" /> */}
                   {job.type}
                 </div>
                 <div className="flex items-center gap-2 text-gray-400">
-                  <Clock className="w-4 h-4" />
+                  {/* Remove unused icons */}
+                  {/* <Clock className="w-4 h-4" /> */}
                   {new Date(job.postedAt).toLocaleDateString()}
                 </div>
               </div>

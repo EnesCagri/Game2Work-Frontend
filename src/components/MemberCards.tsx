@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 type Rarity = "common" | "rare" | "epic" | "legendary";
-type RowId = 1 | 2 | 3;
+type RowId = 1 | 2 | 3 | 4 | 5;
 
 type Member = {
   id: number;

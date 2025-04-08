@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import {
@@ -17,10 +18,9 @@ import {
   GithubIcon,
   TrendingUp,
   Award,
-  Clock,
 } from "lucide-react";
 import { db } from "@/lib/db";
-import type { Company, Job } from "@/types";
+import type { Company, Job, JobType, ExperienceLevel } from "@/types";
 import { JobCard } from "@/components/jobs/JobCard";
 
 const industryColors = {
@@ -49,11 +49,25 @@ export default function CompanyProfile() {
           return;
         }
 
-        setCompany(companyData);
-
-        // Load company's open positions
+        // Load company's open positions first
         const jobs = await db.getJobsByCompany(companyData.id);
-        setOpenJobs(jobs);
+
+        // Add openPositions to companyData
+        const companyWithPositions = {
+          ...companyData,
+          openPositions: jobs.length,
+        };
+        setCompany(companyWithPositions);
+
+        // Add company info to each job before setting state
+        const jobsWithCompany = jobs.map((job) => ({
+          ...job,
+          type: job.type as JobType,
+          experience: job.experience as ExperienceLevel,
+          company: companyData.name,
+          logo: companyData.logo,
+        }));
+        setOpenJobs(jobsWithCompany);
       } catch (err) {
         console.error("Error loading company data:", err);
         setError("Failed to load company data");
@@ -116,9 +130,11 @@ export default function CompanyProfile() {
           <div className="flex items-start gap-8">
             <div className="w-32 h-32 bg-gray-800 rounded-xl flex-shrink-0 overflow-hidden">
               {company.logo ? (
-                <img
+                <Image
                   src={company.logo}
                   alt={`${company.name} logo`}
+                  width={128}
+                  height={128}
                   className="w-full h-full object-cover"
                 />
               ) : (

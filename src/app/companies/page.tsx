@@ -42,7 +42,11 @@ const CompaniesList = () => {
       try {
         setLoading(true);
         const companiesData = await db.getCompanies();
-        setCompanies(companiesData);
+        const companiesWithPositions = companiesData.map((company) => ({
+          ...company,
+          openPositions: 0, // Initialize with 0, we'll update this later if needed
+        }));
+        setCompanies(companiesWithPositions);
         setError(null);
       } catch (err) {
         console.error("Failed to load companies:", err);

@@ -3,6 +3,7 @@
 import { Building2, MapPin, Clock, Briefcase } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import Image from "next/image";
 import type { Job } from "@/types";
 
 const levelColors = {
@@ -35,9 +36,11 @@ export function JobCard({ job }: JobCardProps) {
       <div className="relative z-10 flex items-start gap-4">
         <div className="w-12 h-12 bg-gray-800 rounded-lg flex-shrink-0 overflow-hidden">
           {job.logo ? (
-            <img
+            <Image
               src={job.logo}
-              alt={`${job.company} logo`}
+              alt={job.company}
+              width={64}
+              height={64}
               className="w-full h-full object-cover"
             />
           ) : (
