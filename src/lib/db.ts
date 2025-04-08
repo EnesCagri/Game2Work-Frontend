@@ -55,6 +55,7 @@ export interface DbService {
   getFreeGames: () => Promise<typeof games.games>;
   getMostPlayedGames: () => Promise<typeof games.games>;
   getRecentlyPlayedGames: () => Promise<typeof games.games>;
+  getKickstarts: () => Promise<any[]>;
 }
 
 export class MockDbService implements DbService {
@@ -173,6 +174,16 @@ export class MockDbService implements DbService {
       (a, b) =>
         new Date(b.lastPlayed).getTime() - new Date(a.lastPlayed).getTime()
     );
+  }
+
+  async getKickstarts(): Promise<any[]> {
+    const kickstarts = await this.loadData<{ kickstarts: any[] }>("kickstarts");
+    return kickstarts.kickstarts || [];
+  }
+
+  private async loadData<T>(key: string): Promise<T> {
+    const data = await import(`@/data/db/${key}.json`);
+    return data.default as T;
   }
 }
 
