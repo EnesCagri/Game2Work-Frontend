@@ -3,7 +3,6 @@ import Statistics from "@/components/Statistics";
 import { Button } from "@/components/ui/button";
 import About from "@/components/About";
 import Ecosystem from "@/components/Ecosystem";
-import TopMembers from "@/components/TopMembers";
 import MemberCards from "@/components/MemberCards";
 
 export default function Home() {

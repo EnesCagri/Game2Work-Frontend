@@ -8,6 +8,12 @@ import {
   games,
 } from "@/data/db";
 
+// Add type for playerCount parsing
+type PlayerCount = {
+  count: number;
+  multiplier: number;
+};
+
 export interface DbService {
   // Jobs
   getJobs: () => Promise<typeof jobs.jobs>;
@@ -142,21 +148,23 @@ export class MockDbService implements DbService {
     return games.games.filter((game) => game.price === "Free to Play");
   }
 
+  private parsePlayerCount(playerCount: string): PlayerCount {
+    const count = parseInt(playerCount.split(" ")[0].replace(/[KM]/g, ""));
+    const multiplier = playerCount.includes("K")
+      ? 1000
+      : playerCount.includes("M")
+      ? 1000000
+      : 1;
+    return { count, multiplier };
+  }
+
   async getMostPlayedGames() {
     return [...games.games].sort((a, b) => {
-      const aCount = parseInt(a.playerCount.split(" ")[0].replace(/[KM]/g, ""));
-      const bCount = parseInt(b.playerCount.split(" ")[0].replace(/[KM]/g, ""));
-      const aMultiplier = a.playerCount.includes("K")
-        ? 1000
-        : a.playerCount.includes("M")
-        ? 1000000
-        : 1;
-      const bMultiplier = b.playerCount.includes("K")
-        ? 1000
-        : b.playerCount.includes("M")
-        ? 1000000
-        : 1;
-      return bCount * bMultiplier - aCount * aMultiplier;
+      const aCount = this.parsePlayerCount(a.playerCount);
+      const bCount = this.parsePlayerCount(b.playerCount);
+      return (
+        bCount.count * bCount.multiplier - aCount.count * aCount.multiplier
+      );
     });
   }
 

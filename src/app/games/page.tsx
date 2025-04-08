@@ -12,8 +12,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { GameCard } from "@/components/games/GameCard";
-import { Search, SlidersHorizontal } from "lucide-react";
-import { MockDbService } from "@/lib/db";
+import { SearchIcon } from "lucide-react";
+import { db } from "@/lib/db";
 
 const ITEMS_PER_PAGE = 20;
 
@@ -41,9 +41,6 @@ export default function GamesLibrary() {
   const [currentPage, setCurrentPage] = useState(1);
   const [selectedGenre, setSelectedGenre] = useState<string>("all");
   const [sortBy, setSortBy] = useState<string>("recent");
-
-  // Use getInstance instead of new
-  const db = MockDbService.getInstance();
 
   useEffect(() => {
     const fetchGames = async () => {
@@ -111,7 +108,7 @@ export default function GamesLibrary() {
           {/* Search and Filters */}
           <div className="flex flex-wrap gap-4 items-center">
             <div className="relative flex-1 min-w-[200px]">
-              <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+              <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
                 placeholder="Search games..."
                 className="pl-10 bg-gray-800 border-gray-700"

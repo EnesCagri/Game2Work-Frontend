@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { MockDbService } from "@/lib/db";
+import { db } from "@/lib/db";
 import { Game } from "@/types";
 import {
   TrophyIcon,
@@ -20,7 +20,6 @@ export default function GamePage() {
   const { id } = useParams();
   const [game, setGame] = useState<Game | null>(null);
   const [loading, setLoading] = useState(true);
-  const db = MockDbService.getInstance();
 
   useEffect(() => {
     const fetchGame = async () => {
