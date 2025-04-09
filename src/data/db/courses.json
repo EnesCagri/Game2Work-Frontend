@@ -1,0 +1,364 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "title": "Unity Game Development Fundamentals",
+      "description": "Learn the basics of Unity game development, from setting up your first project to creating simple games.",
+      "thumbnail": "/courses/unity-fundamentals.jpg",
+      "field": "Game Development",
+      "difficulty": "Beginner",
+      "duration": "8 weeks",
+      "rating": 4.8,
+      "tutor": {
+        "name": "John Smith",
+        "avatar": "/tutors/john-smith.jpg",
+        "expertise": "Game Developer with 10+ years of experience"
+      }
+    },
+    {
+      "id": 2,
+      "title": "Advanced C# Programming",
+      "description": "Master advanced C# concepts and patterns for game development.",
+      "thumbnail": "/courses/csharp-advanced.jpg",
+      "field": "Programming",
+      "difficulty": "Advanced",
+      "duration": "12 weeks",
+      "rating": 4.9,
+      "tutor": {
+        "name": "Sarah Johnson",
+        "avatar": "/tutors/sarah-johnson.jpg",
+        "expertise": "Senior Software Engineer"
+      }
+    },
+    {
+      "id": 3,
+      "title": "Game Design Principles",
+      "description": "Learn the fundamental principles of game design and how to create engaging gameplay experiences.",
+      "thumbnail": "/courses/game-design.jpg",
+      "field": "Design",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Michael Chen",
+        "avatar": "/tutors/michael-chen.jpg",
+        "expertise": "Game Designer at AAA Studio"
+      }
+    },
+    {
+      "id": 4,
+      "title": "3D Character Modeling",
+      "description": "Create stunning 3D characters using industry-standard tools and techniques.",
+      "thumbnail": "/courses/3d-modeling.jpg",
+      "field": "Art",
+      "difficulty": "Intermediate",
+      "duration": "10 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Emily Rodriguez",
+        "avatar": "/tutors/emily-rodriguez.jpg",
+        "expertise": "3D Artist and Character Designer"
+      }
+    },
+    {
+      "id": 5,
+      "title": "Game Audio Production",
+      "description": "Learn how to create and implement sound effects and music for games.",
+      "thumbnail": "/courses/game-audio.jpg",
+      "field": "Audio",
+      "difficulty": "Beginner",
+      "duration": "8 weeks",
+      "rating": 4.5,
+      "tutor": {
+        "name": "David Wilson",
+        "avatar": "/tutors/david-wilson.jpg",
+        "expertise": "Audio Engineer and Composer"
+      }
+    },
+    {
+      "id": 6,
+      "title": "Game Marketing Strategies",
+      "description": "Learn effective marketing strategies for promoting and selling your games.",
+      "thumbnail": "/courses/game-marketing.jpg",
+      "field": "Marketing",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.4,
+      "tutor": {
+        "name": "Lisa Thompson",
+        "avatar": "/tutors/lisa-thompson.jpg",
+        "expertise": "Marketing Director at Game Studio"
+      }
+    },
+    {
+      "id": 7,
+      "title": "Multiplayer Game Development with Unity",
+      "description": "Build real-time multiplayer games using Unity and Photon Networking.",
+      "thumbnail": "/courses/unity-multiplayer.jpg",
+      "field": "Game Development",
+      "difficulty": "Advanced",
+      "duration": "10 weeks",
+      "rating": 4.8,
+      "tutor": {
+        "name": "Rachel Park",
+        "avatar": "/tutors/rachel-park.jpg",
+        "expertise": "Multiplayer Systems Engineer"
+      }
+    },
+    {
+      "id": 8,
+      "title": "Shader Programming for Games",
+      "description": "Create stunning visuals and effects with HLSL and Unity Shader Graph.",
+      "thumbnail": "/courses/shader-programming.jpg",
+      "field": "Programming",
+      "difficulty": "Advanced",
+      "duration": "8 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Kevin Liu",
+        "avatar": "/tutors/kevin-liu.jpg",
+        "expertise": "Graphics Programmer"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Level Design Essentials",
+      "description": "Master the art of level design to create immersive and engaging game worlds.",
+      "thumbnail": "/courses/level-design.jpg",
+      "field": "Design",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Anna Brooks",
+        "avatar": "/tutors/anna-brooks.jpg",
+        "expertise": "Senior Level Designer at Indie Studio"
+      }
+    },
+    {
+      "id": 10,
+      "title": "Rigging and Animation for Games",
+      "description": "Learn character rigging and animation techniques for real-time engines.",
+      "thumbnail": "/courses/rigging-animation.jpg",
+      "field": "Art",
+      "difficulty": "Intermediate",
+      "duration": "9 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Carlos Mendez",
+        "avatar": "/tutors/carlos-mendez.jpg",
+        "expertise": "Animator & Technical Artist"
+      }
+    },
+    {
+      "id": 11,
+      "title": "Interactive Audio with FMOD & Unity",
+      "description": "Implement dynamic and adaptive soundscapes using FMOD in Unity.",
+      "thumbnail": "/courses/fmod-audio.jpg",
+      "field": "Audio",
+      "difficulty": "Intermediate",
+      "duration": "7 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Nina Patel",
+        "avatar": "/tutors/nina-patel.jpg",
+        "expertise": "Game Audio Specialist"
+      }
+    },
+    {
+      "id": 12,
+      "title": "Launching Your Indie Game",
+      "description": "A step-by-step guide to preparing, publishing, and launching your indie game.",
+      "thumbnail": "/courses/indie-launch.jpg",
+      "field": "Marketing",
+      "difficulty": "Beginner",
+      "duration": "5 weeks",
+      "rating": 4.5,
+      "tutor": {
+        "name": "Tom Keller",
+        "avatar": "/tutors/tom-keller.jpg",
+        "expertise": "Indie Developer & Publisher"
+      }
+    },
+    {
+      "id": 13,
+      "title": "Virtual Reality Game Development",
+      "description": "Learn to build immersive VR games using Unity and Oculus SDK.",
+      "thumbnail": "/courses/vr-development.jpg",
+      "field": "Game Development",
+      "difficulty": "Advanced",
+      "duration": "10 weeks",
+      "rating": 4.8,
+      "tutor": {
+        "name": "Derek Nolan",
+        "avatar": "/tutors/derek-nolan.jpg",
+        "expertise": "VR Developer and Consultant"
+      }
+    },
+    {
+      "id": 14,
+      "title": "Mobile Game Development with Unity",
+      "description": "Create and publish mobile games for Android and iOS.",
+      "thumbnail": "/courses/mobile-game-dev.jpg",
+      "field": "Game Development",
+      "difficulty": "Intermediate",
+      "duration": "8 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Ava Martinez",
+        "avatar": "/tutors/ava-martinez.jpg",
+        "expertise": "Mobile Game Specialist"
+      }
+    },
+    {
+      "id": 15,
+      "title": "AI for Games: Pathfinding and Behavior Trees",
+      "description": "Implement intelligent NPC behaviors using Unity and C#.",
+      "thumbnail": "/courses/game-ai.jpg",
+      "field": "Programming",
+      "difficulty": "Advanced",
+      "duration": "9 weeks",
+      "rating": 4.9,
+      "tutor": {
+        "name": "Jason Lee",
+        "avatar": "/tutors/jason-lee.jpg",
+        "expertise": "AI Engineer for Games"
+      }
+    },
+    {
+      "id": 16,
+      "title": "2D Game Development with Unity",
+      "description": "Build polished 2D games using Unity’s 2D tools and physics.",
+      "thumbnail": "/courses/2d-game-dev.jpg",
+      "field": "Game Development",
+      "difficulty": "Beginner",
+      "duration": "6 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Lily Nguyen",
+        "avatar": "/tutors/lily-nguyen.jpg",
+        "expertise": "2D Game Designer"
+      }
+    },
+    {
+      "id": 17,
+      "title": "Procedural Generation in Games",
+      "description": "Create endless and dynamic worlds using procedural techniques.",
+      "thumbnail": "/courses/procedural-generation.jpg",
+      "field": "Programming",
+      "difficulty": "Advanced",
+      "duration": "8 weeks",
+      "rating": 4.8,
+      "tutor": {
+        "name": "Oscar Rivera",
+        "avatar": "/tutors/oscar-rivera.jpg",
+        "expertise": "Procedural Systems Architect"
+      }
+    },
+    {
+      "id": 18,
+      "title": "Pixel Art for Indie Games",
+      "description": "Master the art of pixel-based visuals for 2D and retro-style games.",
+      "thumbnail": "/courses/pixel-art.jpg",
+      "field": "Art",
+      "difficulty": "Beginner",
+      "duration": "5 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Maya Torres",
+        "avatar": "/tutors/maya-torres.jpg",
+        "expertise": "Pixel Artist & Illustrator"
+      }
+    },
+    {
+      "id": 19,
+      "title": "UI/UX for Games",
+      "description": "Design intuitive and engaging interfaces for game players.",
+      "thumbnail": "/courses/game-ui-ux.jpg",
+      "field": "Design",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Ethan Clark",
+        "avatar": "/tutors/ethan-clark.jpg",
+        "expertise": "UX Designer for Interactive Media"
+      }
+    },
+    {
+      "id": 20,
+      "title": "Sound Design: From Foley to Game Engine",
+      "description": "Capture, edit, and integrate custom sound effects into your games.",
+      "thumbnail": "/courses/sound-design.jpg",
+      "field": "Audio",
+      "difficulty": "Intermediate",
+      "duration": "7 weeks",
+      "rating": 4.5,
+      "tutor": {
+        "name": "Isabelle Moore",
+        "avatar": "/tutors/isabelle-moore.jpg",
+        "expertise": "Sound Designer & Field Recordist"
+      }
+    },
+    {
+      "id": 21,
+      "title": "Gamification & Player Motivation",
+      "description": "Apply psychological principles to boost player engagement and retention.",
+      "thumbnail": "/courses/gamification.jpg",
+      "field": "Design",
+      "difficulty": "Beginner",
+      "duration": "5 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Bryan Kim",
+        "avatar": "/tutors/bryan-kim.jpg",
+        "expertise": "Game Psychologist & UX Strategist"
+      }
+    },
+    {
+      "id": 22,
+      "title": "Game Monetization Techniques",
+      "description": "Explore different models like freemium, ads, IAPs, and subscriptions.",
+      "thumbnail": "/courses/monetization.jpg",
+      "field": "Marketing",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.4,
+      "tutor": {
+        "name": "Chloe Adams",
+        "avatar": "/tutors/chloe-adams.jpg",
+        "expertise": "Game Marketing Analyst"
+      }
+    },
+    {
+      "id": 23,
+      "title": "Cinematic Cutscenes with Unity Timeline",
+      "description": "Create dynamic cutscenes and story moments using Unity's Timeline and Cinemachine.",
+      "thumbnail": "/courses/cutscenes.jpg",
+      "field": "Art",
+      "difficulty": "Intermediate",
+      "duration": "6 weeks",
+      "rating": 4.6,
+      "tutor": {
+        "name": "Leo Nakamura",
+        "avatar": "/tutors/leo-nakamura.jpg",
+        "expertise": "Technical Artist & Cinematics Director"
+      }
+    },
+    {
+      "id": 24,
+      "title": "Build a Game Portfolio from Scratch",
+      "description": "Develop multiple small projects and showcase them in a professional portfolio.",
+      "thumbnail": "/courses/game-portfolio.jpg",
+      "field": "Career Development",
+      "difficulty": "Beginner",
+      "duration": "8 weeks",
+      "rating": 4.7,
+      "tutor": {
+        "name": "Grace Lin",
+        "avatar": "/tutors/grace-lin.jpg",
+        "expertise": "Career Coach for Game Developers"
+      }
+    }
+  ]
+}

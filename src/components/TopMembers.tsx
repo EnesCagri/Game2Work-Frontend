@@ -147,7 +147,7 @@ const TopMembers = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 hove">
           <CardStack type="company" title="Öncü Şirketler" />
           <CardStack type="developer" title="Top Geliştiriciler" />
           <CardStack type="investor" title="Aktif Yatırımcılar" />

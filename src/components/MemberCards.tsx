@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { GradientOrb } from "./ui/gradient-orb";
 
 type Rarity = "common" | "rare" | "epic" | "legendary";
 type RowId = 1 | 2 | 3 | 4 | 5;
@@ -308,33 +309,37 @@ const Card = ({ member }: { member: Member }) => {
 
 const MemberCards = () => {
   return (
-    <section className="py-24">
-      <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-12"
-        >
-          <h2 className="text-4xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">
-            Ekosistem Kahramanları
-          </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-            Game2Work'ün öne çıkan üyeleri ve başarıları
-          </p>
-        </motion.div>
+    <section className="relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-gray-950" />
+      <GradientOrb
+        color="#ef4442"
+        position="top-right"
+        size="lg"
+        opacity={0.01}
+      />
+      <GradientOrb
+        color="#ef4442"
+        position="bottom-left"
+        size="lg"
+        opacity={0.01}
+      />
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden"></div>
 
-        {/* Cards Container */}
-        <div className="relative max-w-[90vw] mx-auto overflow-hidden rounded-xl border border-gray-800 bg-black/50 backdrop-blur-sm">
-          {/* Fade Edges */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-black/80 to-transparent z-10" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-black/80 to-transparent z-10" />
+      <div className="py-24 relative">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Üyelerimiz</h2>
+            <p className="text-gray-400">
+              Ekosistemimizin değerli üyeleriyle tanışın
+            </p>
+          </div>
 
-          {/* Scrolling Rows */}
-          <div className="py-8 space-y-8">
-            <ScrollingRow direction="left" speed={20} rowId={1} />
-            <ScrollingRow direction="right" speed={25} rowId={2} />
-            <ScrollingRow direction="left" speed={22} rowId={3} />
+          <div className="space-y-12">
+            <ScrollingRow rowId={1} direction="left" speed={30} />
+            <ScrollingRow rowId={2} direction="right" speed={25} />
+            <ScrollingRow rowId={3} direction="left" speed={35} />
           </div>
         </div>
       </div>

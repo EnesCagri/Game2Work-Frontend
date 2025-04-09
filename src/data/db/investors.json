@@ -1,0 +1,139 @@
+{
+  "investors": [
+    {
+      "id": 1,
+      "name": "TechVentures Capital",
+      "type": "Venture Capital",
+      "level": 5,
+      "image": "/investors/techventures.png",
+      "description": "Leading venture capital firm focused on early-stage technology startups.",
+      "investments": 42,
+      "totalFunds": 500000000,
+      "achievements": [
+        {
+          "id": 1,
+          "name": "Unicorn Maker",
+          "icon": "🏆",
+          "description": "Invested in 5+ unicorn startups"
+        },
+        {
+          "id": 2,
+          "name": "Early Bird",
+          "icon": "🐦",
+          "description": "Specializes in seed and Series A investments"
+        }
+      ],
+      "focus": ["AI", "Blockchain", "Gaming"],
+      "location": "San Francisco, CA",
+      "founded": "2010"
+    },
+    {
+      "id": 2,
+      "name": "GameGrowth Fund",
+      "type": "Gaming Focused",
+      "level": 4,
+      "image": "/investors/gamegrowth.png",
+      "description": "Dedicated to supporting innovative gaming startups and studios.",
+      "investments": 28,
+      "totalFunds": 250000000,
+      "achievements": [
+        {
+          "id": 1,
+          "name": "Game Changer",
+          "icon": "🎮",
+          "description": "Invested in 10+ successful gaming studios"
+        },
+        {
+          "id": 2,
+          "name": "Community Builder",
+          "icon": "👥",
+          "description": "Strong focus on community-driven games"
+        }
+      ],
+      "focus": ["Mobile Games", "Indie Games", "Esports"],
+      "location": "Los Angeles, CA",
+      "founded": "2015"
+    },
+    {
+      "id": 3,
+      "name": "FutureTech Angels",
+      "type": "Angel Network",
+      "level": 3,
+      "image": "/investors/futuretech.png",
+      "description": "Network of experienced tech entrepreneurs investing in the future.",
+      "investments": 15,
+      "totalFunds": 100000000,
+      "achievements": [
+        {
+          "id": 1,
+          "name": "Mentor Network",
+          "icon": "👨‍🏫",
+          "description": "Provides hands-on mentorship to portfolio companies"
+        },
+        {
+          "id": 2,
+          "name": "Rapid Growth",
+          "icon": "📈",
+          "description": "Portfolio companies average 3x growth in first year"
+        }
+      ],
+      "focus": ["Web3", "Metaverse", "AR/VR"],
+      "location": "New York, NY",
+      "founded": "2018"
+    },
+    {
+      "id": 4,
+      "name": "Digital Dreams Capital",
+      "type": "Corporate Venture",
+      "level": 5,
+      "image": "/investors/digitaldreams.jpg",
+      "description": "Corporate venture arm of a major gaming company.",
+      "investments": 50,
+      "totalFunds": 750000000,
+      "achievements": [
+        {
+          "id": 1,
+          "name": "Industry Leader",
+          "icon": "👑",
+          "description": "Largest gaming-focused investment portfolio"
+        },
+        {
+          "id": 2,
+          "name": "Strategic Master",
+          "icon": "🎯",
+          "description": "100% successful strategic acquisitions"
+        }
+      ],
+      "focus": ["Gaming Platforms", "Game Development", "Gaming Services"],
+      "location": "Tokyo, Japan",
+      "founded": "2012"
+    },
+    {
+      "id": 5,
+      "name": "Future Play Ventures",
+      "type": "Venture Capital",
+      "level": 4,
+      "image": "/investors/futureplay.jpg",
+      "description": "Forward-thinking investment firm in gaming and interactive media.",
+      "investments": 38,
+      "totalFunds": 400000000,
+      "achievements": [
+        {
+          "id": 1,
+          "name": "Innovation Champion",
+          "icon": "💡",
+          "description": "Supporting cutting-edge gaming technologies"
+        },
+        {
+          "id": 2,
+          "name": "Community Builder",
+          "icon": "🤝",
+          "description": "Strong network of gaming industry partners"
+        }
+      ],
+      "focus": ["Cloud Gaming", "Social Gaming", "Gaming Analytics"],
+      "location": "Berlin, Germany",
+      "founded": "2016"
+    }
+  ]
+}

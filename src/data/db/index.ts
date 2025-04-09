@@ -5,5 +5,17 @@ import applications from "./applications.json";
 import tests from "./tests.json";
 import certifications from "./certifications.json";
 import games from "./games.json";
+import courses from "./courses.json";
+import developers from "./developers.json";
 
-export { jobs, users, companies, applications, tests, certifications, games };
+export {
+  jobs,
+  users,
+  companies,
+  applications,
+  tests,
+  certifications,
+  games,
+  courses,
+  developers,
+};

@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 // import { RocketIcon, UsersIcon, GraduationCapIcon } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { GradientOrb } from "./ui/gradient-orb";
 
 interface Feature {
   title: string;
@@ -194,35 +195,43 @@ const FeatureCard = ({
 
 const FeaturesGrid = () => {
   return (
-    <motion.section
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6 }}
-      className="py-24 bg-black/50"
-    >
-      <div className="container px-4 mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="text-center mb-16"
-        >
-          <h2 className="text-4xl font-bold mb-4">Neler Sunuyoruz?</h2>
-          <p className="text-gray-400 text-lg">
-            Girişimciler ve yatırımcılar için özel olarak tasarlanmış premium
-            özelliklerimiz
-          </p>
-        </motion.div>
+    <section className="relative overflow-hidden">
+      {/* Background gradient */}
+      <div className="absolute inset-0 bg-black" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <FeatureCard key={index} feature={feature} index={index} />
-          ))}
+      <GradientOrb
+        color="#ef4442"
+        position="top-right"
+        size="lg"
+        opacity={0.01}
+      />
+      <GradientOrb
+        color="#ef4442"
+        position="bottom-left"
+        size="lg"
+        opacity={0.01}
+      />
+
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden"></div>
+
+      <div className="py-24 relative">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Özellikler</h2>
+            <p className="text-gray-400">
+              Game2Work ile oyun geliştirme sürecinizi kolaylaştırın
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {features.map((feature, index) => (
+              <FeatureCard key={index} feature={feature} index={index} />
+            ))}
+          </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 };
 

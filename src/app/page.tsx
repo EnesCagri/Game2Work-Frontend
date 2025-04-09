@@ -54,6 +54,7 @@ export default function Home() {
           <div className="absolute -bottom-1/2 -right-1/2 w-full h-full bg-red-500/10 rounded-full blur-3xl animate-pulse delay-1000" />
         </div>
       </section>
+
       <About />
       <Statistics />
       <FeaturesGrid />

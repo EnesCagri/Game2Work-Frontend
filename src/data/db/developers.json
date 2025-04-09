@@ -1,0 +1,330 @@
+{
+  "developers": [
+    {
+      "id": 1,
+      "name": "John Smith",
+      "role": "Game Developer",
+      "image": "/developers/john-smith.jpg",
+      "rarity": "epic",
+      "stats": {
+        "projects": 12,
+        "awards": 3,
+        "experience": 5
+      },
+      "description": "Senior Game Developer with expertise in Unity and Unreal Engine. Specializes in gameplay mechanics and multiplayer systems.",
+      "skills": [
+        "Unity",
+        "Unreal Engine",
+        "C#",
+        "C++",
+        "Gameplay Programming",
+        "Multiplayer Systems"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Unity Certified Professional",
+          "issuer": "Unity Technologies",
+          "date": "2022-03-15"
+        },
+        {
+          "id": 2,
+          "name": "Unreal Engine Developer",
+          "issuer": "Epic Games",
+          "date": "2021-11-20"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Space Odyssey",
+          "role": "Lead Developer",
+          "description": "A multiplayer space exploration game with procedurally generated worlds.",
+          "technologies": ["Unity", "C#", "Photon"],
+          "year": 2022
+        },
+        {
+          "id": 2,
+          "name": "Dungeon Crawler",
+          "role": "Gameplay Programmer",
+          "description": "A roguelike dungeon crawler with unique combat mechanics.",
+          "technologies": ["Unreal Engine", "C++", "Blueprints"],
+          "year": 2021
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Sarah Johnson",
+      "role": "UI/UX Designer",
+      "image": "/developers/sarah-johnson.jpg",
+      "rarity": "rare",
+      "stats": {
+        "projects": 8,
+        "awards": 2,
+        "experience": 4
+      },
+      "description": "Creative UI/UX Designer with a passion for creating intuitive and engaging user interfaces for games.",
+      "skills": [
+        "UI Design",
+        "UX Research",
+        "Figma",
+        "Adobe XD",
+        "Prototyping",
+        "User Testing"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "UX Design Professional",
+          "issuer": "Google",
+          "date": "2022-06-10"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Fantasy RPG UI",
+          "role": "Lead UI Designer",
+          "description": "Designed and implemented the complete UI system for a fantasy RPG game.",
+          "technologies": ["Figma", "Unity UI", "Adobe XD"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Michael Chen",
+      "role": "3D Artist",
+      "image": "/developers/michael-chen.jpg",
+      "rarity": "legendary",
+      "stats": {
+        "projects": 15,
+        "awards": 5,
+        "experience": 7
+      },
+      "description": "Award-winning 3D Artist specializing in character design and environmental art.",
+      "skills": [
+        "3D Modeling",
+        "Character Design",
+        "Maya",
+        "ZBrush",
+        "Substance Painter",
+        "Environment Art"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Autodesk Certified Professional",
+          "issuer": "Autodesk",
+          "date": "2021-09-05"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Mythical Creatures",
+          "role": "Lead Character Artist",
+          "description": "Created a series of mythical creatures for a fantasy game.",
+          "technologies": ["Maya", "ZBrush", "Substance Painter"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Emily Rodriguez",
+      "role": "Sound Designer",
+      "image": "/developers/emily-rodriguez.jpg",
+      "rarity": "common",
+      "stats": {
+        "projects": 6,
+        "awards": 1,
+        "experience": 3
+      },
+      "description": "Sound Designer with expertise in creating immersive audio experiences for games.",
+      "skills": [
+        "Sound Design",
+        "Music Composition",
+        "FMOD",
+        "Wwise",
+        "Audio Implementation",
+        "Foley Recording"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Wwise Certified Professional",
+          "issuer": "Audiokinetic",
+          "date": "2022-01-20"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Horror Game Audio",
+          "role": "Sound Designer",
+          "description": "Created the complete audio experience for a horror game.",
+          "technologies": ["Wwise", "FMOD", "Pro Tools"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "David Wilson",
+      "role": "Game Designer",
+      "image": "/developers/david-wilson.jpg",
+      "rarity": "rare",
+      "stats": {
+        "projects": 10,
+        "awards": 2,
+        "experience": 4
+      },
+      "description": "Game Designer with a focus on level design and game mechanics.",
+      "skills": [
+        "Level Design",
+        "Game Mechanics",
+        "Narrative Design",
+        "Prototyping",
+        "Game Balance",
+        "Documentation"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Game Design Professional",
+          "issuer": "Game Design Institute",
+          "date": "2021-12-15"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Puzzle Platformer",
+          "role": "Lead Designer",
+          "description": "Designed and implemented a puzzle platformer with unique mechanics.",
+          "technologies": ["Unity", "Level Design", "Game Design"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Lisa Thompson",
+      "role": "QA Tester",
+      "image": "/developers/lisa-thompson.jpg",
+      "rarity": "common",
+      "stats": {
+        "projects": 5,
+        "awards": 1,
+        "experience": 2
+      },
+      "description": "Detail-oriented QA Tester with expertise in game testing and bug reporting.",
+      "skills": [
+        "Game Testing",
+        "Bug Reporting",
+        "Test Planning",
+        "Regression Testing",
+        "Performance Testing",
+        "Documentation"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "ISTQB Certified Tester",
+          "issuer": "ISTQB",
+          "date": "2022-02-10"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Open World RPG Testing",
+          "role": "QA Lead",
+          "description": "Led the QA team for a large open-world RPG game.",
+          "technologies": ["JIRA", "TestRail", "Bug Tracking"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Alex Martinez",
+      "role": "Game Developer",
+      "image": "/developers/alex-martinez.jpg",
+      "rarity": "epic",
+      "stats": {
+        "projects": 9,
+        "awards": 2,
+        "experience": 4
+      },
+      "description": "Full-stack game developer with expertise in both frontend and backend development.",
+      "skills": [
+        "Unity",
+        "C#",
+        "JavaScript",
+        "Node.js",
+        "Game Networking",
+        "Database Design"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Unity Certified Developer",
+          "issuer": "Unity Technologies",
+          "date": "2022-04-05"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Multiplayer Shooter",
+          "role": "Backend Developer",
+          "description": "Developed the backend infrastructure for a multiplayer shooter game.",
+          "technologies": ["Node.js", "MongoDB", "WebSocket"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Sophia Lee",
+      "role": "UI/UX Designer",
+      "image": "/developers/sophia-lee.jpg",
+      "rarity": "rare",
+      "stats": {
+        "projects": 7,
+        "awards": 1,
+        "experience": 3
+      },
+      "description": "UI/UX Designer specializing in mobile game interfaces and user experience.",
+      "skills": [
+        "Mobile UI Design",
+        "User Research",
+        "Figma",
+        "Adobe XD",
+        "Prototyping",
+        "User Testing"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Mobile UI Design Professional",
+          "issuer": "Interaction Design Foundation",
+          "date": "2022-03-20"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Mobile Game UI",
+          "role": "UI Designer",
+          "description": "Designed the UI for a popular mobile puzzle game.",
+          "technologies": ["Figma", "Unity UI", "Adobe XD"],
+          "year": 2022
+        }
+      ]
+    }
+  ]
+}

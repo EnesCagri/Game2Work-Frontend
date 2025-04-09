@@ -6,13 +6,85 @@ import {
   tests,
   certifications,
   games,
+  courses,
+  developers,
 } from "@/data/db";
+import investorsData from "@/data/db/investors.json";
+import blogsData from "@/data/db/blogs.json";
 
 // Add type for playerCount parsing
 type PlayerCount = {
   count: number;
   multiplier: number;
 };
+
+interface Member {
+  id: number;
+  name: string;
+  role: string;
+  image: string;
+  rarity: "common" | "rare" | "epic" | "legendary";
+  stats: {
+    projects: number;
+    awards: number;
+    experience: number;
+  };
+}
+
+interface DevelopersData {
+  developers: Member[];
+}
+
+interface Achievement {
+  id: number;
+  name: string;
+  icon: string;
+  description: string;
+}
+
+interface Investor {
+  id: number;
+  name: string;
+  type: string;
+  level: number;
+  image: string;
+  description: string;
+  investments: number;
+  totalFunds: number;
+  achievements: Achievement[];
+  focus: string[];
+  location: string;
+  founded: string;
+}
+
+interface InvestorsData {
+  investors: Investor[];
+}
+
+interface Comment {
+  id: number;
+  author: string;
+  avatar: string;
+  content: string;
+  date: string;
+  likes: number;
+}
+
+interface Blog {
+  id: number;
+  title: string;
+  author: string;
+  authorAvatar: string;
+  date: string;
+  image: string;
+  topic: string;
+  readTime: string;
+  excerpt: string;
+  content: string;
+  tags: string[];
+  likes: number;
+  comments: Comment[];
+}
 
 export interface DbService {
   // Jobs
@@ -56,6 +128,35 @@ export interface DbService {
   getMostPlayedGames: () => Promise<typeof games.games>;
   getRecentlyPlayedGames: () => Promise<typeof games.games>;
   getKickstarts: () => Promise<any[]>;
+
+  // Courses
+  getCourses: () => Promise<typeof courses.courses>;
+  getCourseById: (
+    id: number
+  ) => Promise<(typeof courses.courses)[0] | undefined>;
+  getCoursesByField: (field: string) => Promise<typeof courses.courses>;
+  getCoursesByDifficulty: (
+    difficulty: string
+  ) => Promise<typeof courses.courses>;
+  getCoursesByTutor: (tutorName: string) => Promise<typeof courses.courses>;
+
+  // Developers
+  getDevelopers: () => Promise<Member[]>;
+  getDeveloperById: (id: number) => Promise<Member | undefined>;
+  getDevelopersByRole: (role: string) => Promise<Member[]>;
+  getDevelopersByRarity: (rarity: string) => Promise<Member[]>;
+
+  // Investors
+  getInvestors: () => Promise<Investor[]>;
+  getInvestorById: (id: number) => Promise<Investor | null>;
+  getInvestorsByType: (type: string) => Promise<Investor[]>;
+  getInvestorsByLevel: (level: number) => Promise<Investor[]>;
+
+  // Blogs
+  getBlogs: () => Promise<Blog[]>;
+  getBlogById: (id: number) => Promise<Blog | null>;
+  getBlogsByTopic: (topic: string) => Promise<Blog[]>;
+  getBlogsByTag: (tag: string) => Promise<Blog[]>;
 }
 
 export class MockDbService implements DbService {
@@ -179,6 +280,123 @@ export class MockDbService implements DbService {
   async getKickstarts(): Promise<any[]> {
     const kickstarts = await this.loadData<{ kickstarts: any[] }>("kickstarts");
     return kickstarts.kickstarts || [];
+  }
+
+  // Courses methods
+  async getCourses() {
+    return courses.courses;
+  }
+
+  async getCourseById(id: number) {
+    return courses.courses.find((course) => course.id === id);
+  }
+
+  async getCoursesByField(field: string) {
+    return courses.courses.filter((course) => course.field === field);
+  }
+
+  async getCoursesByDifficulty(difficulty: string) {
+    return courses.courses.filter((course) => course.difficulty === difficulty);
+  }
+
+  async getCoursesByTutor(tutorName: string) {
+    return courses.courses.filter((course) => course.tutor.name === tutorName);
+  }
+
+  // Developers methods
+  async getDevelopers(): Promise<Member[]> {
+    return (developers as DevelopersData).developers;
+  }
+
+  async getDeveloperById(id: number): Promise<Member | undefined> {
+    return (developers as DevelopersData).developers.find(
+      (dev) => dev.id === id
+    );
+  }
+
+  async getDevelopersByRole(role: string): Promise<Member[]> {
+    return (developers as DevelopersData).developers.filter(
+      (dev) => dev.role === role
+    );
+  }
+
+  async getDevelopersByRarity(rarity: string): Promise<Member[]> {
+    return (developers as DevelopersData).developers.filter(
+      (dev) => dev.rarity === rarity
+    );
+  }
+
+  // Investors methods
+  async getInvestors(): Promise<Investor[]> {
+    return investorsData.investors;
+  }
+
+  async getInvestorById(id: number): Promise<Investor | null> {
+    return (
+      investorsData.investors.find((investor) => investor.id === id) || null
+    );
+  }
+
+  async getInvestorsByType(type: string): Promise<Investor[]> {
+    return investorsData.investors.filter((investor) => investor.type === type);
+  }
+
+  async getInvestorsByLevel(level: number): Promise<Investor[]> {
+    return investorsData.investors.filter(
+      (investor) => investor.level === level
+    );
+  }
+
+  // Blogs methods
+  async getBlogs(): Promise<Blog[]> {
+    return blogsData.blogs.map((blog) => ({
+      ...blog,
+      authorAvatar: `/authors/${blog.author
+        .toLowerCase()
+        .replace(/\s+/g, "-")}.jpg`,
+      likes: 0,
+      comments: [],
+    }));
+  }
+
+  async getBlogById(id: number): Promise<Blog | null> {
+    const blog = blogsData.blogs.find((blog) => blog.id === id);
+    if (!blog) return null;
+
+    return {
+      ...blog,
+      authorAvatar: `/authors/${blog.author
+        .toLowerCase()
+        .replace(/\s+/g, "-")}.jpg`,
+      likes: 0,
+      comments: [],
+    };
+  }
+
+  async getBlogsByTopic(topic: string): Promise<Blog[]> {
+    return blogsData.blogs
+      .filter((blog) => blog.topic === topic)
+      .map((blog) => ({
+        ...blog,
+        authorAvatar: `/authors/${blog.author
+          .toLowerCase()
+          .replace(/\s+/g, "-")}.jpg`,
+        likes: 0,
+        comments: [],
+      }));
+  }
+
+  async getBlogsByTag(tag: string): Promise<Blog[]> {
+    return blogsData.blogs
+      .filter((blog) => blog.tags.includes(tag))
+      .map((blog) => ({
+        ...blog,
+        authorAvatar: `/authors/${blog.author
+          .toLowerCase()
+          .replace(/\s+/g, "-")}.jpg`,
+        likes: 0,
+        comments: [],
+      }));
   }
 
   private async loadData<T>(key: string): Promise<T> {
