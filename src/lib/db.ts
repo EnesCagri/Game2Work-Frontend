@@ -10,7 +10,8 @@ import {
   developers,
 } from "@/data/db";
 import investorsData from "@/data/db/investors.json";
-import blogsData from "@/data/db/blogs.json";
+import _blogsData from "@/data/db/blogs.json";
+const blogsData: Blog[] = _blogsData;
 
 // Add type for playerCount parsing
 type PlayerCount = {
@@ -70,21 +71,21 @@ interface Comment {
   likes: number;
 }
 
-interface Blog {
+type Blog = {
   id: number;
   title: string;
   author: string;
-  authorAvatar: string;
   date: string;
   image: string;
   topic: string;
   readTime: string;
   excerpt: string;
-  content: string;
   tags: string[];
+  content: string;
+  authorAvatar: string;
   likes: number;
   comments: Comment[];
-}
+};
 
 export interface DbService {
   // Jobs
@@ -157,6 +158,7 @@ export interface DbService {
   getBlogById: (id: number) => Promise<Blog | null>;
   getBlogsByTopic: (topic: string) => Promise<Blog[]>;
   getBlogsByTag: (tag: string) => Promise<Blog[]>;
+  createBlog: (blog: Omit<Blog, "id" | "likes" | "comments">) => Promise<Blog>;
 }
 
 export class MockDbService implements DbService {
@@ -349,54 +351,38 @@ export class MockDbService implements DbService {
 
   // Blogs methods
   async getBlogs(): Promise<Blog[]> {
-    return blogsData.blogs.map((blog) => ({
-      ...blog,
-      authorAvatar: `/authors/${blog.author
-        .toLowerCase()
-        .replace(/\s+/g, "-")}.jpg`,
-      likes: 0,
-      comments: [],
-    }));
+    return blogsData;
   }
 
   async getBlogById(id: number): Promise<Blog | null> {
-    const blog = blogsData.blogs.find((blog) => blog.id === id);
+    const blog = blogsData.find((blog) => blog.id === id);
     if (!blog) return null;
-
-    return {
-      ...blog,
-      authorAvatar: `/authors/${blog.author
-        .toLowerCase()
-        .replace(/\s+/g, "-")}.jpg`,
-      likes: 0,
-      comments: [],
-    };
+    return blog;
   }
 
   async getBlogsByTopic(topic: string): Promise<Blog[]> {
-    return blogsData.blogs
-      .filter((blog) => blog.topic === topic)
-      .map((blog) => ({
-        ...blog,
-        authorAvatar: `/authors/${blog.author
-          .toLowerCase()
-          .replace(/\s+/g, "-")}.jpg`,
-        likes: 0,
-        comments: [],
-      }));
+    return blogsData.filter((blog) => blog.topic === topic);
   }
 
   async getBlogsByTag(tag: string): Promise<Blog[]> {
-    return blogsData.blogs
-      .filter((blog) => blog.tags.includes(tag))
-      .map((blog) => ({
-        ...blog,
-        authorAvatar: `/authors/${blog.author
-          .toLowerCase()
-          .replace(/\s+/g, "-")}.jpg`,
-        likes: 0,
-        comments: [],
-      }));
+    return blogsData.filter((blog) => blog.tags.includes(tag));
+  }
+
+  async createBlog(
+    blog: Omit<Blog, "id" | "likes" | "comments">
+  ): Promise<Blog> {
+    const newId = Math.max(...blogsData.map((b) => b.id), 0) + 1;
+
+    const newBlog = {
+      ...blog,
+      id: newId,
+      likes: 0,
+      comments: [] as Comment[],
+    } as Blog;
+
+    // Update the blogs array
+    blogsData.push(newBlog);
+    return newBlog;
   }
 
   private async loadData<T>(key: string): Promise<T> {
