@@ -25,7 +25,6 @@ export default function About() {
     <section className="py-20 bg-black relative overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Left side - Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -42,7 +41,6 @@ export default function About() {
             />
           </motion.div>
 
-          {/* Right side - Content */}
           <div className="space-y-8">
             <motion.h2
               initial={{ opacity: 0, y: 20 }}
@@ -64,7 +62,6 @@ export default function About() {
               keyifli bir oyun topluluğunun parçası olurlar.
             </motion.p>
 
-            {/* Features */}
             <div className="space-y-6">
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
