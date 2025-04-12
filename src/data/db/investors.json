@@ -3,137 +3,86 @@
     {
       "id": 1,
       "name": "TechVentures Capital",
+      "image": "/Investors/techventurelogo.png",
       "type": "Venture Capital",
       "level": 5,
-      "image": "/investors/techventures.png",
-      "description": "Leading venture capital firm focused on early-stage technology startups.",
-      "investments": 42,
+      "description": "Leading venture capital firm focused on gaming and tech startups.",
+      "investments": 25,
       "totalFunds": 500000000,
       "achievements": [
         {
           "id": 1,
-          "name": "Unicorn Maker",
+          "name": "Top Gaming Investor",
           "icon": "🏆",
-          "description": "Invested in 5+ unicorn startups"
-        },
-        {
-          "id": 2,
-          "name": "Early Bird",
-          "icon": "🐦",
-          "description": "Specializes in seed and Series A investments"
+          "description": "Recognized as top investor in gaming industry"
         }
       ],
-      "focus": ["AI", "Blockchain", "Gaming"],
+      "focus": ["Gaming", "VR", "AI"],
       "location": "San Francisco, CA",
       "founded": "2010"
     },
     {
       "id": 2,
-      "name": "GameGrowth Fund",
-      "type": "Gaming Focused",
-      "level": 4,
-      "image": "/investors/gamegrowth.png",
-      "description": "Dedicated to supporting innovative gaming startups and studios.",
-      "investments": 28,
-      "totalFunds": 250000000,
-      "achievements": [
-        {
-          "id": 1,
-          "name": "Game Changer",
-          "icon": "🎮",
-          "description": "Invested in 10+ successful gaming studios"
-        },
-        {
-          "id": 2,
-          "name": "Community Builder",
-          "icon": "👥",
-          "description": "Strong focus on community-driven games"
-        }
-      ],
-      "focus": ["Mobile Games", "Indie Games", "Esports"],
-      "location": "Los Angeles, CA",
-      "founded": "2015"
-    },
-    {
-      "id": 3,
-      "name": "FutureTech Angels",
+      "name": "Digital Dreams Fund",
+      "image": "/Investors/digitaldreamslogo.png",
       "type": "Angel Network",
-      "level": 3,
-      "image": "/investors/futuretech.png",
-      "description": "Network of experienced tech entrepreneurs investing in the future.",
+      "level": 4,
+      "description": "Angel network specializing in early-stage gaming startups.",
       "investments": 15,
       "totalFunds": 100000000,
       "achievements": [
         {
-          "id": 1,
-          "name": "Mentor Network",
-          "icon": "👨‍🏫",
-          "description": "Provides hands-on mentorship to portfolio companies"
-        },
-        {
           "id": 2,
-          "name": "Rapid Growth",
-          "icon": "📈",
-          "description": "Portfolio companies average 3x growth in first year"
+          "name": "Early Stage Expert",
+          "icon": "💡",
+          "description": "Specialized in early-stage investments"
         }
       ],
-      "focus": ["Web3", "Metaverse", "AR/VR"],
+      "focus": ["Mobile Games", "Indie Games"],
       "location": "New York, NY",
-      "founded": "2018"
+      "founded": "2015"
     },
     {
-      "id": 4,
-      "name": "Digital Dreams Capital",
-      "type": "Corporate Venture",
-      "level": 5,
-      "image": "/investors/digitaldreams.jpg",
-      "description": "Corporate venture arm of a major gaming company.",
-      "investments": 50,
-      "totalFunds": 750000000,
+      "id": 3,
+      "name": "Future Growth Partners",
+      "image": "/Investors/futurelogo.png",
+      "type": "Private Equity",
+      "level": 3,
+      "description": "Private equity firm focused on growth-stage gaming companies.",
+      "investments": 10,
+      "totalFunds": 250000000,
       "achievements": [
         {
-          "id": 1,
-          "name": "Industry Leader",
-          "icon": "👑",
-          "description": "Largest gaming-focused investment portfolio"
-        },
-        {
-          "id": 2,
-          "name": "Strategic Master",
-          "icon": "🎯",
-          "description": "100% successful strategic acquisitions"
+          "id": 3,
+          "name": "Growth Specialist",
+          "icon": "📈",
+          "description": "Expert in scaling gaming companies"
         }
       ],
-      "focus": ["Gaming Platforms", "Game Development", "Gaming Services"],
-      "location": "Tokyo, Japan",
+      "focus": ["Esports", "Gaming Platforms"],
+      "location": "London, UK",
       "founded": "2012"
     },
     {
-      "id": 5,
-      "name": "Future Play Ventures",
+      "id": 4,
+      "name": "Growth Capital Ventures",
+      "image": "/Investors/Growthlogo.png",
       "type": "Venture Capital",
       "level": 4,
-      "image": "/investors/futureplay.jpg",
-      "description": "Forward-thinking investment firm in gaming and interactive media.",
-      "investments": 38,
-      "totalFunds": 400000000,
+      "description": "Venture capital firm with focus on gaming and entertainment.",
+      "investments": 20,
+      "totalFunds": 300000000,
       "achievements": [
         {
-          "id": 1,
-          "name": "Innovation Champion",
-          "icon": "💡",
-          "description": "Supporting cutting-edge gaming technologies"
-        },
-        {
-          "id": 2,
-          "name": "Community Builder",
-          "icon": "🤝",
-          "description": "Strong network of gaming industry partners"
+          "id": 4,
+          "name": "Industry Leader",
+          "icon": "🎮",
+          "description": "Leading investor in gaming industry"
         }
       ],
-      "focus": ["Cloud Gaming", "Social Gaming", "Gaming Analytics"],
-      "location": "Berlin, Germany",
-      "founded": "2016"
+      "focus": ["Gaming", "Entertainment", "Tech"],
+      "location": "Los Angeles, CA",
+      "founded": "2011"
     }
   ]
 }

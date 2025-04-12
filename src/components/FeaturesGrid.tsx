@@ -218,7 +218,9 @@ const FeaturesGrid = () => {
       <div className="py-24 relative">
         <div className="container relative z-10 mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Özellikler</h2>
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              Özellikler
+            </h2>
             <p className="text-gray-400">
               Game2Work ile oyun geliştirme sürecinizi kolaylaştırın
             </p>

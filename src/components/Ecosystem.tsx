@@ -8,7 +8,7 @@ import { GradientOrb } from "./ui/gradient-orb";
 const ecosystemRoles = [
   {
     icon: Code2,
-    title: "Ürün Geliştiricileri İçin",
+    title: "Developer İçin",
     description: [
       "Projelerinizi şeffaf bir şekilde tanıtın ve gerçek kullanıcılardan anında geri bildirim alın.",
       "Diğer geliştiricilerle iletişim kurarak ağınızı genişletin ve işbirliği fırsatları yakalayın.",
@@ -77,8 +77,8 @@ const Ecosystem = () => {
             transition={{ duration: 0.6 }}
             className="text-center mb-16"
           >
-            <h2 className="text-white text-4xl font-bold mb-4 ">
-              Rakamlarla GameToWork
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent">
+              Ekosistemimizi Tanıyın
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
               Türkiye'nin en büyük girişimcilik platformunda herkes için bir yer

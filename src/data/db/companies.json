@@ -33,17 +33,13 @@
     {
       "id": 3,
       "name": "Unity Technologies",
-      "logo": "/companies/unity.png",
-      "description": "The world's leading real-time development platform.",
+      "logo": "/Companies/unitylogo.jpeg",
+      "description": "Unity is a cross-platform game engine developed by Unity Technologies.",
       "industry": "Software Development",
       "website": "https://unity.com",
-      "location": "San Francisco, USA",
-      "size": "5000-10000",
-      "founded": 2004,
-      "socialMedia": {
-        "linkedin": "https://linkedin.com/company/unity-technologies",
-        "twitter": "https://twitter.com/unity"
-      }
+      "location": "San Francisco, CA",
+      "size": "1000+",
+      "founded": "2004"
     },
     {
       "id": 4,
@@ -63,17 +59,13 @@
     {
       "id": 5,
       "name": "Epic Games",
-      "logo": "/companies/epic.png",
-      "description": "Creators of Unreal Engine and Fortnite.",
+      "logo": "/Companies/epiclogo.png",
+      "description": "Epic Games is an American video game and software development company.",
       "industry": "Gaming",
-      "website": "https://epicgames.com",
-      "location": "Cary, USA",
-      "size": "5000-10000",
-      "founded": 1991,
-      "socialMedia": {
-        "linkedin": "https://linkedin.com/company/epic-games",
-        "twitter": "https://twitter.com/epicgames"
-      }
+      "website": "https://www.epicgames.com",
+      "location": "Cary, NC",
+      "size": "1000+",
+      "founded": "1991"
     },
     {
       "id": 6,
@@ -93,32 +85,24 @@
     {
       "id": 7,
       "name": "Valve Corporation",
-      "logo": "/companies/valve.png",
-      "description": "Innovative game developer and creator of Steam.",
+      "logo": "/Companies/valvelogo.jpg",
+      "description": "Valve is an American video game developer, publisher, and digital distribution company.",
       "industry": "Gaming",
-      "website": "https://valvesoftware.com",
-      "location": "Bellevue, USA",
-      "size": "1000-5000",
-      "founded": 1996,
-      "socialMedia": {
-        "linkedin": "https://linkedin.com/company/valve",
-        "twitter": "https://twitter.com/valvesoftware"
-      }
+      "website": "https://www.valvesoftware.com",
+      "location": "Bellevue, WA",
+      "size": "500+",
+      "founded": "1996"
     },
     {
       "id": 8,
       "name": "Ubisoft",
-      "logo": "/companies/ubisoft.png",
-      "description": "One of the largest gaming companies in the world.",
+      "logo": "/Companies/ubisoftlogo.jpg",
+      "description": "Ubisoft is a French video game company headquartered in Montreuil.",
       "industry": "Gaming",
-      "website": "https://ubisoft.com",
-      "location": "Montreal, Canada",
-      "size": "10000+",
-      "founded": 1986,
-      "socialMedia": {
-        "linkedin": "https://linkedin.com/company/ubisoft",
-        "twitter": "https://twitter.com/ubisoft"
-      }
+      "website": "https://www.ubisoft.com",
+      "location": "Montreuil, France",
+      "size": "20000+",
+      "founded": "1986"
     },
     {
       "id": 9,
@@ -138,17 +122,13 @@
     {
       "id": 10,
       "name": "NVIDIA",
-      "logo": "/companies/nvidia.png",
-      "description": "Leaders in AI computing and GPU technology.",
+      "logo": "/Companies/nvidialogo.jpg",
+      "description": "NVIDIA is an American multinational technology company.",
       "industry": "Hardware & AI",
-      "website": "https://nvidia.com",
-      "location": "Santa Clara, USA",
-      "size": "10000+",
-      "founded": 1993,
-      "socialMedia": {
-        "linkedin": "https://linkedin.com/company/nvidia",
-        "twitter": "https://twitter.com/nvidia"
-      }
+      "website": "https://www.nvidia.com",
+      "location": "Santa Clara, CA",
+      "size": "20000+",
+      "founded": "1993"
     }
   ]
 }

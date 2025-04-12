@@ -8,7 +8,7 @@ interface GameCardProps {
   game: {
     id: string;
     title: string;
-    coverImage: string;
+    image: string;
     lastPlayed?: string;
     totalPlaytime?: string;
     genres: string[];
@@ -25,7 +25,7 @@ export function GameCard({ game }: GameCardProps) {
         <div className="relative aspect-[3/4] overflow-hidden rounded-lg">
           {/* Game Cover */}
           <Image
-            src={game.coverImage}
+            src={game.image}
             alt={game.title}
             fill
             className="object-cover transition-transform duration-300 group-hover:scale-110"

@@ -2,321 +2,135 @@
   "games": [
     {
       "id": "1",
-      "title": "Counter-Strike 2",
-      "coverImage": "/games/cs2.png",
-      "description": "Counter-Strike 2 is the largest technical leap forward in Counter-Strike's history, ensuring new features and updates for years to come.",
-      "releaseDate": "2023-09-27",
-      "developer": "Valve",
-      "publisher": "Valve",
-      "genres": ["FPS", "Action", "Multiplayer", "Competitive"],
-      "platforms": ["Windows"],
-      "price": "Free to Play",
+      "title": "Red Dead Redemption 2",
+      "description": "An epic tale of life in America's unforgiving heartland.",
+      "image": "/games/rdr2.png",
+      "genres": ["Action", "Adventure"],
+      "platforms": ["PC", "PS4", "Xbox One"],
+      "price": "59.99",
       "rating": 4.8,
-      "features": [
-        "Multiplayer",
-        "Competitive",
-        "Trading",
-        "Steam Achievements",
-        "Steam Workshop"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10",
-          "processor": "Intel Core i5-4460 or better",
-          "memory": "8 GB RAM",
-          "graphics": "NVIDIA GTX 970 / AMD Radeon RX 480",
-          "storage": "85 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-15",
-      "totalPlaytime": "156 hours",
-      "playerCount": "1.2M active players"
+      "playerCount": "1M+",
+      "lastPlayed": "2024-03-20"
     },
     {
       "id": "2",
-      "title": "Batman: Arkham Knight",
-      "coverImage": "/games/batman-arkham-knight.jpg",
-      "description": "Batman: Arkham Knight brings the award-winning trilogy to its epic conclusion.",
-      "releaseDate": "2015-06-23",
-      "developer": "Rocksteady Studios",
-      "publisher": "Warner Bros. Interactive Entertainment",
-      "genres": ["Action", "Adventure", "Open World"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "$19.99",
-      "rating": 4.5,
-      "features": [
-        "Single-player",
-        "Controller Support",
-        "Steam Achievements",
-        "Steam Cloud"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 7 SP1",
-          "processor": "Intel Core i5-750, 2.67 GHz",
-          "memory": "6 GB RAM",
-          "graphics": "NVIDIA GTX 660",
-          "storage": "45 GB available space"
-        }
-      },
-      "lastPlayed": "2024-02-20",
-      "totalPlaytime": "42 hours",
-      "playerCount": "15K active players"
+      "title": "Counter-Strike 2",
+      "description": "The next evolution of the legendary tactical shooter.",
+      "image": "/games/cs2.png",
+      "genres": ["FPS", "Multiplayer"],
+      "platforms": ["PC"],
+      "price": "Free to Play",
+      "rating": 4.7,
+      "playerCount": "500K+",
+      "lastPlayed": "2024-03-19"
     },
     {
       "id": "3",
-      "title": "Left 4 Dead 2",
-      "coverImage": "/games/l4d2.jpg",
-      "description": "Set in the zombie apocalypse, Left 4 Dead 2 is the highly anticipated sequel to the award-winning Left 4 Dead.",
-      "releaseDate": "2009-11-17",
-      "developer": "Valve",
-      "publisher": "Valve",
-      "genres": ["FPS", "Zombie", "Co-op", "Action"],
-      "platforms": ["Windows", "Mac", "Linux"],
-      "price": "$9.99",
-      "rating": 4.7,
-      "features": [
-        "Co-op",
-        "Multiplayer",
-        "Steam Workshop",
-        "Cross-Platform Multiplayer"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 7",
-          "processor": "Pentium 4 3.0GHz",
-          "memory": "2 GB RAM",
-          "graphics": "DirectX 9 compatible video card",
-          "storage": "13 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-10",
-      "totalPlaytime": "89 hours",
-      "playerCount": "35K active players"
+      "title": "Mafia: Definitive Edition",
+      "description": "A remake of the classic action-adventure game set in the 1930s.",
+      "image": "/games/mafia.png",
+      "genres": ["Action", "Adventure"],
+      "platforms": ["PC", "PS4", "Xbox One"],
+      "price": "39.99",
+      "rating": 4.6,
+      "playerCount": "100K+",
+      "lastPlayed": "2024-03-18"
     },
     {
       "id": "4",
-      "title": "Metro Exodus",
-      "coverImage": "/games/metro-exodus.jpg",
-      "description": "Flee the shattered ruins of dead Moscow and embark on an epic, continent-spanning journey across post-apocalyptic Russia.",
-      "releaseDate": "2019-02-15",
-      "developer": "4A Games",
-      "publisher": "Deep Silver",
-      "genres": ["FPS", "Survival", "Post-apocalyptic", "Story Rich"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "$29.99",
-      "rating": 4.6,
-      "features": [
-        "Single-player",
-        "Ray Tracing",
-        "DLSS",
-        "Controller Support"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10",
-          "processor": "Intel Core i5-4440",
-          "memory": "8 GB RAM",
-          "graphics": "GeForce GTX 670",
-          "storage": "59 GB available space"
-        }
-      },
-      "lastPlayed": "2024-01-15",
-      "totalPlaytime": "28 hours",
-      "playerCount": "8K active players"
+      "title": "Shadow of the Tomb Raider",
+      "description": "Lara Croft's defining moment as she becomes the Tomb Raider.",
+      "image": "/games/shadow.png",
+      "genres": ["Action", "Adventure"],
+      "platforms": ["PC", "PS4", "Xbox One"],
+      "price": "49.99",
+      "rating": 4.5,
+      "playerCount": "200K+",
+      "lastPlayed": "2024-03-17"
     },
     {
       "id": "5",
-      "title": "PUBG: BATTLEGROUNDS",
-      "coverImage": "/games/pubg.jpg",
-      "description": "Land on strategic locations, loot weapons and supplies, and survive to become the last team standing.",
-      "releaseDate": "2017-12-21",
-      "developer": "KRAFTON, Inc.",
-      "publisher": "KRAFTON, Inc.",
-      "genres": ["Battle Royale", "Shooter", "Survival", "Multiplayer"],
-      "platforms": ["Windows"],
+      "title": "MultiVersus",
+      "description": "A free-to-play platform fighter featuring Warner Bros. characters.",
+      "image": "/games/multiversus.png",
+      "genres": ["Fighting", "Multiplayer"],
+      "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
       "price": "Free to Play",
-      "rating": 4.2,
-      "features": [
-        "Battle Royale",
-        "Multiplayer",
-        "Third Person",
-        "First Person"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "processor": "Intel Core i5-4430",
-          "memory": "8 GB RAM",
-          "graphics": "NVIDIA GeForce GTX 960",
-          "storage": "40 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-12",
-      "totalPlaytime": "245 hours",
-      "playerCount": "500K active players"
+      "rating": 4.4,
+      "playerCount": "300K+",
+      "lastPlayed": "2024-03-16"
     },
     {
       "id": "6",
-      "title": "Mafia: Definitive Edition",
-      "coverImage": "/games/mafia.png",
-      "description": "An organized crime epic set in the Prohibition Era, remade from the ground up.",
-      "releaseDate": "2020-09-25",
-      "developer": "Hangar 13",
-      "publisher": "2K",
-      "genres": ["Action", "Adventure", "Crime", "Story Rich"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "$39.99",
-      "rating": 4.5,
-      "features": [
-        "Single-player",
-        "Controller Support",
-        "Full Controller Support",
-        "Steam Cloud"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "processor": "Intel Core i5-2550K",
-          "memory": "6 GB RAM",
-          "graphics": "NVIDIA GeForce GTX 660",
-          "storage": "50 GB available space"
-        }
-      },
-      "lastPlayed": "2024-02-01",
-      "totalPlaytime": "32 hours",
-      "playerCount": "5K active players"
+      "title": "PUBG: Battlegrounds",
+      "description": "The original battle royale game that started it all.",
+      "image": "/games/pubg.jpg",
+      "genres": ["Battle Royale", "FPS"],
+      "platforms": ["PC", "PS4", "Xbox One", "Mobile"],
+      "price": "Free to Play",
+      "rating": 4.3,
+      "playerCount": "400K+",
+      "lastPlayed": "2024-03-15"
     },
     {
       "id": "7",
-      "title": "MultiVersus",
-      "coverImage": "/games/multiversus.png",
-      "description": "Multiverse mashup fighting game featuring Warner Bros. characters.",
-      "releaseDate": "2022-07-19",
-      "developer": "Player First Games",
-      "publisher": "Warner Bros. Games",
-      "genres": ["Fighting", "Action", "Multiplayer", "2D Fighter"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "Free to Play",
-      "rating": 4.3,
-      "features": [
-        "Online Multiplayer",
-        "Cross-Platform",
-        "Controller Support",
-        "2D Fighter"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "processor": "Intel Core i5-2300",
-          "memory": "4 GB RAM",
-          "graphics": "GeForce GTX 550 Ti",
-          "storage": "15 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-01",
-      "totalPlaytime": "48 hours",
-      "playerCount": "150K active players"
+      "title": "Metro Exodus",
+      "description": "An epic, story-driven first person shooter from 4A Games.",
+      "image": "/games/metroexodus.jpg",
+      "genres": ["FPS", "Survival"],
+      "platforms": ["PC", "PS4", "Xbox One"],
+      "price": "39.99",
+      "rating": 4.7,
+      "playerCount": "150K+",
+      "lastPlayed": "2024-03-14"
     },
     {
       "id": "8",
-      "title": "Shadow of War",
-      "coverImage": "/games/shadow.png",
-      "description": "Go behind enemy lines to forge your army, conquer Fortresses and dominate Mordor.",
-      "releaseDate": "2017-10-10",
-      "developer": "Monolith Productions",
-      "publisher": "Warner Bros. Interactive Entertainment",
-      "genres": ["Action", "RPG", "Open World", "Fantasy"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "$49.99",
-      "rating": 4.4,
-      "features": [
-        "Single-player",
-        "Nemesis System",
-        "Steam Achievements",
-        "Steam Trading Cards"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "processor": "Intel Core i5-2550K",
-          "memory": "8 GB RAM",
-          "graphics": "GeForce GTX 660",
-          "storage": "70 GB available space"
-        }
-      },
-      "lastPlayed": "2024-01-20",
-      "totalPlaytime": "65 hours",
-      "playerCount": "12K active players"
+      "title": "Batman: Arkham Knight",
+      "description": "The epic conclusion to the Arkham trilogy.",
+      "image": "/games/arkhamknight.jpg",
+      "genres": ["Action", "Adventure"],
+      "platforms": ["PC", "PS4", "Xbox One"],
+      "price": "19.99",
+      "rating": 4.8,
+      "playerCount": "250K+",
+      "lastPlayed": "2024-03-13"
     },
     {
       "id": "9",
-      "title": "Call of Duty: Modern Warfare III",
-      "coverImage": "/games/cod-mw3.jpg",
-      "description": "The latest evolution of Modern Warfare featuring both multiplayer combat and zombie survival.",
-      "releaseDate": "2023-11-10",
-      "developer": "Sledgehammer Games",
-      "publisher": "Activision",
-      "genres": ["FPS", "Action", "Multiplayer", "Military"],
-      "platforms": ["Windows", "PlayStation", "Xbox"],
-      "price": "$69.99",
-      "rating": 4.1,
-      "features": [
-        "Multiplayer",
-        "Co-op",
-        "Campaign",
-        "Cross-Platform Multiplayer"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 10 64-bit",
-          "processor": "Intel Core i5-6600K",
-          "memory": "8 GB RAM",
-          "graphics": "GeForce GTX 960",
-          "storage": "149 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-14",
-      "totalPlaytime": "125 hours",
-      "playerCount": "850K active players"
+      "title": "Left 4 Dead 2",
+      "description": "The sequel to the award-winning Left 4 Dead.",
+      "image": "/games/left4dead.jpg",
+      "genres": ["FPS", "Co-op"],
+      "platforms": ["PC", "Xbox 360"],
+      "price": "9.99",
+      "rating": 4.6,
+      "playerCount": "100K+",
+      "lastPlayed": "2024-03-12"
     },
     {
       "id": "10",
       "title": "Brawlhalla",
-      "coverImage": "/games/brawlhalla.jpg",
-      "description": "An epic platform fighter for up to 8 players online or locally.",
-      "releaseDate": "2017-10-17",
-      "developer": "Blue Mammoth Games",
-      "publisher": "Ubisoft",
-      "genres": ["Fighting", "Action", "Multiplayer", "2D Fighter"],
-      "platforms": [
-        "Windows",
-        "Mac",
-        "PlayStation",
-        "Xbox",
-        "Switch",
-        "Mobile"
-      ],
+      "description": "A free-to-play platform fighting game.",
+      "image": "/games/brawlhalla.jpg",
+      "genres": ["Fighting", "Platform"],
+      "platforms": ["PC", "PS4", "Xbox One", "Switch", "Mobile"],
       "price": "Free to Play",
-      "rating": 4.2,
-      "features": [
-        "Cross-Platform",
-        "Online Multiplayer",
-        "Local Multiplayer",
-        "Controller Support"
-      ],
-      "systemRequirements": {
-        "minimum": {
-          "os": "Windows 7",
-          "processor": "Intel Core 2 Duo",
-          "memory": "2 GB RAM",
-          "graphics": "Intel HD 3000",
-          "storage": "2 GB available space"
-        }
-      },
-      "lastPlayed": "2024-03-13",
-      "totalPlaytime": "180 hours",
-      "playerCount": "250K active players"
+      "rating": 4.5,
+      "playerCount": "200K+",
+      "lastPlayed": "2024-03-11"
+    },
+    {
+      "id": "11",
+      "title": "Call of Duty: Modern Warfare 3",
+      "description": "The epic conclusion to the Modern Warfare trilogy.",
+      "image": "/games/mw3.jpg",
+      "genres": ["FPS", "Multiplayer"],
+      "platforms": ["PC", "PS3", "Xbox 360"],
+      "price": "29.99",
+      "rating": 4.7,
+      "playerCount": "300K+",
+      "lastPlayed": "2024-03-10"
     }
   ]
 }

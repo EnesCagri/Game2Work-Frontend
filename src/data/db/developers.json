@@ -4,7 +4,7 @@
       "id": 1,
       "name": "John Smith",
       "role": "Game Developer",
-      "image": "/developers/john-smith.jpg",
+      "image": "/Developers/gamer1.jpg",
       "rarity": "epic",
       "stats": {
         "projects": 12,
@@ -57,7 +57,7 @@
       "id": 2,
       "name": "Sarah Johnson",
       "role": "UI/UX Designer",
-      "image": "/developers/sarah-johnson.jpg",
+      "image": "/Developers/gamer2.jpg",
       "rarity": "rare",
       "stats": {
         "projects": 8,
@@ -96,7 +96,7 @@
       "id": 3,
       "name": "Michael Chen",
       "role": "3D Artist",
-      "image": "/developers/michael-chen.jpg",
+      "image": "/Developers/gamer3.jpg",
       "rarity": "legendary",
       "stats": {
         "projects": 15,
@@ -135,7 +135,7 @@
       "id": 4,
       "name": "Emily Rodriguez",
       "role": "Sound Designer",
-      "image": "/developers/emily-rodriguez.jpg",
+      "image": "/Developers/gamer4.jpg",
       "rarity": "common",
       "stats": {
         "projects": 6,
@@ -174,7 +174,7 @@
       "id": 5,
       "name": "David Wilson",
       "role": "Game Designer",
-      "image": "/developers/david-wilson.jpg",
+      "image": "/Developers/gamer5.jpg",
       "rarity": "rare",
       "stats": {
         "projects": 10,
@@ -213,7 +213,7 @@
       "id": 6,
       "name": "Lisa Thompson",
       "role": "QA Tester",
-      "image": "/developers/lisa-thompson.jpg",
+      "image": "/Developers/gamer6.jpg",
       "rarity": "common",
       "stats": {
         "projects": 5,
@@ -252,7 +252,7 @@
       "id": 7,
       "name": "Alex Martinez",
       "role": "Game Developer",
-      "image": "/developers/alex-martinez.jpg",
+      "image": "/Developers/gamer7.jpg",
       "rarity": "epic",
       "stats": {
         "projects": 9,
@@ -291,7 +291,7 @@
       "id": 8,
       "name": "Sophia Lee",
       "role": "UI/UX Designer",
-      "image": "/developers/sophia-lee.jpg",
+      "image": "/Developers/gamer8.jpg",
       "rarity": "rare",
       "stats": {
         "projects": 7,

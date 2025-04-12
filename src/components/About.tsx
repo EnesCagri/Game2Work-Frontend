@@ -11,7 +11,6 @@ import {
   ArrowRight,
 } from "lucide-react";
 import Image from "next/image";
-import { GradientOrb } from "./ui/gradient-orb";
 
 const targetGroups = [
   { icon: GamepadIcon, text: "Bireysel Oyun Geliştiricileri" },
@@ -21,161 +20,150 @@ const targetGroups = [
   { icon: Target, text: "Oyun Meraklıları" },
 ];
 
-const About = () => {
+export default function About() {
   return (
-    <section className="relative overflow-hidden">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-black" />
-      <GradientOrb
-        color="#ef4442"
-        position="top-right"
-        size="lg"
-        opacity={0.01}
-      />
-      <GradientOrb
-        color="#ef4442"
-        position="bottom-left"
-        size="lg"
-        opacity={0.01}
-      />
+    <section className="py-20 bg-black relative overflow-hidden">
+      <div className="container mx-auto px-4">
+        <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left side - Image */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="relative aspect-video rounded-xl overflow-hidden"
+          >
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/20 via-pink-500/20 to-red-500/20" />
+            <Image
+              src="/Developers/gamer2.jpg"
+              alt="Game Developer"
+              fill
+              className="object-cover"
+              priority
+            />
+          </motion.div>
 
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden"></div>
-
-      <div className="py-24 relative">
-        <div className="container relative z-10 mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Image Section */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
+          {/* Right side - Content */}
+          <div className="space-y-8">
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6 }}
-              className="relative"
+              className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent"
             >
-              <div className="aspect-square rounded-2xl overflow-hidden relative">
-                <div className="absolute inset-0 bg-gradient-to-tr from-purple-500/20 via-pink-500/20 to-orange-500/20 z-10" />
-                <Image
-                  src="/gamedevimg.jpg"
-                  alt="Game2Work Platform"
-                  fill
-                  className="object-cover"
-                  priority
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-              {/* Floating elements */}
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.3, duration: 0.6 }}
-                className="absolute -top-8 -right-8 bg-purple-500/10 backdrop-blur-sm border border-purple-500/20 p-4 rounded-xl"
-              >
-                <GamepadIcon className="w-8 h-8 text-purple-500" />
-              </motion.div>
-              <motion.div
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true }}
-                transition={{ delay: 0.4, duration: 0.6 }}
-                className="absolute -bottom-8 -left-8 bg-orange-500/10 backdrop-blur-sm border border-orange-500/20 p-4 rounded-xl"
-              >
-                <BriefcaseIcon className="w-8 h-8 text-orange-500" />
-              </motion.div>
-            </motion.div>
+              Neden Game To Work?
+            </motion.h2>
 
-            {/* Content Section */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="text-gray-300 text-lg"
+            >
+              Game To Work sayesinde geliştiriciler projelerini sergiler,
+              yatırımcılar potansiyel fırsatları erkenden yakalar, oyuncular ise
+              keyifli bir oyun topluluğunun parçası olurlar.
+            </motion.p>
+
+            {/* Features */}
+            <div className="space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="group relative flex items-start gap-4 bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-purple-500/5 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                <div className="relative z-10 w-12 h-12 rounded-full bg-purple-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-purple-500/20 transition-colors duration-300">
+                  <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                    🤝
+                  </span>
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-purple-200 transition-colors duration-300">
+                    Doğru Kişilerle Buluşma
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    Oyun, yatırım ve kullanıcı katkılarının kesiştiği buluşma
+                    noktası.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="group relative flex items-start gap-4 bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-pink-500/5 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                <div className="relative z-10 w-12 h-12 rounded-full bg-pink-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-pink-500/20 transition-colors duration-300">
+                  <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                    🧭
+                  </span>
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-pink-200 transition-colors duration-300">
+                    Şeffaf ve Erişilebilir Yapı
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    Herkesin katılabildiği ve katkı sunabildiği açık bir sistem.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.3 }}
+                className="group relative flex items-start gap-4 bg-white/5 p-4 rounded-lg hover:bg-white/10 transition-all duration-300"
+              >
+                <div className="absolute inset-0 bg-red-500/5 rounded-lg blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                <div className="relative z-10 w-12 h-12 rounded-full bg-red-500/10 flex items-center justify-center flex-shrink-0 group-hover:bg-red-500/20 transition-colors duration-300">
+                  <span className="text-2xl group-hover:scale-110 transition-transform duration-300">
+                    🚀
+                  </span>
+                </div>
+                <div className="relative z-10">
+                  <h3 className="text-xl font-semibold text-white mb-2 group-hover:text-red-200 transition-colors duration-300">
+                    Gerçek Potansiyele Ulaşma
+                  </h3>
+                  <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                    Girişimleri, yetenekleri ve fikirleri görünür kılıyoruz.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+
+            {/* Target Groups */}
             <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="lg:pl-8"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.5 }}
+              className="flex flex-wrap gap-3"
             >
-              <h2 className="text-4xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-500 via-pink-500 to-orange-500">
-                Oyun Dünyasının Yeni Nesil Platformu
-              </h2>
-
-              <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                Game2Work, oyun ekosistemini demokratikleştirerek bireysel
-                geliştiricilerin büyük şirketlerle rekabet edebilmesini sağlayan
-                yenilikçi bir dijital platformdur.
-              </p>
-
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-purple-500/10 flex items-center justify-center flex-shrink-0">
-                    <Users className="w-5 h-5 text-purple-500" />
+              {targetGroups.map((group, index) => (
+                <motion.div
+                  key={index}
+                  whileHover={{ scale: 1.05 }}
+                  transition={{ duration: 0.2 }}
+                  className="group relative"
+                >
+                  <div className="absolute inset-0 bg-white/5 rounded-full blur-lg group-hover:blur-xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                  <div className="relative z-10 flex items-center gap-2 bg-white/5 px-4 py-2 rounded-full hover:bg-white/10 transition-all duration-300 shadow-lg hover:shadow-white/10">
+                    <group.icon className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors duration-300" />
+                    <span className="text-sm text-gray-300 group-hover:text-white transition-colors duration-300">
+                      {group.text}
+                    </span>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      Güçlü Topluluk
-                    </h3>
-                    <p className="text-gray-400">
-                      Geliştiriciler, yatırımcılar ve mentorlardan oluşan aktif
-                      bir ekosistem.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-pink-500/10 flex items-center justify-center flex-shrink-0">
-                    <Target className="w-5 h-5 text-pink-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      Network & Yatırım
-                    </h3>
-                    <p className="text-gray-400">
-                      Projenizi tanıtın, geri bildirim alın ve yatırımcılarla
-                      buluşun.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-3">
-                  <div className="w-8 h-8 rounded-lg bg-orange-500/10 flex items-center justify-center flex-shrink-0">
-                    <Wallet className="w-5 h-5 text-orange-500" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-white mb-1">
-                      Finansal Destek
-                    </h3>
-                    <p className="text-gray-400">
-                      Bağış toplama ve yatırım alma fırsatlarıyla projelerinizi
-                      büyütün.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex flex-wrap gap-3 mb-8">
-                {targetGroups.map((group, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: index * 0.1, duration: 0.5 }}
-                    className="flex items-center gap-2 bg-gray-900/30 px-4 py-2 rounded-full border border-gray-800"
-                  >
-                    <group.icon className="w-4 h-4 text-gray-400" />
-                    <span className="text-sm text-gray-300">{group.text}</span>
-                  </motion.div>
-                ))}
-              </div>
-
-              <Button className="group" size="lg">
-                Hemen Başla
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
-              </Button>
+                </motion.div>
+              ))}
             </motion.div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default About;
+}

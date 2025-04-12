@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import {
@@ -138,7 +139,12 @@ const Navbar = () => {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-red-500 rounded-lg flex items-center justify-center">
-              <GamepadIcon className="w-5 h-5 text-white" />
+              <Image
+                src="/GameToWorkLogo.png"
+                alt="GameToWork"
+                width={32}
+                height={32}
+              />
             </div>
             <span className="text-xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
               GameToWork
