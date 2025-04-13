@@ -87,28 +87,51 @@ export interface Company {
 export interface Game {
   id: string;
   title: string;
-  coverImage: string;
   description: string;
-  releaseDate: string;
-  developer: string;
-  publisher: string;
+  image: string;
   genres: string[];
   platforms: string[];
   price: string;
   rating: number;
-  features: string[];
-  systemRequirements: {
+  playerCount: string;
+  lastPlayed?: string;
+  totalPlaytime?: string;
+  releaseDate?: string;
+  developer?: string;
+  publisher?: string;
+  screenshots?: string[];
+  youtubeId?: string;
+  metacritic?: number;
+  esrbRating?: string;
+  features?: string[];
+  systemRequirements?: {
     minimum: {
       os: string;
       processor: string;
       memory: string;
-      graphics: string;
+      storage: string;
+    };
+    recommended: {
+      os: string;
+      processor: string;
+      memory: string;
       storage: string;
     };
   };
-  lastPlayed: string;
-  totalPlaytime: string;
-  playerCount: string;
+  awards?: string[];
+  languages?: string[];
+  size?: string;
+  relatedGames?: {
+    id: string;
+    title: string;
+    image: string;
+  }[];
+  dlc?: {
+    title: string;
+    description: string;
+    price: string | number;
+  }[];
+  achievements?: number;
 }
 
 // Add other type definitions as needed

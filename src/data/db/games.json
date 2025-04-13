@@ -3,98 +3,690 @@
     {
       "id": "1",
       "title": "Red Dead Redemption 2",
-      "description": "An epic tale of life in America's unforgiving heartland.",
+      "description": "Red Dead Redemption 2, Rockstar Games'in yarattığı destansı bir western macera oyunudur. 1899 yılında geçen oyun, Arthur Morgan ve Van der Linde çetesinin hikayesini anlatır. Vahşi Batı'nın son günlerinde, kanun kaçaklarının peşine düşüldüğü bir dönemde, hayatta kalma ve sadakat arasındaki zorlu seçimleri konu alır. Devasa açık dünyası, detaylı karakter etkileşimleri ve etkileyici grafikleriyle türünün en önemli örneklerinden biridir.",
       "image": "/games/rdr2.png",
-      "genres": ["Action", "Adventure"],
-      "platforms": ["PC", "PS4", "Xbox One"],
+      "screenshots": [
+        "/games/rdr2/screenshot1.jpg",
+        "/games/rdr2/screenshot2.jpg",
+        "/games/rdr2/screenshot3.jpg",
+        "/games/rdr2/screenshot4.jpg"
+      ],
+      "genres": ["Action", "Adventure", "Open World", "Western"],
+      "platforms": ["PC", "PS4", "Xbox One", "Stadia"],
       "price": "59.99",
       "rating": 4.8,
+      "youtubeId": "eaW0tYpxyp0",
       "playerCount": "1M+",
-      "lastPlayed": "2024-03-20"
+      "lastPlayed": "2024-03-20",
+      "totalPlaytime": "50+ saat",
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "releaseDate": "2018-10-26",
+      "features": [
+        "Geniş Açık Dünya",
+        "Detaylı Karakter Özelleştirme",
+        "Gerçekçi Fizik Motoru",
+        "Dinamik Hava Sistemi",
+        "Online Multiplayer",
+        "Zengin Yan Görevler"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-2500K / AMD FX-6300",
+          "memory": "8 GB RAM",
+          "storage": "150 GB",
+          "graphics": "Nvidia GeForce GTX 770 2GB / AMD Radeon R9 280 3GB",
+          "directx": "Version 12"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+          "memory": "12 GB RAM",
+          "storage": "150 GB",
+          "graphics": "Nvidia GeForce GTX 1060 6GB / AMD Radeon RX 480 4GB",
+          "directx": "Version 12"
+        }
+      },
+      "awards": [
+        "Game of the Year 2018",
+        "Best Narrative 2018",
+        "Best Audio Design 2018",
+        "Best Performance 2018"
+      ],
+      "relatedGames": [
+        {
+          "id": "12",
+          "title": "Grand Theft Auto V",
+          "image": "/games/gtav.jpg"
+        },
+        {
+          "id": "13",
+          "title": "The Witcher 3: Wild Hunt",
+          "image": "/games/witcher3.jpg"
+        },
+        {
+          "id": "3",
+          "title": "Mafia: Definitive Edition",
+          "image": "/games/mafia.png"
+        }
+      ],
+      "dlc": [
+        {
+          "title": "Red Dead Online",
+          "description": "Çok oyunculu çevrimiçi deneyim",
+          "price": "19.99"
+        }
+      ],
+      "languages": [
+        "English",
+        "French",
+        "German",
+        "Italian",
+        "Spanish",
+        "Turkish"
+      ],
+      "metacritic": 97,
+      "esrbRating": "Mature 17+",
+      "size": "150 GB",
+      "achievements": 51
     },
     {
       "id": "2",
       "title": "Counter-Strike 2",
-      "description": "The next evolution of the legendary tactical shooter.",
+      "description": "Counter-Strike 2, efsanevi taktiksel nişancı oyununun en son evrimi. Source 2 motoru üzerinde geliştirilen oyun, yenilenmiş grafikleri, geliştirilmiş fizik motoru ve yeni nesil sis sistemleriyle CS:GO'nun mirasını bir adım öteye taşıyor. Her roundun taktiksel derinliği ve rekabetçi yapısıyla e-spor sahnesinin vazgeçilmez oyunu.",
       "image": "/games/cs2.png",
-      "genres": ["FPS", "Multiplayer"],
+      "screenshots": [
+        "/games/cs2/screenshot1.jpg",
+        "/games/cs2/screenshot2.jpg",
+        "/games/cs2/screenshot3.jpg",
+        "/games/cs2/screenshot4.jpg"
+      ],
+      "genres": ["FPS", "Tactical Shooter", "Multiplayer", "Competitive"],
       "platforms": ["PC"],
       "price": "Free to Play",
       "rating": 4.7,
+      "youtubeId": "kw1nwZYBtmw",
       "playerCount": "500K+",
-      "lastPlayed": "2024-03-19"
+      "lastPlayed": "2024-03-19",
+      "totalPlaytime": "100+ saat",
+      "developer": "Valve",
+      "publisher": "Valve",
+      "releaseDate": "2023-09-27",
+      "features": [
+        "Source 2 Engine",
+        "Sub-tick Güncellemeler",
+        "Gelişmiş Sis Sistemi",
+        "128-tick Sunucular",
+        "Yenilenmiş Haritalar",
+        "Rekabetçi Modlar"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-4460 / AMD Ryzen 3 1200",
+          "memory": "8 GB RAM",
+          "storage": "85 GB",
+          "graphics": "NVIDIA GTX 970 / AMD Radeon RX 480",
+          "directx": "Version 12"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-7600K / AMD Ryzen 5 1600",
+          "memory": "12 GB RAM",
+          "storage": "85 GB",
+          "graphics": "NVIDIA GTX 1060 / AMD Radeon RX 580",
+          "directx": "Version 12"
+        }
+      },
+      "awards": [
+        "Best Competitive Game 2023",
+        "Best Ongoing Game 2023",
+        "Best Multiplayer Game 2023"
+      ],
+      "relatedGames": [
+        {
+          "id": "6",
+          "title": "PUBG: Battlegrounds",
+          "image": "/games/pubg.jpg"
+        },
+        {
+          "id": "11",
+          "title": "Call of Duty: Modern Warfare 3",
+          "image": "/games/mw3.jpg"
+        },
+        {
+          "id": "9",
+          "title": "Left 4 Dead 2",
+          "image": "/games/left4dead.jpg"
+        }
+      ],
+      "languages": [
+        "English",
+        "Turkish",
+        "Russian",
+        "Chinese",
+        "Portuguese",
+        "Spanish"
+      ],
+      "metacritic": 89,
+      "esrbRating": "Mature 17+",
+      "size": "85 GB",
+      "achievements": 167
     },
     {
       "id": "3",
       "title": "Mafia: Definitive Edition",
-      "description": "A remake of the classic action-adventure game set in the 1930s.",
+      "description": "1930'ların Lost Heaven şehrinde geçen bu yeniden yapım, klasik Mafia oyununun modern bir yorumu. Tommy Angelo'nun sıradan bir taksi şoföründen organize suç dünyasının önemli bir üyesine dönüşümünü anlatan etkileyici hikayesi, yenilenmiş grafikleri ve geliştirilmiş oynanışıyla unutulmaz bir deneyim sunuyor.",
       "image": "/games/mafia.png",
-      "genres": ["Action", "Adventure"],
+      "screenshots": [
+        "/games/mafia/screenshot1.jpg",
+        "/games/mafia/screenshot2.jpg",
+        "/games/mafia/screenshot3.jpg",
+        "/games/mafia/screenshot4.jpg"
+      ],
+      "genres": ["Action", "Adventure", "Crime", "Open World"],
       "platforms": ["PC", "PS4", "Xbox One"],
       "price": "39.99",
       "rating": 4.6,
+      "youtubeId": "5ZZbvnzn6WM",
       "playerCount": "100K+",
-      "lastPlayed": "2024-03-18"
+      "lastPlayed": "2024-03-18",
+      "totalPlaytime": "30+ saat",
+      "developer": "Hangar 13",
+      "publisher": "2K Games",
+      "releaseDate": "2020-09-25",
+      "features": [
+        "Yeniden Yapılmış Şehir",
+        "Geliştirilmiş Sürüş Mekanikleri",
+        "Modern Grafik Motoru",
+        "Yeni Oynanış Özellikleri",
+        "Klasik Mod",
+        "Zorluk Seviyeleri"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-2550K / AMD FX-8120",
+          "memory": "6 GB RAM",
+          "storage": "50 GB",
+          "graphics": "NVIDIA GeForce GTX 660 / AMD Radeon HD 7870",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-3770 / AMD FX-8350",
+          "memory": "16 GB RAM",
+          "storage": "50 GB",
+          "graphics": "NVIDIA GeForce GTX 1080 / AMD Radeon RX 5700",
+          "directx": "Version 11"
+        }
+      },
+      "awards": [
+        "Best Remake 2020",
+        "Best Art Direction 2020",
+        "Best Narrative Design 2020"
+      ],
+      "relatedGames": [
+        {
+          "id": "1",
+          "title": "Red Dead Redemption 2",
+          "image": "/games/rdr2.png"
+        },
+        {
+          "id": "12",
+          "title": "Grand Theft Auto V",
+          "image": "/games/gtav.jpg"
+        },
+        {
+          "id": "8",
+          "title": "Batman: Arkham Knight",
+          "image": "/games/arkhamknight.jpg"
+        }
+      ],
+      "languages": [
+        "English",
+        "French",
+        "Italian",
+        "German",
+        "Spanish",
+        "Turkish"
+      ],
+      "metacritic": 79,
+      "esrbRating": "Mature 17+",
+      "size": "50 GB",
+      "achievements": 50
     },
     {
       "id": "4",
       "title": "Shadow of the Tomb Raider",
-      "description": "Lara Croft's defining moment as she becomes the Tomb Raider.",
+      "description": "Lara Croft'un en karanlık macerasında, Maya kıyamet kehanetini durdurmak için tehlikeli ve ölümcül bir yolculuğa çıkın. Güney Amerika'nın vahşi ormanlarında hayatta kalma mücadelesi veren Lara, gizlilik, keşif ve aksiyon dolu bir deneyimle karşınıza çıkıyor.",
       "image": "/games/shadow.png",
-      "genres": ["Action", "Adventure"],
+      "screenshots": [
+        "/games/tomb-raider/screenshot1.jpg",
+        "/games/tomb-raider/screenshot2.jpg",
+        "/games/tomb-raider/screenshot3.jpg",
+        "/games/tomb-raider/screenshot4.jpg"
+      ],
+      "genres": ["Action", "Adventure", "Survival"],
       "platforms": ["PC", "PS4", "Xbox One"],
       "price": "49.99",
       "rating": 4.5,
+      "youtubeId": "XYtyeqVQnRI",
       "playerCount": "200K+",
-      "lastPlayed": "2024-03-17"
+      "lastPlayed": "2024-03-17",
+      "totalPlaytime": "40+ saat",
+      "developer": "Eidos Montreal",
+      "publisher": "Square Enix",
+      "releaseDate": "2018-09-14",
+      "features": [
+        "Gelişmiş Tırmanma Sistemi",
+        "Derin Gizlilik Mekanikleri",
+        "Zorlu Bulmacalar",
+        "Gerçekçi Su Altı Keşifleri",
+        "Özelleştirilebilir Zorluk",
+        "Zengin Yan Görevler"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i3-3220 / AMD FX-4300",
+          "memory": "8 GB RAM",
+          "storage": "40 GB",
+          "graphics": "NVIDIA GTX 660 / AMD HD 7770",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-4770K / AMD Ryzen 5 1600",
+          "memory": "16 GB RAM",
+          "storage": "40 GB",
+          "graphics": "NVIDIA GTX 1060 6GB / AMD RX 480 8GB",
+          "directx": "Version 12"
+        }
+      },
+      "awards": [
+        "Best Action-Adventure 2018",
+        "Best Sound Design 2018",
+        "Best Visual Effects 2018"
+      ],
+      "relatedGames": [
+        {
+          "id": "1",
+          "title": "Red Dead Redemption 2",
+          "image": "/games/rdr2.png"
+        },
+        {
+          "id": "7",
+          "title": "Metro Exodus",
+          "image": "/games/metroexodus.jpg"
+        },
+        {
+          "id": "8",
+          "title": "Batman: Arkham Knight",
+          "image": "/games/arkhamknight.jpg"
+        }
+      ],
+      "dlc": [
+        {
+          "title": "The Forge",
+          "description": "Yeni mezar ve silahlar",
+          "price": "9.99"
+        },
+        {
+          "title": "The Pillar",
+          "description": "Yeni macera ve bulmacalar",
+          "price": "9.99"
+        }
+      ],
+      "languages": [
+        "English",
+        "French",
+        "German",
+        "Italian",
+        "Spanish",
+        "Turkish"
+      ],
+      "metacritic": 84,
+      "esrbRating": "Mature 17+",
+      "size": "40 GB",
+      "achievements": 100
     },
     {
       "id": "5",
       "title": "MultiVersus",
-      "description": "A free-to-play platform fighter featuring Warner Bros. characters.",
+      "description": "Warner Bros. karakterlerinin yer aldığı bu ücretsiz dövüş oyununda, Batman'den Bugs Bunny'ye kadar birçok ikonik karakterle rekabetçi 2v2 maçlara katılın. Benzersiz karakter kombinasyonları ve takım sinerjileriyle stratejik dövüş deneyimi yaşayın.",
       "image": "/games/multiversus.png",
-      "genres": ["Fighting", "Multiplayer"],
+      "screenshots": [
+        "/games/multiversus/screenshot1.jpg",
+        "/games/multiversus/screenshot2.jpg",
+        "/games/multiversus/screenshot3.jpg",
+        "/games/multiversus/screenshot4.jpg"
+      ],
+      "genres": ["Fighting", "Multiplayer", "Platform Fighter"],
       "platforms": ["PC", "PS4", "PS5", "Xbox One", "Xbox Series X/S"],
       "price": "Free to Play",
       "rating": 4.4,
+      "youtubeId": "w-XoZn_4icM",
       "playerCount": "300K+",
-      "lastPlayed": "2024-03-16"
+      "lastPlayed": "2024-03-16",
+      "totalPlaytime": "25+ saat",
+      "developer": "Player First Games",
+      "publisher": "Warner Bros. Games",
+      "releaseDate": "2022-07-19",
+      "features": [
+        "Cross-Platform Oyun",
+        "2v2 Odaklı Dövüş",
+        "Karakter Perkleri",
+        "Sezonluk İçerik",
+        "Özelleştirilebilir Savaşlar",
+        "Rekabetçi Modlar"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-2300 / AMD FX-8350",
+          "memory": "4 GB RAM",
+          "storage": "15 GB",
+          "graphics": "NVIDIA GeForce GTX 550 Ti / AMD Radeon HD 7770",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-3470 / AMD Ryzen 3 1200",
+          "memory": "8 GB RAM",
+          "storage": "15 GB",
+          "graphics": "NVIDIA GeForce GTX 660 / AMD Radeon R7 370",
+          "directx": "Version 11"
+        }
+      },
+      "awards": [
+        "Best Fighting Game 2022",
+        "Best Free-to-Play Game 2022",
+        "Best Multiplayer Game 2022"
+      ],
+      "relatedGames": [
+        {
+          "id": "10",
+          "title": "Brawlhalla",
+          "image": "/games/brawlhalla.jpg"
+        },
+        {
+          "id": "8",
+          "title": "Batman: Arkham Knight",
+          "image": "/games/arkhamknight.jpg"
+        }
+      ],
+      "languages": [
+        "English",
+        "French",
+        "German",
+        "Italian",
+        "Spanish",
+        "Turkish"
+      ],
+      "metacritic": 82,
+      "esrbRating": "Teen",
+      "size": "15 GB",
+      "achievements": 75
     },
     {
       "id": "6",
       "title": "PUBG: Battlegrounds",
-      "description": "The original battle royale game that started it all.",
+      "description": "Battle Royale türünün öncüsü olan PUBG, 100 oyuncunun hayatta kalma mücadelesi verdiği devasa bir açık dünya deneyimi sunuyor. Stratejik konumlandırma, kaynak yönetimi ve nişancılık becerilerinizi kullanarak son hayatta kalan siz olun.",
       "image": "/games/pubg.jpg",
-      "genres": ["Battle Royale", "FPS"],
+      "screenshots": [
+        "/games/pubg/screenshot1.jpg",
+        "/games/pubg/screenshot2.jpg",
+        "/games/pubg/screenshot3.jpg",
+        "/games/pubg/screenshot4.jpg"
+      ],
+      "genres": ["Battle Royale", "FPS", "Survival", "Multiplayer"],
       "platforms": ["PC", "PS4", "Xbox One", "Mobile"],
       "price": "Free to Play",
       "rating": 4.3,
+      "youtubeId": "hU8CmAFt9IQ",
       "playerCount": "400K+",
-      "lastPlayed": "2024-03-15"
+      "lastPlayed": "2024-03-15",
+      "totalPlaytime": "150+ saat",
+      "developer": "KRAFTON",
+      "publisher": "KRAFTON",
+      "releaseDate": "2017-12-20",
+      "features": [
+        "Geniş Harita Çeşitliliği",
+        "Gerçekçi Silah Fiziği",
+        "Araç Mekanikleri",
+        "Takım Oyunu",
+        "Sezonluk İçerik",
+        "Özelleştirme Sistemi"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-4430 / AMD FX-6300",
+          "memory": "8 GB RAM",
+          "storage": "40 GB",
+          "graphics": "NVIDIA GeForce GTX 960 / AMD Radeon R7 370",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-6600K / AMD Ryzen 5 1600",
+          "memory": "16 GB RAM",
+          "storage": "40 GB",
+          "graphics": "NVIDIA GeForce GTX 1060 / AMD Radeon RX 580",
+          "directx": "Version 11"
+        }
+      },
+      "awards": [
+        "Best Multiplayer Game 2017",
+        "Best Ongoing Game 2018",
+        "Best Mobile Game 2018"
+      ],
+      "relatedGames": [
+        {
+          "id": "2",
+          "title": "Counter-Strike 2",
+          "image": "/games/cs2.png"
+        },
+        {
+          "id": "11",
+          "title": "Call of Duty: Modern Warfare 3",
+          "image": "/games/mw3.jpg"
+        }
+      ],
+      "languages": [
+        "English",
+        "Chinese",
+        "Korean",
+        "Japanese",
+        "Russian",
+        "Turkish"
+      ],
+      "metacritic": 86,
+      "esrbRating": "Teen",
+      "size": "40 GB",
+      "achievements": 124
     },
     {
       "id": "7",
       "title": "Metro Exodus",
-      "description": "An epic, story-driven first person shooter from 4A Games.",
+      "description": "Post-apokaliptik Rusya'da geçen bu atmosferik FPS'de, Artyom olarak radyoaktif vahşi doğada hayatta kalma mücadelesi verin. Açık dünya keşfi, kaynak yönetimi ve yoğun hikaye anlatımıyla benzersiz bir deneyim sunan Metro Exodus, serinin en iddialı oyunu.",
       "image": "/games/metroexodus.jpg",
-      "genres": ["FPS", "Survival"],
+      "screenshots": [
+        "/games/metro/screenshot1.jpg",
+        "/games/metro/screenshot2.jpg",
+        "/games/metro/screenshot3.jpg",
+        "/games/metro/screenshot4.jpg"
+      ],
+      "genres": ["FPS", "Survival", "Post-apocalyptic", "Story-Rich"],
       "platforms": ["PC", "PS4", "Xbox One"],
       "price": "39.99",
       "rating": 4.7,
+      "youtubeId": "fbbqlvuovQ0",
       "playerCount": "150K+",
-      "lastPlayed": "2024-03-14"
+      "lastPlayed": "2024-03-14",
+      "totalPlaytime": "35+ saat",
+      "developer": "4A Games",
+      "publisher": "Deep Silver",
+      "releaseDate": "2019-02-15",
+      "features": [
+        "Dinamik Hava Sistemi",
+        "Gündüz/Gece Döngüsü",
+        "Özelleştirilebilir Silahlar",
+        "Açık Dünya Bölgeleri",
+        "Çoklu Son Sistemi",
+        "Gerçekçi Fizik Motoru"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-4440 / AMD FX-8320",
+          "memory": "8 GB RAM",
+          "storage": "59 GB",
+          "graphics": "NVIDIA GeForce GTX 670 / AMD Radeon HD 7870",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-4770K / AMD Ryzen 5 1500X",
+          "memory": "8 GB RAM",
+          "storage": "59 GB",
+          "graphics": "NVIDIA GeForce GTX 1070 / AMD RX Vega 56",
+          "directx": "Version 12"
+        }
+      },
+      "awards": [
+        "Best Visual Design 2019",
+        "Best Atmosphere 2019",
+        "Best Story 2019"
+      ],
+      "relatedGames": [
+        {
+          "id": "4",
+          "title": "Shadow of the Tomb Raider",
+          "image": "/games/shadow.png"
+        },
+        {
+          "id": "1",
+          "title": "Red Dead Redemption 2",
+          "image": "/games/rdr2.png"
+        }
+      ],
+      "dlc": [
+        {
+          "title": "The Two Colonels",
+          "description": "Yeni hikaye içeriği",
+          "price": "7.99"
+        },
+        {
+          "title": "Sam's Story",
+          "description": "Yeni bölge ve karakter",
+          "price": "17.99"
+        }
+      ],
+      "languages": [
+        "English",
+        "Russian",
+        "German",
+        "French",
+        "Italian",
+        "Turkish"
+      ],
+      "metacritic": 82,
+      "esrbRating": "Mature 17+",
+      "size": "59 GB",
+      "achievements": 70
     },
     {
       "id": "8",
       "title": "Batman: Arkham Knight",
-      "description": "The epic conclusion to the Arkham trilogy.",
+      "description": "Rocksteady'nin Arkham serisinin epik finali, Batman'i Gotham City'nin en tehlikeli gecesinde Scarecrow ve gizemli Arkham Knight ile karşı karşıya getiriyor. Gelişmiş savaş mekanikleri, Batmobile sekansları ve açık dünya keşfi ile serinin en kapsamlı oyunu.",
       "image": "/games/arkhamknight.jpg",
-      "genres": ["Action", "Adventure"],
+      "screenshots": [
+        "/games/batman/screenshot1.jpg",
+        "/games/batman/screenshot2.jpg",
+        "/games/batman/screenshot3.jpg",
+        "/games/batman/screenshot4.jpg"
+      ],
+      "genres": ["Action", "Adventure", "Superhero", "Open World"],
       "platforms": ["PC", "PS4", "Xbox One"],
       "price": "19.99",
       "rating": 4.8,
+      "youtubeId": "wsf78BS9VE0",
       "playerCount": "250K+",
-      "lastPlayed": "2024-03-13"
+      "lastPlayed": "2024-03-13",
+      "totalPlaytime": "45+ saat",
+      "developer": "Rocksteady Studios",
+      "publisher": "Warner Bros. Interactive",
+      "releaseDate": "2015-06-23",
+      "features": [
+        "Batmobile Gameplay",
+        "Gelişmiş Combat Sistemi",
+        "Yan Görev Hikayeleri",
+        "Gadget Sistemi",
+        "Stealth Mekanikleri",
+        "Karakter Gelişimi"
+      ],
+      "systemRequirements": {
+        "minimum": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i5-750 / AMD Phenom II X4 965",
+          "memory": "6 GB RAM",
+          "storage": "45 GB",
+          "graphics": "NVIDIA GTX 660 / AMD HD 7870",
+          "directx": "Version 11"
+        },
+        "recommended": {
+          "os": "Windows 10 (64-bit)",
+          "processor": "Intel Core i7-3770 / AMD FX-8350",
+          "memory": "8 GB RAM",
+          "storage": "45 GB",
+          "graphics": "NVIDIA GTX 760 / AMD Radeon HD 7950",
+          "directx": "Version 11"
+        }
+      },
+      "awards": [
+        "Game of the Year 2015",
+        "Best Action Game 2015",
+        "Best Art Direction 2015"
+      ],
+      "relatedGames": [
+        {
+          "id": "3",
+          "title": "Mafia: Definitive Edition",
+          "image": "/games/mafia.png"
+        },
+        {
+          "id": "5",
+          "title": "MultiVersus",
+          "image": "/games/multiversus.png"
+        }
+      ],
+      "dlc": [
+        {
+          "title": "Season of Infamy",
+          "description": "Yeni hikaye görevleri",
+          "price": "9.99"
+        },
+        {
+          "title": "Batgirl: A Matter of Family",
+          "description": "Yeni oynanabilir karakter",
+          "price": "6.99"
+        }
+      ],
+      "languages": [
+        "English",
+        "French",
+        "German",
+        "Italian",
+        "Spanish",
+        "Turkish"
+      ],
+      "metacritic": 87,
+      "esrbRating": "Mature 17+",
+      "size": "45 GB",
+      "achievements": 69
     },
     {
       "id": "9",

@@ -2,47 +2,66 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { Code2, Rocket, LineChart, ArrowRight } from "lucide-react";
+import {
+  Code2,
+  Building2,
+  LineChart,
+  Gamepad2,
+  ArrowRight,
+} from "lucide-react";
 import { GradientOrb } from "./ui/gradient-orb";
 
 const ecosystemRoles = [
   {
     icon: Code2,
-    title: "Developer İçin",
+    title: "Geliştiriciler",
     description: [
-      "Projelerinizi şeffaf bir şekilde tanıtın ve gerçek kullanıcılardan anında geri bildirim alın.",
-      "Diğer geliştiricilerle iletişim kurarak ağınızı genişletin ve işbirliği fırsatları yakalayın.",
-      "Aylık güncellemelerle kullanıcıları ve yatırımcıları gelişmelere dahil edin.",
+      "İster bağımsız oyun geliştirici olun, ister büyük bir stüdyoda çalışın, size uygun fırsatları keşfedin.",
+      "Oyun geliştirme becerilerinizi geliştirin, portfolyonuzu oluşturun ve iş fırsatlarına erişin.",
+      "Kendi oyun girişiminizi başlatın, topluluk desteği alın ve yatırımcılarla tanışın.",
     ],
     cta: {
-      text: "Projenizi Yükleyin",
-      href: "/upload-project",
+      text: "Geliştirici Profili Oluştur",
+      href: "/developer-signup",
     },
   },
   {
-    icon: Rocket,
-    title: "Girişimciler İçin",
+    icon: Building2,
+    title: "Şirketler",
     description: [
-      "Hem yerel hem küresel pazarda girişiminizi tanıtın ve hedef kitlenize ulaşın.",
-      "Topluluğunuzdan bağış sistemiyle ilk finansmanınızı sağlayarak projenizi hızlandırın.",
-      "Yatırımcıların radarına girerek büyüme fırsatlarını yakalayın.",
+      "Oyun stüdyonuzu tanıtın ve yetenekli geliştiricilerle buluşun.",
+      "Yeni projeler için işbirlikleri kurun ve ekibinizi genişletin.",
+      "Oyun endüstrisindeki en son trendleri ve teknolojileri takip edin.",
     ],
     cta: {
-      text: "Girişiminizi Ekleyin",
-      href: "/add-startup",
+      text: "Şirket Profili Oluştur",
+      href: "/company-signup",
     },
   },
   {
     icon: LineChart,
-    title: "Yatırımcılar İçin",
+    title: "Yatırımcılar",
     description: [
-      "Filtreleme seçenekleriyle ilgilendiğiniz sektör ve bölgelerde yeni projeleri kolayca bulun.",
-      "Girişimlerin gelişimini ve topluluk etkileşimlerini takip ederek doğru kararlar verin.",
-      "Doğrudan girişimcilerle bağlantı kurarak yatırım sürecinizi hızlandırın.",
+      "Yenilikçi oyun projelerini ve stüdyoları keşfedin.",
+      "Erken aşama yatırım fırsatlarını değerlendirin.",
+      "Oyun endüstrisindeki yükselen trendleri takip edin.",
     ],
     cta: {
-      text: "Profilinizi Oluşturun",
+      text: "Yatırımcı Profili Oluştur",
       href: "/investor-signup",
+    },
+  },
+  {
+    icon: Gamepad2,
+    title: "Oyun Tutkunları",
+    description: [
+      "Yeni oyunları keşfedin ve geliştiricilere geri bildirim verin.",
+      "Oyun topluluğuna katılın ve etkinliklere katılın.",
+      "Oyun geliştirme süreçlerini yakından takip edin.",
+    ],
+    cta: {
+      text: "Topluluğa Katıl",
+      href: "/community-signup",
     },
   },
 ];
@@ -81,13 +100,13 @@ const Ecosystem = () => {
               Ekosistemimizi Tanıyın
             </h2>
             <p className="text-lg text-gray-300 max-w-3xl mx-auto">
-              Türkiye'nin en büyük girişimcilik platformunda herkes için bir yer
-              var. Hangi rolde olursanız olun, ekosistemimizde büyümenize
-              yardımcı olacak araçlar sunuyoruz.
+              Oyun dünyasının her kesiminden insanları bir araya getiriyoruz.
+              İster geliştirici olun, ister oyun tutkunu, ekosistemimizde sizin
+              için bir yer var.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {ecosystemRoles.map((role, index) => {
               const Icon = role.icon;
               return (

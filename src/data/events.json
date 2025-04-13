@@ -1,0 +1,48 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Game Development Workshop",
+      "date": "2024-03-15",
+      "time": "14:00 - 17:00",
+      "location": "Istanbul Game Hub",
+      "description": "Learn the basics of game development with Unity and C#. Perfect for beginners!",
+      "attendees": 45,
+      "image": "/events/workshop.jpg",
+      "type": "workshop"
+    },
+    {
+      "id": 2,
+      "title": "Game Industry Networking Night",
+      "date": "2024-03-20",
+      "time": "19:00 - 22:00",
+      "location": "Digital Valley Co-working Space",
+      "description": "Connect with game developers, designers, and industry professionals.",
+      "attendees": 120,
+      "image": "/events/networking.jpg",
+      "type": "networking"
+    },
+    {
+      "id": 3,
+      "title": "Game Design Conference 2024",
+      "date": "2024-04-05",
+      "time": "09:00 - 18:00",
+      "location": "Istanbul Congress Center",
+      "description": "Annual conference featuring talks from leading game designers and studios.",
+      "attendees": 500,
+      "image": "/events/conference.jpg",
+      "type": "conference"
+    },
+    {
+      "id": 4,
+      "title": "48-Hour Game Jam",
+      "date": "2024-04-15",
+      "time": "10:00 - 10:00",
+      "location": "Online",
+      "description": "Join us for an intense 48-hour game development competition!",
+      "attendees": 200,
+      "image": "/events/hackathon.jpg",
+      "type": "hackathon"
+    }
+  ]
+}

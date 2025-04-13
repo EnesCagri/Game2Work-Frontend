@@ -20,17 +20,17 @@ const ITEMS_PER_PAGE = 20;
 interface Game {
   id: string;
   title: string;
-  coverImage: string;
+  image: string;
   description: string;
-  releaseDate: string;
-  developer: string;
-  publisher: string;
+  releaseDate?: string;
+  developer?: string;
+  publisher?: string;
   genres: string[];
   platforms: string[];
   price: string;
   rating: number;
-  lastPlayed: string;
-  totalPlaytime: string;
+  lastPlayed?: string;
+  totalPlaytime?: string;
   playerCount: string;
 }
 
@@ -71,15 +71,15 @@ export default function GamesLibrary() {
       switch (sortBy) {
         case "recent":
           return (
-            new Date(b.lastPlayed || "").getTime() -
-            new Date(a.lastPlayed || "").getTime()
+            new Date(b.lastPlayed || 0).getTime() -
+            new Date(a.lastPlayed || 0).getTime()
           );
         case "name":
           return a.title.localeCompare(b.title);
         case "release":
           return (
-            new Date(b.releaseDate).getTime() -
-            new Date(a.releaseDate).getTime()
+            new Date(b.releaseDate || 0).getTime() -
+            new Date(a.releaseDate || 0).getTime()
           );
         default:
           return 0;
@@ -99,30 +99,32 @@ export default function GamesLibrary() {
   ).sort();
 
   return (
-    <div className="min-h-screen bg-gray-900 py-8">
+    <div className="min-h-screen bg-black py-8">
       <div className="container mx-auto px-4">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-white mb-4">Games Library</h1>
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent mb-4">
+            Oyun Kütüphanesi
+          </h1>
 
           {/* Search and Filters */}
           <div className="flex flex-wrap gap-4 items-center">
             <div className="relative flex-1 min-w-[200px]">
               <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
               <Input
-                placeholder="Search games..."
-                className="pl-10 bg-gray-800 border-gray-700"
+                placeholder="Oyun ara..."
+                className="pl-10 bg-gray-900/50 border-gray-800 focus:border-red-500/50"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
 
             <Select value={selectedGenre} onValueChange={setSelectedGenre}>
-              <SelectTrigger className="w-[180px] bg-gray-800 border-gray-700">
-                <SelectValue placeholder="Genre" />
+              <SelectTrigger className="w-[180px] bg-gray-900/50 border-gray-800 focus:border-red-500/50">
+                <SelectValue placeholder="Tür" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="all">All Genres</SelectItem>
+              <SelectContent className="bg-gray-900 border-gray-800">
+                <SelectItem value="all">Tüm Türler</SelectItem>
                 {uniqueGenres.map((genre) => (
                   <SelectItem key={genre} value={genre.toLowerCase()}>
                     {genre}
@@ -132,13 +134,13 @@ export default function GamesLibrary() {
             </Select>
 
             <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-[180px] bg-gray-800 border-gray-700">
-                <SelectValue placeholder="Sort by" />
+              <SelectTrigger className="w-[180px] bg-gray-900/50 border-gray-800 focus:border-red-500/50">
+                <SelectValue placeholder="Sırala" />
               </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="recent">Recently Played</SelectItem>
-                <SelectItem value="name">Name</SelectItem>
-                <SelectItem value="release">Release Date</SelectItem>
+              <SelectContent className="bg-gray-900 border-gray-800">
+                <SelectItem value="recent">Son Oynananlar</SelectItem>
+                <SelectItem value="name">İsim</SelectItem>
+                <SelectItem value="release">Çıkış Tarihi</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -161,14 +163,20 @@ export default function GamesLibrary() {
               variant="outline"
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
               disabled={currentPage === 1}
+              className="border-gray-800 hover:bg-gray-900/50"
             >
-              Previous
+              Önceki
             </Button>
             {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
               <Button
                 key={page}
                 variant={currentPage === page ? "default" : "outline"}
                 onClick={() => setCurrentPage(page)}
+                className={
+                  currentPage === page
+                    ? "bg-gradient-to-r from-red-700 via-pink-500 to-red-500 text-white"
+                    : "border-gray-800 hover:bg-gray-900/50"
+                }
               >
                 {page}
               </Button>
@@ -177,8 +185,9 @@ export default function GamesLibrary() {
               variant="outline"
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
               disabled={currentPage === totalPages}
+              className="border-gray-800 hover:bg-gray-900/50"
             >
-              Next
+              Sonraki
             </Button>
           </div>
         )}
@@ -187,13 +196,17 @@ export default function GamesLibrary() {
         {filteredGames.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-400 text-lg">
-              No games found matching your criteria.
+              Arama kriterlerinize uygun oyun bulunamadı.
             </p>
           </div>
         )}
 
         {/* Loading Indicator */}
-        {loading && <div>Loading...</div>}
+        {loading && (
+          <div className="text-center py-12">
+            <div className="animate-pulse text-gray-400">Yükleniyor...</div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -23,6 +23,8 @@ import {
   ChevronRight,
   //MessageSquareIcon,
   NewspaperIcon,
+  CalendarIcon,
+  SparklesIcon,
 } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import {
@@ -110,6 +112,12 @@ const groupedLinks = [
         href: "/blogs",
         icon: NewspaperIcon,
         description: "Oyun endüstrisi hakkında güncel haberler ve yazılar",
+      },
+      {
+        name: "Etkinlikler",
+        href: "/events",
+        icon: CalendarIcon,
+        description: "Oyun dünyasındaki etkinlikleri keşfedin",
       },
     ],
   },
@@ -209,6 +217,15 @@ const Navbar = () => {
 
           {/* Auth Buttons */}
           <div className="hidden md:flex items-center space-x-4">
+            <Link href="/generative">
+              <Button className="bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 hover:from-purple-700 hover:via-pink-600 hover:to-red-600 text-white font-bold relative group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600/50 via-pink-500/50 to-red-500/50 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-70" />
+                <div className="relative flex items-center gap-2">
+                  <SparklesIcon className="w-5 h-5" />
+                  <span>Code Goblin</span>
+                </div>
+              </Button>
+            </Link>
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
                 <Avatar className="cursor-pointer">
@@ -298,6 +315,15 @@ const Navbar = () => {
               {/* Auth Buttons */}
               {!isAuthenticated ? (
                 <div className="flex flex-col space-y-2 px-4 pt-4 border-t border-gray-800">
+                  <Link href="/generative" className="w-full">
+                    <Button className="w-full justify-start bg-gradient-to-r from-purple-600 via-pink-500 to-red-500 hover:from-purple-700 hover:via-pink-600 hover:to-red-600 relative group overflow-hidden">
+                      <div className="absolute inset-0 bg-gradient-to-r from-purple-600/50 via-pink-500/50 to-red-500/50 blur-xl group-hover:blur-2xl transition-all duration-300 opacity-70" />
+                      <div className="relative flex items-center gap-2">
+                        <SparklesIcon className="w-5 h-5" />
+                        <span>Code Goblin</span>
+                      </div>
+                    </Button>
+                  </Link>
                   <Button variant="ghost" className="w-full justify-start">
                     Giriş Yap
                   </Button>
