@@ -8,17 +8,24 @@ import {
   LineChart,
   Gamepad2,
   ArrowRight,
+  ChevronDown,
+  ChevronUp,
 } from "lucide-react";
 import { GradientOrb } from "./ui/gradient-orb";
+import { useState } from "react";
 
 const ecosystemRoles = [
   {
     icon: Code2,
-    title: "Geliştiriciler",
-    description: [
-      "İster bağımsız oyun geliştirici olun, ister büyük bir stüdyoda çalışın, size uygun fırsatları keşfedin.",
-      "Oyun geliştirme becerilerinizi geliştirin, portfolyonuzu oluşturun ve iş fırsatlarına erişin.",
-      "Kendi oyun girişiminizi başlatın, topluluk desteği alın ve yatırımcılarla tanışın.",
+    title: "Bağımsız Oyun Geliştiricileri",
+    mainDescription:
+      "Kendi oyun projesini başlatan, mini bir ekiple ilerleyen ya da yeteneklerini göstererek iş başvuruları yapmak isteyen bir oyun geliştiricisiysen Game To Work tam sana göre.",
+    features: [
+      "Yeni oyun girişimlerin için vitrin oluştur ve çalışmalarını sergile.",
+      "Oyununu deneyimleyen kullanıcılardan geri bildirimler al.",
+      "Finansman ihtiyacını karşılayacak yatırımcılarla buluş veya bağış topla.",
+      "Diğer geliştiricilerle iletişime geçerek projelerine katılacak yeni ortaklar bul.",
+      "Kariyerini bir basamak yukarı taşıyacak iş ilanlarına başvur.",
     ],
     cta: {
       text: "Geliştirici Profili Oluştur",
@@ -27,11 +34,15 @@ const ecosystemRoles = [
   },
   {
     icon: Building2,
-    title: "Şirketler",
-    description: [
-      "Oyun stüdyonuzu tanıtın ve yetenekli geliştiricilerle buluşun.",
-      "Yeni projeler için işbirlikleri kurun ve ekibinizi genişletin.",
-      "Oyun endüstrisindeki en son trendleri ve teknolojileri takip edin.",
+    title: "Oyun Şirketleri",
+    mainDescription:
+      "Endüstriyel oyun dünyasında büyük projelere imza atan, ekibini genişletmek ve finansal ortaklıklarla büyümek isteyen bir oyun şirketiysen Game To Work'te aradıklarına sadece bir adım uzaksın.",
+    features: [
+      "Şirket olarak geliştirdiğin oyunları büyük bir topluluğun erişimine sunarak kullanıcı deneyimini ölç.",
+      "Oyunlarını deneyimleyen kullanıcılardan doğrudan geri bildirimler toplayarak geliştirme sürecini güçlendir.",
+      "Şirket içi ihtiyaçların için iş ilanları yayınlayarak yeni yetenekleri ekibine kat.",
+      "Proje bazlı ya da şirket geneli yatırımlar arayarak hibe, bağış ya da sponsor alma fırsatları yakala.",
+      "Diğer oyun stüdyolarıyla işbirlikleri yaparak çalışma kapasiteni büyüt.",
     ],
     cta: {
       text: "Şirket Profili Oluştur",
@@ -39,34 +50,53 @@ const ecosystemRoles = [
     },
   },
   {
-    icon: LineChart,
-    title: "Yatırımcılar",
-    description: [
-      "Yenilikçi oyun projelerini ve stüdyoları keşfedin.",
-      "Erken aşama yatırım fırsatlarını değerlendirin.",
-      "Oyun endüstrisindeki yükselen trendleri takip edin.",
-    ],
-    cta: {
-      text: "Yatırımcı Profili Oluştur",
-      href: "/investor-signup",
-    },
-  },
-  {
     icon: Gamepad2,
     title: "Oyun Tutkunları",
-    description: [
-      "Yeni oyunları keşfedin ve geliştiricilere geri bildirim verin.",
-      "Oyun topluluğuna katılın ve etkinliklere katılın.",
-      "Oyun geliştirme süreçlerini yakından takip edin.",
+    mainDescription:
+      "Geliştiricilerin ve oyun şirketlerinin paylaşıma sunduğu yeni oyunları ilk deneyenlerden olmak ve oyun kültürüne yeni bir soluk katmak istiyorsan Game To Work senin için hazır.",
+    features: [
+      "Indie oyunları erkenden keşfet, ilk deneyimleyenlerden biri ol.",
+      "Yorumların ve puanlarınla geliştiricilere doğrudan katkı sağla.",
+      "Sosyal bir topluluğun parçası olarak diğer oyun tutkunlarıyla iletişim kur.",
+      "Oyun dünyasındaki gelişmeleri, kampanyaları ve yaklaşan AAA yapımları kaçırma.",
+      "Kendi indie oyun kütüphaneni oluştur, favorilerini listele.",
     ],
     cta: {
       text: "Topluluğa Katıl",
       href: "/community-signup",
     },
   },
+  {
+    icon: LineChart,
+    title: "Oyun Yatırımcıları",
+    mainDescription:
+      "Erken aşamadaki oyun projelerini erkenden keşfetmek, girişimcilerle birebir temas kurmak ve oyun ekosisteminin geleceğine yön vermek istiyorsan Game To Work senin için ideal bir alan.",
+    features: [
+      "Potansiyel taşıyan oyun girişimlerini geliştirici profilleriyle birlikte incele.",
+      "Geliştiriciler ve oyun şirketleriyle doğrudan bağlantı kurarak yatırım fırsatlarını değerlendir.",
+      "Proje bazlı fonlama, sponsorluk ya da hisse bazlı yatırım modelleriyle projelere katkı ver.",
+      "Oyuncuların geri bildirimleri ve topluluk etkileşimleri üzerinden kullanıcı davranışlarını analiz et.",
+      "Girişim portföyünü oluştur, yatırım yaptığın projeleri uzun vadeli olarak takip et.",
+    ],
+    cta: {
+      text: "Yatırımcı Profili Oluştur",
+      href: "/investor-signup",
+    },
+  },
 ];
 
 const Ecosystem = () => {
+  const [expandedRoles, setExpandedRoles] = useState<Record<number, boolean>>(
+    {}
+  );
+
+  const toggleExpand = (index: number) => {
+    setExpandedRoles((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
+
   return (
     <section className="relative overflow-hidden">
       {/* Background gradient */}
@@ -84,8 +114,6 @@ const Ecosystem = () => {
         size="lg"
         opacity={0.01}
       />
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden"></div>
 
       <div className="py-24 relative">
         <div className="container relative z-10 mx-auto px-4">
@@ -109,6 +137,11 @@ const Ecosystem = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {ecosystemRoles.map((role, index) => {
               const Icon = role.icon;
+              const isExpanded = expandedRoles[index];
+              const visibleItems = isExpanded
+                ? role.features
+                : role.features.slice(0, 3);
+
               return (
                 <motion.div
                   key={index}
@@ -129,8 +162,13 @@ const Ecosystem = () => {
                       {role.title}
                     </h3>
 
+                    {/* Main Description */}
+                    <p className="text-lg text-gray-300 mb-6 leading-relaxed">
+                      {role.mainDescription}
+                    </p>
+
                     <ul className="space-y-3 mb-8">
-                      {role.description.map((item, i) => (
+                      {visibleItems.map((item, i) => (
                         <li
                           key={i}
                           className="flex items-start gap-2 text-gray-400 group-hover:text-gray-300"
@@ -140,6 +178,25 @@ const Ecosystem = () => {
                         </li>
                       ))}
                     </ul>
+
+                    {/* Expand/Collapse Button */}
+                    {role.features.length > 3 && (
+                      <button
+                        onClick={() => toggleExpand(index)}
+                        className="text-sm text-purple-500 hover:text-pink-500 flex items-center gap-1 mb-4 transition-colors"
+                      >
+                        {isExpanded ? (
+                          <>
+                            Daha Az Göster <ChevronUp className="w-4 h-4" />
+                          </>
+                        ) : (
+                          <>
+                            Daha Fazla Göster{" "}
+                            <ChevronDown className="w-4 h-4" />
+                          </>
+                        )}
+                      </button>
+                    )}
 
                     {/* CTA Button */}
                     <Button

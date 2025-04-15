@@ -13,24 +13,28 @@ const socialLinks = [
     icon: "/social/instagram.svg",
     href: "#",
     hoverColor: "hover:bg-gradient-to-r from-purple-500 to-pink-500",
+    defaultColor: "text-purple-500",
   },
   {
     name: "LinkedIn",
     icon: "/social/linkedin.svg",
     href: "#",
     hoverColor: "hover:bg-blue-600",
+    defaultColor: "text-blue-500",
   },
   {
     name: "Twitter",
     icon: "/social/twitter.svg",
     href: "#",
     hoverColor: "hover:bg-blue-400",
+    defaultColor: "text-blue-400",
   },
   {
     name: "YouTube",
     icon: "/social/youtube.svg",
     href: "#",
     hoverColor: "hover:bg-red-600",
+    defaultColor: "text-red-500",
   },
 ];
 
@@ -72,38 +76,30 @@ export default function MediaSignup() {
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.1 }}
+            transition={{ duration: 0.6 }}
             className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-red-400 to-red-900 bg-clip-text text-transparent"
           >
-            Gelişmelerden Haberdar Olun
+            Gelişmelerden Haberdar Ol
           </motion.h2>
 
           {/* Description */}
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-300 text-lg mb-4"
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-gray-300 text-lg mb-8"
           >
-            Erken duyurular, girişim haberleri ve topluluk hareketleri için bizi
-            takip et.
-          </motion.p>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="text-gray-400 mb-8"
-          >
-            İlk sen öğren, ilk sen katıl. 👇
+            Yeni özelliklerden, etkinliklerden ve fırsatlardan ilk senin haberin
+            olsun.
           </motion.p>
 
           {/* Email Signup Form with enhanced button */}
           <motion.form
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.4 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
             onSubmit={handleSubmit}
-            className="flex flex-col sm:flex-row gap-4 mb-12 max-w-xl mx-auto"
+            className="flex flex-col sm:flex-row gap-4 max-w-xl mx-auto"
           >
             <Input
               type="email"
@@ -127,8 +123,8 @@ export default function MediaSignup() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
-            className="flex justify-center gap-6"
+            transition={{ duration: 0.6, delay: 0.3 }}
+            className="flex justify-center gap-6 mt-8"
           >
             {socialLinks.map((social, index) => (
               <motion.div
@@ -136,7 +132,7 @@ export default function MediaSignup() {
                 initial={{ opacity: 0, scale: 0.8 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 whileHover={{ scale: 1.1 }}
-                transition={{ duration: 0.3, delay: 0.6 + index * 0.1 }}
+                transition={{ duration: 0.3, delay: 0.4 + index * 0.1 }}
                 className="relative group"
               >
                 <div
@@ -154,7 +150,7 @@ export default function MediaSignup() {
                     alt={social.name}
                     width={24}
                     height={24}
-                    className="opacity-75 group-hover:opacity-100 transition-opacity"
+                    className={`${social.defaultColor} group-hover:opacity-100 transition-opacity`}
                   />
                 </Link>
               </motion.div>

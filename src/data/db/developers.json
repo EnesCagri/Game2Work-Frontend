@@ -325,6 +325,201 @@
           "year": 2022
         }
       ]
+    },
+    {
+      "id": 9,
+      "name": "Ava Davis",
+      "role": "Game Designer",
+      "image": "/Developers/gamer19.jpg",
+      "rarity": "epic",
+      "stats": {
+        "projects": 14,
+        "awards": 5,
+        "experience": 7
+      },
+      "description": "Game Designer with extensive experience and a passion for creating high-quality games.",
+      "skills": [
+        "Narrative Design",
+        "Level Design",
+        "Prototyping",
+        "Game Mechanics",
+        "Documentation",
+        "Game Balance"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Game Design Professional",
+          "issuer": "Various Institutes",
+          "date": "2023-02-13"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Skybound",
+          "role": "Game Designer",
+          "description": "A game project focused on high-end graphics.",
+          "technologies": ["Unity", "Level Design", "Game Design"],
+          "year": 2023
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "name": "Noah White",
+      "role": "QA Tester",
+      "image": "/Developers/gamer20.jpg",
+      "rarity": "legendary",
+      "stats": {
+        "projects": 14,
+        "awards": 4,
+        "experience": 7
+      },
+      "description": "QA Tester with extensive experience and a passion for creating high-quality games.",
+      "skills": [
+        "Test Planning",
+        "Game Testing",
+        "Bug Reporting",
+        "Performance Testing",
+        "Regression Testing",
+        "Documentation"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "ISTQB Certified Tester",
+          "issuer": "Various Institutes",
+          "date": "2022-12-04"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Cyber Siege",
+          "role": "QA Tester",
+          "description": "A game project focused on multiplayer.",
+          "technologies": ["JIRA", "TestRail", "Bug Tracking"],
+          "year": 2022
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "name": "Lucas Allen",
+      "role": "Sound Designer",
+      "image": "/Developers/gamer21.jpg",
+      "rarity": "legendary",
+      "stats": {
+        "projects": 13,
+        "awards": 1,
+        "experience": 8
+      },
+      "description": "Sound Designer with extensive experience and a passion for creating high-quality games.",
+      "skills": [
+        "Sound Design",
+        "Audio Implementation",
+        "Wwise",
+        "Foley Recording",
+        "FMOD",
+        "Music Composition"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Wwise Certified Professional",
+          "issuer": "Various Institutes",
+          "date": "2020-10-02"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Ancient Realms",
+          "role": "Sound Designer",
+          "description": "A game project focused on multiplayer.",
+          "technologies": ["Wwise", "FMOD", "Pro Tools"],
+          "year": 2020
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "name": "Liam Hall",
+      "role": "Sound Designer",
+      "image": "/Developers/gamer22.jpg",
+      "rarity": "rare",
+      "stats": {
+        "projects": 11,
+        "awards": 0,
+        "experience": 7
+      },
+      "description": "Sound Designer with extensive experience and a passion for creating high-quality games.",
+      "skills": [
+        "Sound Design",
+        "Music Composition",
+        "Wwise",
+        "FMOD",
+        "Foley Recording",
+        "Audio Implementation"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Wwise Certified Professional",
+          "issuer": "Various Institutes",
+          "date": "2022-01-09"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Ancient Realms",
+          "role": "Sound Designer",
+          "description": "A game project focused on immersive storytelling.",
+          "technologies": ["Wwise", "FMOD", "Pro Tools"],
+          "year": 2020
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "name": "Oliver Green",
+      "role": "Sound Designer",
+      "image": "/Developers/gamer23.jpg",
+      "rarity": "common",
+      "stats": {
+        "projects": 10,
+        "awards": 2,
+        "experience": 7
+      },
+      "description": "Sound Designer with extensive experience and a passion for creating high-quality games.",
+      "skills": [
+        "Music Composition",
+        "Sound Design",
+        "Foley Recording",
+        "FMOD",
+        "Audio Implementation",
+        "Wwise"
+      ],
+      "certifications": [
+        {
+          "id": 1,
+          "name": "Wwise Certified Professional",
+          "issuer": "Various Institutes",
+          "date": "2023-08-09"
+        }
+      ],
+      "projects": [
+        {
+          "id": 1,
+          "name": "Galactic Quest",
+          "role": "Sound Designer",
+          "description": "A game project focused on high-end graphics.",
+          "technologies": ["Wwise", "FMOD", "Pro Tools"],
+          "year": 2020
+        }
+      ]
     }
   ]
 }

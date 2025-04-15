@@ -3,144 +3,189 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
+import { Button } from "./ui/button";
 import { GradientOrb } from "./ui/gradient-orb";
+import { useState, useEffect } from "react";
+import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-type Rarity = "common" | "rare" | "epic" | "legendary";
-type RowId = 1 | 2 | 3 | 4 | 5;
+type Category = "all" | "developer" | "studio" | "investor";
+type RowId = 1 | 2 | 3;
 
 type Member = {
   id: number;
   name: string;
   role: string;
+  category: Category;
   image: string;
-  rarity: Rarity;
+  isVerified: boolean;
   rowId: RowId;
   stats: {
-    projects: number;
-    awards: number;
-    experience: number;
+    projects?: number;
+    experience?: number;
+    communityScore?: number;
+    developedGames?: number;
+    employeeCount?: number;
+    investmentCount?: number;
+    totalInvestment?: number;
+    interests?: string[];
   };
 };
 
 const members: Member[] = [
-  // Row 1 - Game Studios
+  // Row 1 - Developers
   {
     id: 1,
-    name: "Peak Games",
-    role: "Game Studio",
+    name: "Ahmet Yılmaz",
+    role: "Game Developer",
+    category: "developer",
     image: "/akura.png",
-    rarity: "legendary",
+    isVerified: true,
     rowId: 1,
-    stats: { projects: 15, awards: 23, experience: 10 },
+    stats: {
+      projects: 6,
+      experience: 4,
+      communityScore: 8.7,
+    },
   },
   {
     id: 2,
-    name: "Dream Games",
-    role: "Game Studio",
+    name: "Lisa Thompson",
+    role: "Unity Developer",
+    category: "developer",
     image: "/crown.png",
-    rarity: "legendary",
+    isVerified: true,
     rowId: 1,
-    stats: { projects: 8, awards: 12, experience: 5 },
+    stats: {
+      projects: 8,
+      experience: 5,
+      communityScore: 9.1,
+    },
   },
   {
     id: 3,
-    name: "Indie Forge",
-    role: "Indie Game Studio",
+    name: "James Carter",
+    role: "Full Stack Developer",
+    category: "developer",
     image: "/deathpizza.png",
-    rarity: "epic",
+    isVerified: true,
     rowId: 1,
-    stats: { projects: 12, awards: 5, experience: 7 },
+    stats: {
+      projects: 12,
+      experience: 7,
+      communityScore: 9.3,
+    },
   },
 
-  // Row 2 - Developers
+  // Row 2 - Studios
   {
     id: 4,
-    name: "Ahmet Yılmaz",
-    role: "Game Developer",
-    image: "/akura.png",
-    rarity: "rare",
+    name: "Dream Games",
+    role: "Game Studio",
+    category: "studio",
+    image: "/deathpizza.png",
+    isVerified: true,
     rowId: 2,
-    stats: { projects: 6, awards: 3, experience: 8 },
+    stats: {
+      developedGames: 12,
+      employeeCount: 8,
+      communityScore: 9.2,
+    },
   },
   {
     id: 5,
-    name: "Lisa Thompson",
-    role: "AI Engineer",
-    image: "/crown.png",
-    rarity: "epic",
+    name: "Indie Forge",
+    role: "Indie Game Studio",
+    category: "studio",
+    image: "/akura.png",
+    isVerified: true,
     rowId: 2,
-    stats: { projects: 10, awards: 7, experience: 6 },
+    stats: {
+      developedGames: 8,
+      employeeCount: 5,
+      communityScore: 8.9,
+    },
   },
   {
     id: 6,
-    name: "James Carter",
-    role: "Full Stack Developer",
-    image: "/deathpizza.png",
-    rarity: "legendary",
+    name: "Pixel Wizards",
+    role: "Art Studio",
+    category: "studio",
+    image: "/crown.png",
+    isVerified: true,
     rowId: 2,
-    stats: { projects: 18, awards: 4, experience: 12 },
+    stats: {
+      developedGames: 15,
+      employeeCount: 12,
+      communityScore: 9.4,
+    },
   },
 
   // Row 3 - Investors
   {
     id: 7,
     name: "Tech Ventures",
-    role: "Investor",
-    image: "/akura.png",
-    rarity: "rare",
+    role: "Game Investor",
+    category: "investor",
+    image: "/crown.png",
+    isVerified: true,
     rowId: 3,
-    stats: { projects: 20, awards: 0, experience: 15 },
+    stats: {
+      investmentCount: 5,
+      totalInvestment: 250000,
+      interests: ["Mobil", "Hypercasual"],
+    },
   },
   {
     id: 8,
     name: "Angel Fund",
-    role: "Investor",
-    image: "/crown.png",
-    rarity: "epic",
+    role: "Investment Fund",
+    category: "investor",
+    image: "/deathpizza.png",
+    isVerified: true,
     rowId: 3,
-    stats: { projects: 35, awards: 1, experience: 20 },
+    stats: {
+      investmentCount: 8,
+      totalInvestment: 500000,
+      interests: ["PC", "Console", "Mobile"],
+    },
   },
-
-  // Row 4 - Designers
   {
     id: 9,
-    name: "Sophie Martinez",
-    role: "UI/UX Designer",
-    image: "/deathpizza.png",
-    rarity: "rare",
-    rowId: 4,
-    stats: { projects: 25, awards: 6, experience: 10 },
-  },
-  {
-    id: 10,
-    name: "Pixel Wizards",
-    role: "Art Studio",
+    name: "Game Capital",
+    role: "Venture Capital",
+    category: "investor",
     image: "/akura.png",
-    rarity: "epic",
-    rowId: 4,
-    stats: { projects: 30, awards: 12, experience: 15 },
-  },
-
-  // Row 5 - Cybersecurity & AI
-  {
-    id: 11,
-    name: "CyberShield",
-    role: "Cybersecurity",
-    image: "/crown.png",
-    rarity: "legendary",
-    rowId: 5,
-    stats: { projects: 50, awards: 9, experience: 20 },
-  },
-  {
-    id: 12,
-    name: "AI Pioneers",
-    role: "Artificial Intelligence",
-    image: "/deathpizza.png",
-    rarity: "legendary",
-    rowId: 5,
-    stats: { projects: 15, awards: 18, experience: 12 },
+    isVerified: true,
+    rowId: 3,
+    stats: {
+      investmentCount: 12,
+      totalInvestment: 1000000,
+      interests: ["Mobile", "PC", "Console"],
+    },
   },
 ];
+
+const categoryColors: Record<
+  Category,
+  { bg: string; border: string; text: string }
+> = {
+  all: { bg: "bg-gray-800", border: "border-gray-700", text: "text-gray-300" },
+  developer: {
+    bg: "bg-blue-900/20",
+    border: "border-blue-500/50",
+    text: "text-blue-400",
+  },
+  studio: {
+    bg: "bg-orange-900/20",
+    border: "border-orange-500/50",
+    text: "text-orange-400",
+  },
+  investor: {
+    bg: "bg-purple-900/20",
+    border: "border-purple-500/50",
+    text: "text-purple-400",
+  },
+};
 
 const ScrollingRow = ({
   direction = "left",
@@ -152,7 +197,7 @@ const ScrollingRow = ({
   rowId: RowId;
 }) => {
   const rowMembers = members.filter((member) => member.rowId === rowId);
-  const cardWidth = 280;
+  const cardWidth = 320;
   const cardGap = 16;
   const totalCardWidth = cardWidth + cardGap;
 
@@ -186,131 +231,129 @@ const ScrollingRow = ({
   );
 };
 
-const rarityColors: Record<
-  Rarity,
-  {
-    base: string;
-    glow: string;
-    highlight: string;
-  }
-> = {
-  legendary: {
-    base: "bg-gradient-to-br from-yellow-500/20 to-amber-500/20 border-yellow-500/50",
-    glow: "group-hover:shadow-[0_0_30px_-5px_rgba(245,158,11,0.3)]",
-    highlight: "group-hover:from-yellow-500/30 group-hover:to-amber-500/30",
-  },
-  epic: {
-    base: "bg-gradient-to-br from-fuchsia-500/20 to-pink-500/20 border-fuchsia-500/50",
-    glow: "group-hover:shadow-[0_0_30px_-5px_rgba(217,70,239,0.3)]",
-    highlight: "group-hover:from-fuchsia-500/30 group-hover:to-pink-500/30",
-  },
-  rare: {
-    base: "bg-gradient-to-br from-purple-500/20 to-pink-500/20 border-purple-500/50",
-    glow: "group-hover:shadow-[0_0_30px_-5px_rgba(168,85,247,0.3)]",
-    highlight: "group-hover:from-purple-500/30 group-hover:to-pink-500/30",
-  },
-  common: {
-    base: "bg-gradient-to-br from-blue-500/20 to-cyan-500/20 border-blue-500/50",
-    glow: "group-hover:shadow-[0_0_30px_-5px_rgba(59,130,246,0.3)]",
-    highlight: "group-hover:from-blue-500/30 group-hover:to-cyan-500/30",
-  },
-};
-
 const Card = ({ member }: { member: Member }) => {
-  const colors = rarityColors[member.rarity] || rarityColors.common;
+  const colors = categoryColors[member.category];
 
   return (
-    <Link
-      href={`/profile/${member.id}`}
-      className="block w-[280px] h-[400px] flex-shrink-0 group"
+    <motion.div
+      whileHover={{ scale: 1.02 }}
+      transition={{ type: "spring", stiffness: 400, damping: 25 }}
+      className={`
+        relative w-[320px] flex-shrink-0 rounded-xl p-6
+        ${colors.bg} ${colors.border}
+        border backdrop-blur-sm
+        transition-all duration-300
+        hover:border-opacity-75
+      `}
     >
-      <motion.div
-        whileHover={{ scale: 1.02 }}
-        transition={{ type: "spring", stiffness: 400, damping: 25 }}
-        className={`
-          relative h-full rounded-xl 
-          ${colors.base} ${colors.glow} ${colors.highlight}
-          border backdrop-blur-sm
-          transition-all duration-300
-          hover:border-opacity-75
-        `}
-      >
-        {/* Glow Overlay */}
-        <div
-          className={`
-          absolute inset-0 rounded-xl
-          opacity-0 group-hover:opacity-100
-          transition-opacity duration-300
-          bg-gradient-to-t from-transparent via-white/5 to-transparent
-        `}
+      {/* Verified Badge */}
+      {member.isVerified && (
+        <div className="absolute top-4 right-4 z-50">
+          <CheckCircle2 className="w-5 h-5 text-blue-400" />
+        </div>
+      )}
+
+      {/* Image Container */}
+      <div className="relative w-full h-40 mb-4 rounded-lg overflow-hidden">
+        <Image
+          src={member.image}
+          alt={member.name}
+          fill
+          className="object-cover"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+      </div>
 
-        <div
-          className="absolute top-4 z-99 right-4 px-3 py-1 rounded-full text-xs font-semibold 
-          bg-black/50 backdrop-blur-sm border border-gray-700
-          group-hover:bg-black/70 group-hover:border-gray-600
-          transition-all duration-300"
-        >
-          {member.rarity.toUpperCase()}
-        </div>
+      {/* Content */}
+      <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+      <p className={`text-sm ${colors.text} mb-4`}>{member.role}</p>
 
-        <div className="p-6 flex flex-col h-full relative z-10">
-          {/* Image Container */}
-          <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
-            <Image
-              src={member.image}
-              alt={member.name}
-              fill
-              className="object-cover transform group-hover:scale-105 transition-transform duration-300"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+      {/* Stats */}
+      <div className="space-y-2 mb-6">
+        {member.stats.projects && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Projeler</span>
+            <span className="text-white font-semibold">
+              {member.stats.projects}
+            </span>
           </div>
-
-          {/* Content */}
-          <h3 className="text-xl font-bold text-white mb-1 group-hover:text-white/90 transition-colors">
-            {member.name}
-          </h3>
-          <p className="text-sm text-gray-400 mb-4 group-hover:text-gray-300 transition-colors">
-            {member.role}
-          </p>
-
-          {/* Stats */}
-          <div className="mt-auto space-y-2">
-            <div className="flex justify-between">
-              <span className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                Projects
-              </span>
-              <span className="text-white font-semibold group-hover:text-white/90 transition-colors">
-                {member.stats.projects}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                Awards
-              </span>
-              <span className="text-white font-semibold group-hover:text-white/90 transition-colors">
-                {member.stats.awards}
-              </span>
-            </div>
-            <div className="flex justify-between">
-              <span className="text-gray-400 group-hover:text-gray-300 transition-colors">
-                Experience
-              </span>
-              <span className="text-white font-semibold group-hover:text-white/90 transition-colors">
-                {member.stats.experience}y
-              </span>
-            </div>
+        )}
+        {member.stats.experience && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Deneyim</span>
+            <span className="text-white font-semibold">
+              {member.stats.experience} yıl
+            </span>
           </div>
-        </div>
-      </motion.div>
-    </Link>
+        )}
+        {member.stats.communityScore && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Topluluk Puanı</span>
+            <span className="text-white font-semibold">
+              {member.stats.communityScore}
+            </span>
+          </div>
+        )}
+        {member.stats.developedGames && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Geliştirilen Oyun</span>
+            <span className="text-white font-semibold">
+              {member.stats.developedGames}
+            </span>
+          </div>
+        )}
+        {member.stats.employeeCount && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Çalışan Sayısı</span>
+            <span className="text-white font-semibold">
+              {member.stats.employeeCount}
+            </span>
+          </div>
+        )}
+        {member.stats.investmentCount && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Yatırım Sayısı</span>
+            <span className="text-white font-semibold">
+              {member.stats.investmentCount} proje
+            </span>
+          </div>
+        )}
+        {member.stats.totalInvestment && (
+          <div className="flex justify-between">
+            <span className="text-gray-400">Toplam Yatırım</span>
+            <span className="text-white font-semibold">
+              ${member.stats.totalInvestment.toLocaleString()}
+            </span>
+          </div>
+        )}
+        {member.stats.interests && (
+          <div className="flex flex-wrap gap-2 mt-2">
+            {member.stats.interests.map((interest, index) => (
+              <span
+                key={index}
+                className="px-2 py-1 text-xs rounded-full bg-black/20 text-gray-300"
+              >
+                {interest}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      {/* CTA Button */}
+      <Button variant="outline" className="w-full group" asChild>
+        <Link href={`/profile/${member.id}`}>
+          Profili Gör
+          <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+        </Link>
+      </Button>
+    </motion.div>
   );
 };
 
 const MemberCards = () => {
   return (
     <section className="relative overflow-hidden">
-      {/* Background gradient */}
       <div className="absolute inset-0 bg-gray-950" />
       <GradientOrb
         color="#ef4442"
@@ -324,14 +367,12 @@ const MemberCards = () => {
         size="lg"
         opacity={0.01}
       />
-      {/* Animated background elements */}
-      <div className="absolute inset-0 overflow-hidden"></div>
 
       <div className="py-24 relative">
         <div className="container relative z-10 mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent">
-              Üyelerimiz
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-red-700 via-pink-500 to-red-500 bg-clip-text text-transparent mb-4">
+              GameToWork Ekosistemi
             </h2>
             <p className="text-gray-400">
               Ekosistemimizin değerli üyeleriyle tanışın
@@ -342,6 +383,18 @@ const MemberCards = () => {
             <ScrollingRow rowId={1} direction="left" speed={30} />
             <ScrollingRow rowId={2} direction="right" speed={25} />
             <ScrollingRow rowId={3} direction="left" speed={35} />
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center mt-16">
+            <p className="text-xl text-gray-300 mb-6">
+              Sen de bu listede yer almak ister misin?
+            </p>
+            <div className="absolute inset-0 bg-red-500/50 rounded-md blur-xl group-hover:blur-2xl transition-all duration-300 opacity-0 group-hover:opacity-100" />
+            <Button className="relative z-10 bg-gradient-to-r from-red-400 to-red-800 hover:from-red-600 hover:to-red-900 duration-300 ease-in-out transition text-white px-8 shadow-lg shadow-red-500/20 hover:shadow-red-500/40">
+              Profilini Oluştur
+              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+            </Button>
           </div>
         </div>
       </div>
