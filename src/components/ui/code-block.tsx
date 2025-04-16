@@ -1,41 +1,83 @@
 "use client";
 
+import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { dracula } from "react-syntax-highlighter/dist/cjs/styles/prism";
+import { vscDarkPlus } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { Copy, Check } from "lucide-react";
+import { Button } from "./button";
+import { motion, AnimatePresence } from "framer-motion";
 
-export interface CodeBlockProps {
-  language?: string;
+interface CodeBlockProps {
   code: string;
+  language?: string;
+  showLineNumbers?: boolean;
+  className?: string;
 }
 
-export const CodeBlock = ({
-  language = "typescript",
+export function CodeBlock({
   code,
-}: CodeBlockProps) => {
+  language = "csharp",
+  showLineNumbers = true,
+  className = "",
+}: CodeBlockProps) {
+  const [copied, setCopied] = useState(false);
+
+  const copyToClipboard = () => {
+    navigator.clipboard.writeText(code);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
-    <div className="rounded-xl overflow-hidden border border-muted bg-black/40 backdrop-blur-sm p-2 my-4">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-xs text-muted-foreground">{language}</span>
-        <button
-          onClick={() => navigator.clipboard.writeText(code)}
-          className="text-xs text-muted-foreground hover:text-primary transition-colors"
+    <div className={`relative group ${className}`}>
+      <div className="absolute right-2 top-2 z-10">
+        <Button
+          variant="ghost"
+          size="sm"
+          className="h-8 w-8 p-0 hover:bg-gray-700/50"
+          onClick={copyToClipboard}
         >
-          Copy code
-        </button>
+          <AnimatePresence mode="wait">
+            {copied ? (
+              <motion.div
+                key="check"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.5 }}
+                className="text-green-400"
+              >
+                <Check className="h-4 w-4" />
+              </motion.div>
+            ) : (
+              <motion.div
+                key="copy"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.5 }}
+                className="text-gray-400"
+              >
+                <Copy className="h-4 w-4" />
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </Button>
       </div>
       <SyntaxHighlighter
         language={language}
-        style={dracula}
-        wrapLines={true}
+        style={vscDarkPlus}
         customStyle={{
-          background: "transparent",
+          margin: 0,
+          padding: "1rem",
+          borderRadius: "0.5rem",
           fontSize: "0.875rem",
           lineHeight: "1.5",
-          margin: 0,
+          background: "rgb(31, 41, 55)",
         }}
+        showLineNumbers={showLineNumbers}
+        wrapLines
       >
-        {code.trim()}
+        {code}
       </SyntaxHighlighter>
     </div>
   );
-};
+}

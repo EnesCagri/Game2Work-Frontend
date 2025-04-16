@@ -71,6 +71,11 @@ const singleLinks = [
     href: "/kickstarts",
     icon: RocketIcon,
   },
+  {
+    name: "Kod Kütüphanesi",
+    href: "/code-library",
+    icon: CodeIcon,
+  },
 ];
 
 // Grouped links
