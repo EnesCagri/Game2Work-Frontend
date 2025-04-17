@@ -1,0 +1,12 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Game Development Conference",
+      "date": "2024-03-20",
+      "location": "San Francisco, CA",
+      "description": "Annual game development conference",
+      "image": "/events/gdc.jpg"
+    }
+  ]
+}
