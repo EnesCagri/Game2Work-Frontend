@@ -92,6 +92,7 @@ export interface DbService {
   getJobs: () => Promise<typeof jobs.jobs>;
   getJobById: (id: number) => Promise<(typeof jobs.jobs)[0] | undefined>;
   getJobsByCompany: (companyId: number) => Promise<typeof jobs.jobs>;
+  getSimilarJobs: (jobId: number) => Promise<typeof jobs.jobs>;
 
   // Companies
   getCompanies: () => Promise<typeof companies.companies>;
@@ -383,6 +384,49 @@ export class MockDbService implements DbService {
     // Update the blogs array
     blogsData.push(newBlog);
     return newBlog;
+  }
+
+  async getSimilarJobs(jobId: number) {
+    const currentJob = await this.getJobById(jobId);
+    if (!currentJob) return [];
+
+    const allJobs = await this.getJobs();
+
+    // Find jobs with similar skills, type, or from the same company
+    const similarJobs = allJobs
+      .filter((job) => {
+        if (job.id === jobId) return false;
+
+        const sameCompany = job.companyId === currentJob.companyId;
+        const sameType =
+          job.type.toLowerCase() === currentJob.type.toLowerCase();
+
+        // Check for similar skills
+        const currentSkills = new Set(
+          (currentJob.skills || []).map((skill: string | { name: string }) =>
+            typeof skill === "string"
+              ? skill.toLowerCase()
+              : skill.name.toLowerCase()
+          )
+        );
+
+        const jobSkills = new Set(
+          (job.skills || []).map((skill: string | { name: string }) =>
+            typeof skill === "string"
+              ? skill.toLowerCase()
+              : skill.name.toLowerCase()
+          )
+        );
+
+        const hasCommonSkills = [...currentSkills].some((skill) =>
+          jobSkills.has(skill)
+        );
+
+        return sameCompany || sameType || hasCommonSkills;
+      })
+      .slice(0, 3); // Limit to 3 similar jobs
+
+    return similarJobs;
   }
 
   private async loadData<T>(key: string): Promise<T> {

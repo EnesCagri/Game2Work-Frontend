@@ -233,10 +233,12 @@ const Navbar = () => {
             </Link>
             {isAuthenticated ? (
               <div className="flex items-center space-x-4">
-                <Avatar className="cursor-pointer">
-                  <AvatarImage src={user.image} alt={user.name} />
-                  <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
-                </Avatar>
+                <Link href="/profile">
+                  <Avatar className="cursor-pointer hover:ring-2 hover:ring-purple-500 transition-all duration-300">
+                    <AvatarImage src={user.image} alt={user.name} />
+                    <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
+                  </Avatar>
+                </Link>
                 <Button variant="ghost" size="icon">
                   <LogOutIcon className="w-5 h-5" />
                 </Button>
@@ -244,9 +246,11 @@ const Navbar = () => {
             ) : (
               <div className="flex items-center space-x-2">
                 <Button variant="ghost">Giriş Yap</Button>
-                <Button className="bg-red-600 hover:bg-red-700 text-white font-bold">
-                  Kayıt Ol
-                </Button>
+                <Link href="/register">
+                  <Button className="bg-red-600 hover:bg-red-700 text-white font-bold">
+                    Kayıt Ol
+                  </Button>
+                </Link>
               </div>
             )}
           </div>
@@ -338,13 +342,13 @@ const Navbar = () => {
                 </div>
               ) : (
                 <div className="flex items-center justify-between px-4 pt-4 border-t border-gray-800">
-                  <div className="flex items-center space-x-2">
+                  <Link href="/profile" className="flex items-center space-x-2">
                     <Avatar>
                       <AvatarImage src={user.image} alt={user.name} />
                       <AvatarFallback>{user.name.charAt(0)}</AvatarFallback>
                     </Avatar>
                     <span className="text-gray-300">{user.name}</span>
-                  </div>
+                  </Link>
                   <Button variant="ghost" size="icon">
                     <LogOutIcon className="w-5 h-5" />
                   </Button>

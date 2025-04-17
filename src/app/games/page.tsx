@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
 import {
   Select,
   SelectContent,
@@ -12,7 +13,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { GameCard } from "@/components/games/GameCard";
-import { SearchIcon } from "lucide-react";
+import { GameSeriesSlider } from "@/components/games/GameSeriesSlider";
+import { SearchIcon, X, FilterX } from "lucide-react";
 import { db } from "@/lib/db";
 
 const ITEMS_PER_PAGE = 20;
@@ -39,14 +41,16 @@ export default function GamesLibrary() {
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const [selectedGenre, setSelectedGenre] = useState<string>("all");
+  const [selectedKeywords, setSelectedKeywords] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<string>("recent");
+  const [selectedSeries, setSelectedSeries] = useState<string | null>(null);
+  const [seriesGames, setSeriesGames] = useState<string[]>([]);
 
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const data = await db.getGames();
-        setGames(data);
+        const gamesData = await db.getGames();
+        setGames(gamesData);
       } catch (error) {
         console.error("Failed to fetch games:", error);
       } finally {
@@ -57,15 +61,57 @@ export default function GamesLibrary() {
     fetchGames();
   }, []);
 
+  // Get unique genres from all games
+  const uniqueGenres = Array.from(
+    new Set(games.flatMap((game) => game.genres))
+  ).sort();
+
+  // Toggle keyword selection
+  const toggleKeyword = (keyword: string) => {
+    setSelectedKeywords((prev) =>
+      prev.includes(keyword)
+        ? prev.filter((k) => k !== keyword)
+        : [...prev, keyword]
+    );
+    setCurrentPage(1);
+  };
+
+  // Handle series selection
+  const handleSeriesSelect = (gameIds: string[]) => {
+    setSeriesGames(gameIds);
+    setSelectedSeries(gameIds.length > 0 ? "series" : null);
+    setCurrentPage(1);
+    // Clear other filters when selecting a series
+    setSelectedKeywords([]);
+    setSearch("");
+  };
+
+  // Clear all filters
+  const clearAllFilters = () => {
+    setSeriesGames([]);
+    setSelectedSeries(null);
+    setSelectedKeywords([]);
+    setSearch("");
+    setCurrentPage(1);
+    setSortBy("recent");
+  };
+
   // Filter and sort games
   const filteredGames = games
     .filter((game) => {
       const matchesSearch = game.title
         .toLowerCase()
         .includes(search.toLowerCase());
-      const matchesGenre =
-        selectedGenre === "all" || game.genres.includes(selectedGenre);
-      return matchesSearch && matchesGenre;
+      const matchesKeywords =
+        selectedKeywords.length === 0 ||
+        selectedKeywords.some((keyword) =>
+          game.genres
+            .map((g) => g.toLowerCase())
+            .includes(keyword.toLowerCase())
+        );
+      const matchesSeries =
+        seriesGames.length === 0 || seriesGames.includes(game.id);
+      return matchesSearch && matchesKeywords && matchesSeries;
     })
     .sort((a, b) => {
       switch (sortBy) {
@@ -93,10 +139,8 @@ export default function GamesLibrary() {
     currentPage * ITEMS_PER_PAGE
   );
 
-  // Update the Select component to use actual genres from our mock data
-  const uniqueGenres = Array.from(
-    new Set(games.flatMap((game) => game.genres))
-  ).sort();
+  const hasActiveFilters =
+    search || selectedKeywords.length > 0 || seriesGames.length > 0;
 
   return (
     <div className="min-h-screen bg-black py-8">
@@ -107,42 +151,91 @@ export default function GamesLibrary() {
             Oyun Kütüphanesi
           </h1>
 
+          {/* Game Series Slider */}
+          <div className="mb-6">
+            <GameSeriesSlider
+              onSeriesSelect={handleSeriesSelect}
+              selectedSeries={selectedSeries}
+            />
+          </div>
+
           {/* Search and Filters */}
-          <div className="flex flex-wrap gap-4 items-center">
-            <div className="relative flex-1 min-w-[200px]">
-              <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
-              <Input
-                placeholder="Oyun ara..."
-                className="pl-10 bg-gray-900/50 border-gray-800 focus:border-red-500/50"
-                value={search}
-                onChange={(e) => setSearch(e.target.value)}
-              />
+          <div className="space-y-4">
+            <div className="flex flex-wrap gap-4 items-center">
+              <div className="relative flex-1 min-w-[200px]">
+                <SearchIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 w-5 h-5" />
+                <Input
+                  placeholder="Oyun ara..."
+                  className="pl-10 bg-gray-900/50 border-gray-800 focus:border-red-500/50"
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                />
+              </div>
+
+              <Select value={sortBy} onValueChange={setSortBy}>
+                <SelectTrigger className="w-[180px] bg-gray-900/50 border-gray-800 focus:border-red-500/50">
+                  <SelectValue placeholder="Sırala" />
+                </SelectTrigger>
+                <SelectContent className="bg-gray-900 border-gray-800">
+                  <SelectItem value="recent">Son Oynananlar</SelectItem>
+                  <SelectItem value="name">İsim</SelectItem>
+                  <SelectItem value="release">Çıkış Tarihi</SelectItem>
+                </SelectContent>
+              </Select>
+
+              {hasActiveFilters && (
+                <Button
+                  variant="ghost"
+                  size="icon"
+                  onClick={clearAllFilters}
+                  className="bg-gray-900/50 hover:bg-red-500/10 hover:text-red-500"
+                  title="Tüm Filtreleri Temizle"
+                >
+                  <FilterX className="h-5 w-5" />
+                </Button>
+              )}
             </div>
 
-            <Select value={selectedGenre} onValueChange={setSelectedGenre}>
-              <SelectTrigger className="w-[180px] bg-gray-900/50 border-gray-800 focus:border-red-500/50">
-                <SelectValue placeholder="Tür" />
-              </SelectTrigger>
-              <SelectContent className="bg-gray-900 border-gray-800">
-                <SelectItem value="all">Tüm Türler</SelectItem>
+            {/* Genre Keywords */}
+            {!selectedSeries && (
+              <div className="flex flex-wrap gap-2">
                 {uniqueGenres.map((genre) => (
-                  <SelectItem key={genre} value={genre.toLowerCase()}>
+                  <Badge
+                    key={genre}
+                    variant={
+                      selectedKeywords.includes(genre) ? "default" : "secondary"
+                    }
+                    className={`cursor-pointer hover:bg-red-500/10 ${
+                      selectedKeywords.includes(genre)
+                        ? "bg-gradient-to-r from-red-700 via-pink-500 to-red-500"
+                        : ""
+                    }`}
+                    onClick={() => toggleKeyword(genre)}
+                  >
                     {genre}
-                  </SelectItem>
+                  </Badge>
                 ))}
-              </SelectContent>
-            </Select>
+              </div>
+            )}
 
-            <Select value={sortBy} onValueChange={setSortBy}>
-              <SelectTrigger className="w-[180px] bg-gray-900/50 border-gray-800 focus:border-red-500/50">
-                <SelectValue placeholder="Sırala" />
-              </SelectTrigger>
-              <SelectContent className="bg-gray-900 border-gray-800">
-                <SelectItem value="recent">Son Oynananlar</SelectItem>
-                <SelectItem value="name">İsim</SelectItem>
-                <SelectItem value="release">Çıkış Tarihi</SelectItem>
-              </SelectContent>
-            </Select>
+            {/* Selected Keywords */}
+            {selectedKeywords.length > 0 && (
+              <div className="flex flex-wrap gap-2 mt-2">
+                {selectedKeywords.map((keyword) => (
+                  <Badge
+                    key={keyword}
+                    variant="secondary"
+                    className="flex items-center gap-1 cursor-pointer hover:bg-destructive/10"
+                  >
+                    {keyword}
+                    <X
+                      className="h-3 w-3 cursor-pointer hover:text-destructive"
+                      onClick={() => toggleKeyword(keyword)}
+                    />
+                  </Badge>
+                ))}
+              </div>
+            )}
           </div>
         </div>
 

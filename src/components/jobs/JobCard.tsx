@@ -1,6 +1,6 @@
 "use client";
 
-import { Building2, MapPin, Clock, Briefcase } from "lucide-react";
+import { Building2, MapPin, Clock, Briefcase, Youtube } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
@@ -13,13 +13,16 @@ const levelColors = {
   Lead: "from-purple-500 to-fuchsia-500",
 } as const;
 
+type ExperienceLevel = keyof typeof levelColors;
+
 interface JobCardProps {
   job: Job;
 }
 
 export function JobCard({ job }: JobCardProps) {
   const glowColor =
-    levelColors[job.experience] || "from-purple-500 to-pink-500";
+    levelColors[job.experience as ExperienceLevel] ||
+    "from-purple-500 to-pink-500";
 
   return (
     <Link
@@ -70,10 +73,16 @@ export function JobCard({ job }: JobCardProps) {
               <Clock className="w-4 h-4" />
               {new Date(job.postedAt).toLocaleDateString()}
             </div>
+            {job.youtubeVideoId && (
+              <div className="flex items-center gap-2 text-sm text-red-400 group-hover:text-red-300">
+                <Youtube className="w-4 h-4" />
+                Video Available
+              </div>
+            )}
           </div>
           <div className="mt-4 flex items-center justify-between">
             <span className="text-sm font-medium text-purple-400">
-              {job.salary}
+              {job.salary || "Salary not specified"}
             </span>
             <Link href={`/jobs/${job.id}`}>
               <Button

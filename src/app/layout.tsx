@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Toaster } from "sonner";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr" suppressHydrationWarning>
-      <body className={inter.className}>
+      <body className={inter.className} suppressHydrationWarning>
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
@@ -31,6 +32,7 @@ export default function RootLayout({
             <main className="flex-grow">{children}</main>
             <Footer />
           </div>
+          <Toaster />
         </ThemeProvider>
       </body>
     </html>

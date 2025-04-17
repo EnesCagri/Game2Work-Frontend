@@ -15,35 +15,55 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { z } from "zod";
 
-const loginSchema = z.object({
-  email: z.string().email("Geçerli bir e-posta adresi giriniz"),
-  password: z.string().min(6, "Şifre en az 6 karakter olmalıdır"),
-});
+const registerSchema = z
+  .object({
+    email: z.string().email("Geçerli bir e-posta adresi giriniz"),
+    password: z.string().min(6, "Şifre en az 6 karakter olmalıdır"),
+    confirmPassword: z.string().min(6, "Şifre en az 6 karakter olmalıdır"),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Şifreler eşleşmiyor",
+    path: ["confirmPassword"],
+  });
 
-type LoginFormData = z.infer<typeof loginSchema>;
+type RegisterFormData = z.infer<typeof registerSchema>;
 
-export default function LoginPage() {
+export default function RegisterPage() {
   const router = useRouter();
-  const { login } = useAuth();
+  const { register: registerUser } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
 
-  const form = useForm<LoginFormData>({
-    resolver: zodResolver(loginSchema),
+  const form = useForm<RegisterFormData>({
+    resolver: zodResolver(registerSchema),
     defaultValues: {
       email: "",
       password: "",
+      confirmPassword: "",
     },
   });
 
-  const onSubmit = async (data: LoginFormData) => {
+  const onSubmit = async (data: RegisterFormData) => {
     setIsLoading(true);
     try {
-      const result = await login(data.email, data.password);
+      const result = await registerUser({
+        email: data.email,
+        password: data.password,
+        name: "",
+        surname: "",
+        roles: [],
+        profile: {
+          country: "",
+          city: "",
+          education: "",
+          birthDate: "",
+          phone: "",
+        },
+      });
       if (result.success) {
-        toast.success("Giriş başarılı!");
-        router.push("/");
+        toast.success("Kayıt başarılı!");
+        router.push("/register/profile");
       } else {
-        toast.error(result.error || "Giriş başarısız");
+        toast.error(result.error || "Kayıt başarısız");
       }
     } catch (error) {
       toast.error("Bir hata oluştu");
@@ -53,7 +73,7 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-red-900 to-gray-900 p-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-b from-gray-900 via-purple-900 to-gray-900 p-4">
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -61,16 +81,16 @@ export default function LoginPage() {
         className="w-full max-w-md space-y-8 p-8 bg-gray-900/50 backdrop-blur-sm rounded-xl border border-gray-800 shadow-2xl"
       >
         <div className="text-center">
-          <h2 className="text-4xl font-bold bg-gradient-to-r from-red-400 via-pink-500 to-red-400 bg-clip-text text-transparent">
-            Giriş Yap
+          <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 via-pink-500 to-purple-400 bg-clip-text text-transparent">
+            Kayıt Ol
           </h2>
           <p className="mt-2 text-gray-400">
-            Hesabınız yok mu?{" "}
+            Zaten hesabınız var mı?{" "}
             <Link
-              href="/register"
+              href="/login"
               className="text-purple-400 hover:text-purple-300 transition-colors"
             >
-              Kayıt olun
+              Giriş yapın
             </Link>
           </p>
         </div>
@@ -112,6 +132,24 @@ export default function LoginPage() {
                 </p>
               )}
             </div>
+
+            <div>
+              <Label htmlFor="confirmPassword" className="text-gray-300">
+                Şifre Tekrar
+              </Label>
+              <Input
+                id="confirmPassword"
+                type="password"
+                {...form.register("confirmPassword")}
+                className="mt-1 bg-gray-800 border-gray-700 text-white focus:ring-2 focus:ring-purple-500"
+                placeholder="••••••••"
+              />
+              {form.formState.errors.confirmPassword && (
+                <p className="mt-1 text-sm text-red-500">
+                  {form.formState.errors.confirmPassword.message}
+                </p>
+              )}
+            </div>
           </div>
 
           <Button
@@ -119,7 +157,7 @@ export default function LoginPage() {
             className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 transform hover:scale-[1.02]"
             disabled={isLoading}
           >
-            {isLoading ? "Giriş yapılıyor..." : "Giriş Yap"}
+            {isLoading ? "Kayıt yapılıyor..." : "Kayıt Ol"}
           </Button>
         </form>
 
