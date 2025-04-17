@@ -85,6 +85,7 @@ export default function JobDetails() {
           positionType: jobData.type,
           createdAt: new Date(jobData.postedAt),
           updatedAt: new Date(jobData.postedAt),
+          isSaved: false,
         };
         setJob(formattedJob);
 
@@ -121,6 +122,7 @@ export default function JobDetails() {
               positionType: job.type,
               createdAt: new Date(job.postedAt),
               updatedAt: new Date(job.postedAt),
+              isSaved: false,
             };
             return formattedJob;
           });
@@ -162,6 +164,7 @@ export default function JobDetails() {
             positionType: job.type,
             createdAt: new Date(job.postedAt),
             updatedAt: new Date(job.postedAt),
+            isSaved: false,
           };
           return formattedJob;
         });
@@ -200,6 +203,7 @@ export default function JobDetails() {
               positionType: job.type,
               createdAt: new Date(job.postedAt),
               updatedAt: new Date(job.postedAt),
+              isSaved: false,
             };
             return formattedJob;
           });
@@ -588,14 +592,16 @@ export default function JobDetails() {
                       {blog.excerpt}
                     </p>
                     <div className="flex flex-wrap gap-2 mb-4">
-                      {blog.tags.slice(0, 3).map((tag, index) => (
-                        <span
-                          key={index}
-                          className="px-2 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs"
-                        >
-                          {tag}
-                        </span>
-                      ))}
+                      {blog.tags
+                        .slice(0, 3)
+                        .map((tag: string, index: number) => (
+                          <span
+                            key={index}
+                            className="px-2 py-1 bg-purple-500/10 text-purple-400 rounded-full text-xs"
+                          >
+                            {tag}
+                          </span>
+                        ))}
                     </div>
                   </div>
                 </Link>

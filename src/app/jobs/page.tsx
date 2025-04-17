@@ -45,7 +45,6 @@ import Image from "next/image";
 import { toast } from "sonner";
 import Link from "next/link";
 import JobsForYouCarousel from "@/components/JobsForYouCarousel";
-import JobCard from "@/components/JobCard";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -230,13 +229,14 @@ export default function JobsPage() {
           const company = companiesData.find((c) => c.id === job.companyId);
           const formattedJob: Job = {
             ...job,
-            id: job.id.toString(),
-            companyId: job.companyId.toString(),
+            id: job.id,
+            companyId: job.companyId,
             company: company?.name || "Unknown Company",
             logo: company?.logo || "",
             positionType: job.type.toLowerCase(),
             createdAt: new Date(job.postedAt),
             updatedAt: new Date(job.postedAt),
+            isSaved: false,
           };
           return formattedJob;
         });
@@ -263,13 +263,14 @@ export default function JobsPage() {
           const company = companiesData.find((c) => c.id === job.companyId);
           const formattedJob: Job = {
             ...job,
-            id: job.id.toString(),
-            companyId: job.companyId.toString(),
+            id: job.id,
+            companyId: job.companyId,
             company: company?.name || "Unknown Company",
             logo: company?.logo || "",
             positionType: job.type.toLowerCase(),
             createdAt: new Date(job.postedAt),
             updatedAt: new Date(job.postedAt),
+            isSaved: false,
           };
           return formattedJob;
         });
@@ -399,7 +400,7 @@ export default function JobsPage() {
     );
   };
 
-  const handleApply = async (jobId: string) => {
+  const handleApply = async (jobId: number) => {
     try {
       // TODO: Implement job application logic
       toast.success("Application submitted successfully!");
@@ -408,7 +409,7 @@ export default function JobsPage() {
     }
   };
 
-  const handleSave = async (jobId: string) => {
+  const handleSave = async (jobId: number) => {
     // TODO: Implement job saving logic
     toast.success("Job saved successfully!");
   };

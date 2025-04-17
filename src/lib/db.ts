@@ -160,6 +160,14 @@ export interface DbService {
   getBlogsByTopic: (topic: string) => Promise<Blog[]>;
   getBlogsByTag: (tag: string) => Promise<Blog[]>;
   createBlog: (blog: Omit<Blog, "id" | "likes" | "comments">) => Promise<Blog>;
+
+  // Auth
+  register: (data: any) => Promise<any>;
+  login: (email: string, password: string) => Promise<any>;
+  logout: () => Promise<void>;
+  getCurrentUser: () => any;
+  updateProfile: (userId: number, profileData: any) => Promise<any>;
+  updateRoles: (userId: number, roles: string[]) => Promise<any>;
 }
 
 export class MockDbService implements DbService {
@@ -432,6 +440,36 @@ export class MockDbService implements DbService {
   private async loadData<T>(key: string): Promise<T> {
     const data = await import(`@/data/db/${key}.json`);
     return data.default as T;
+  }
+
+  // Auth methods
+  async register(data: any) {
+    // Implementation here
+    return data;
+  }
+
+  async login(email: string, password: string) {
+    // Implementation here
+    return null;
+  }
+
+  async logout() {
+    // Implementation here
+  }
+
+  getCurrentUser() {
+    // Implementation here
+    return null;
+  }
+
+  async updateProfile(userId: number, profileData: any) {
+    // Implementation here
+    return null;
+  }
+
+  async updateRoles(userId: number, roles: string[]) {
+    // Implementation here
+    return null;
   }
 }
 
