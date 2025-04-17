@@ -45,6 +45,7 @@ import Image from "next/image";
 import { toast } from "sonner";
 import Link from "next/link";
 import JobsForYouCarousel from "@/components/JobsForYouCarousel";
+import { HeroAnimSection } from "@/components/HeroAnimSection";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -426,50 +427,7 @@ export default function JobsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8">
-      {/* Hero Section */}
-      <div className="relative overflow-hidden rounded-2xl bg-gradient-to-r from-primary/10 to-primary/5 p-8 md:p-12 mb-12">
-        <div className="absolute inset-0 bg-grid-white/10 [mask-image:linear-gradient(0deg,white,rgba(255,255,255,0.6))]" />
-        <div className="relative">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="text-center md:text-left"
-          >
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary/60">
-              Oyun Geliştirme Kariyerinizi Başlatın
-            </h1>
-            <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl">
-              Hayalinizdeki oyun geliştirme işini bulun veya yetenekli
-              geliştiricileri ekibinize katın.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-              <Button
-                size="lg"
-                className="bg-primary hover:bg-primary/90 text-primary-foreground"
-                onClick={() => {
-                  const searchSection =
-                    document.getElementById("search-section");
-                  searchSection?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                İş Fırsatlarını Keşfet
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-primary text-primary hover:bg-primary/10"
-                onClick={() => {
-                  // TODO: Implement job posting navigation
-                  toast.info("İş ilanı yayınlama özelliği yakında eklenecek!");
-                }}
-              >
-                İş İlanı Yayınla
-              </Button>
-            </div>
-          </motion.div>
-        </div>
-      </div>
+      <HeroAnimSection />
 
       {/* Recommended Jobs Slider */}
       <JobsForYouCarousel />
@@ -750,7 +708,10 @@ export default function JobsPage() {
         <div className="text-center py-12">İlanlar yükleniyor...</div>
       ) : (
         <>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div
+            id="jobs-catalog"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+          >
             {paginatedJobs.map((job) => (
               <div
                 key={job.id}

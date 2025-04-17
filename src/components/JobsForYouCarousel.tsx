@@ -37,7 +37,15 @@ export default function JobsForYouCarousel() {
             (a, b) =>
               new Date(b.postedAt).getTime() - new Date(a.postedAt).getTime()
           )
-          .slice(0, 8);
+          .slice(0, 8)
+          .map((job) => ({
+            ...job,
+            company: `Company ${job.companyId}`, // Use companyId to create company name
+            positionType: job.type,
+            createdAt: new Date(job.postedAt),
+            updatedAt: new Date(job.postedAt),
+            isSaved: false,
+          }));
 
         setJobs(featuredJobs);
       } catch (error) {
