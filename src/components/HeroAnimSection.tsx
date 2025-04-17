@@ -191,7 +191,9 @@ export function HeroAnimSection() {
               </>
             )}
             <div className="text-4xl mb-2">🎮</div>
-            <div className="text-sm font-bold text-center">GameToWork</div>
+            <div className="text-sm font-bold text-center text-red-700">
+              İşsizlik
+            </div>
           </div>
         </motion.div>
       </div>
@@ -215,9 +217,9 @@ export function HeroAnimSection() {
             <div className="flex gap-6 justify-center">
               <button
                 onClick={scrollToJobs}
-                className="group relative px-8 py-4 bg-[#FF0000] text-white font-[Press_Start_2P] text-sm hover:bg-[#FF3333] transition-all duration-200 cursor-pointer"
+                className="group relative px-8 py-4 bg-[#FF0000] text-white font-[Press_Start_2P] text-sm hover:bg-[#FF3333] transition-all duration-200 cursor-pointer pixel-border"
                 style={{
-                  boxShadow: "0 4px 0 #800000, 0 5px 0 #000",
+                  boxShadow: "4px 4px 0 #000",
                   clipPath: "polygon(0 0, 100% 0, 100% 75%, 90% 100%, 0 100%)",
                 }}
               >
@@ -226,9 +228,9 @@ export function HeroAnimSection() {
               </button>
               <Link
                 href="jobs/post-job"
-                className="group relative px-8 py-4 bg-[#0000FF] text-white font-[Press_Start_2P] text-sm hover:bg-[#3333FF] transition-all duration-200"
+                className="group relative px-8 py-4 bg-[#0000FF] text-white font-[Press_Start_2P] text-sm hover:bg-[#3333FF] transition-all duration-200 pixel-border"
                 style={{
-                  boxShadow: "0 4px 0 #000080, 0 5px 0 #000",
+                  boxShadow: "4px 4px 0 #000",
                   clipPath: "polygon(10% 0, 100% 0, 100% 100%, 0 75%, 0 0)",
                 }}
               >
@@ -249,9 +251,19 @@ export function HeroAnimSection() {
         )}
       </AnimatePresence>
 
-      {/* Add font import */}
+      {/* Add font import and pixel border styles */}
       <style jsx global>{`
         @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+        .pixel-border {
+          border: 4px solid #000;
+          image-rendering: pixelated;
+        }
+
+        .pixel-border:hover {
+          transform: translate(2px, 2px);
+          box-shadow: 2px 2px 0 #000 !important;
+        }
       `}</style>
     </div>
   );
