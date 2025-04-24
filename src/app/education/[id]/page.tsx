@@ -9,6 +9,21 @@ import { Badge } from "@/components/ui/badge";
 import { Card } from "@/components/ui/card";
 import { GradientOrb } from "@/components/ui/gradient-orb";
 import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import {
   Play,
   Clock,
   Users,
@@ -29,8 +44,16 @@ import {
   Globe,
   ThumbsUp,
   MessageCircle,
+  FileText,
+  Download,
+  PlayCircle,
+  ClipboardList,
+  FileDown,
+  CheckCircle2,
+  AlertCircle,
 } from "lucide-react";
 import { db } from "@/lib/db";
+import { cn } from "@/lib/utils";
 
 interface Review {
   id: number;
@@ -69,9 +92,20 @@ interface Course {
     lessons: {
       title: string;
       duration: string;
-      isPreview: boolean;
+      type: "video" | "text" | "resource" | "quiz" | "assignment";
+      isPreview?: boolean;
       isCompleted?: boolean;
+      isLocked?: boolean;
       videoUrl?: string;
+      thumbnail?: string;
+      content?: string;
+      resourceType?: string;
+      size?: string;
+      prerequisites?: string[];
+      questionCount?: number;
+      passingScore?: number;
+      deadline?: string;
+      description?: string;
     }[];
   }[];
   tutor: {
@@ -83,6 +117,7 @@ interface Course {
   students?: number;
   reviews?: Review[];
   previewVideo?: string;
+  descriptionImages?: string[];
 }
 
 const difficultyIcons = {
@@ -100,12 +135,182 @@ const difficultyColors = {
     "bg-gradient-to-r from-red-500/80 to-red-600/80 hover:from-red-500/90 hover:to-red-600/90",
 };
 
+const VideoModal = ({
+  videoUrl,
+  title,
+  thumbnail,
+}: {
+  videoUrl: string;
+  title: string;
+  thumbnail?: string;
+}) => (
+  <Dialog>
+    <DialogTrigger asChild>
+      <div className="relative aspect-video rounded-lg overflow-hidden cursor-pointer group">
+        {thumbnail ? (
+          <>
+            <Image
+              src={thumbnail}
+              alt={title}
+              fill
+              className="object-cover transition-transform group-hover:scale-105"
+            />
+            <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
+              <PlayCircle className="w-16 h-16 text-white opacity-75 group-hover:opacity-100 transition-opacity" />
+            </div>
+          </>
+        ) : (
+          <Button
+            variant="ghost"
+            className="w-full h-full flex items-center gap-2"
+          >
+            <PlayCircle className="w-8 h-8 text-blue-400" />
+            <span>{title}</span>
+          </Button>
+        )}
+      </div>
+    </DialogTrigger>
+    <DialogContent className="max-w-4xl">
+      <DialogHeader>
+        <DialogTitle>{title}</DialogTitle>
+      </DialogHeader>
+      <div className="aspect-video w-full">
+        <iframe
+          src={`https://www.youtube.com/embed/${videoUrl}`}
+          title={title}
+          className="w-full h-full"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </DialogContent>
+  </Dialog>
+);
+
+const LessonRow = ({
+  lesson,
+}: {
+  lesson: Course["curriculum"][0]["lessons"][0];
+}) => {
+  const getIcon = () => {
+    if (lesson.isLocked) {
+      return <Lock className="w-5 h-5 text-gray-500" />;
+    }
+    if (lesson.isCompleted) {
+      return <CheckCircle2 className="w-5 h-5 text-green-500" />;
+    }
+    if (lesson.type === "video" && lesson.videoUrl) {
+      return <PlayCircle className="w-5 h-5 text-blue-400" />;
+    }
+    switch (lesson.type) {
+      case "text":
+        return <FileText className="w-5 h-5 text-green-400" />;
+      case "resource":
+        return <Download className="w-5 h-5 text-purple-400" />;
+      case "quiz":
+        return <ClipboardList className="w-5 h-5 text-yellow-400" />;
+      case "assignment":
+        return <GraduationCap className="w-5 h-5 text-red-400" />;
+      default:
+        return null;
+    }
+  };
+
+  const [isModalOpen, setIsModalOpen] = React.useState(false);
+
+  const handleClick = () => {
+    if (!lesson.isLocked && lesson.type === "video" && lesson.videoUrl) {
+      setIsModalOpen(true);
+    }
+  };
+
+  return (
+    <>
+      <div
+        className={cn(
+          "flex items-center justify-between p-4 hover:bg-gray-700/30 transition-colors",
+          !lesson.isLocked && lesson.type === "video" && "cursor-pointer"
+        )}
+        onClick={handleClick}
+      >
+        <div className="flex items-center gap-3 flex-1">
+          {getIcon()}
+          <div className="flex-1">
+            <div className="flex items-center gap-2">
+              <span
+                className={cn(
+                  "text-gray-300",
+                  lesson.isLocked && "text-gray-500"
+                )}
+              >
+                {lesson.title}
+              </span>
+              {lesson.prerequisites && lesson.prerequisites.length > 0 && (
+                <Badge className="bg-yellow-500/20 text-yellow-400 text-xs">
+                  Ön koşul gerekli
+                </Badge>
+              )}
+            </div>
+            {lesson.description && (
+              <p className="text-sm text-gray-400 mt-1">{lesson.description}</p>
+            )}
+          </div>
+        </div>
+        <div className="flex items-center gap-4">
+          {lesson.type === "resource" && (
+            <Badge className="bg-purple-500/20 text-purple-400">
+              {lesson.size}
+            </Badge>
+          )}
+          {lesson.type === "quiz" && (
+            <Badge className="bg-yellow-500/20 text-yellow-400">
+              {lesson.questionCount} Soru
+            </Badge>
+          )}
+          <span className="text-gray-500 min-w-[60px] text-right">
+            {lesson.duration}
+          </span>
+        </div>
+      </div>
+
+      {/* Video Modal */}
+      {lesson.type === "video" && lesson.videoUrl && (
+        <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
+          <DialogContent className="max-w-4xl">
+            <DialogHeader>
+              <DialogTitle>{lesson.title}</DialogTitle>
+            </DialogHeader>
+            <div className="aspect-video w-full">
+              <iframe
+                src={`https://www.youtube.com/embed/${lesson.videoUrl}`}
+                title={lesson.title}
+                className="w-full h-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            </div>
+          </DialogContent>
+        </Dialog>
+      )}
+    </>
+  );
+};
+
+// Add a helper function to safely parse duration
+const parseDuration = (duration: string) => {
+  if (!duration) return 0;
+  const parts = duration.split(":");
+  if (parts.length !== 2) return 0;
+  return parseInt(parts[0]) || 0;
+};
+
 export default function CourseDetail() {
   const params = useParams();
   const [course, setCourse] = React.useState<Course | null>(null);
   const [loading, setLoading] = React.useState(true);
   const [expandedSections, setExpandedSections] = React.useState<number[]>([0]);
   const [showFullDescription, setShowFullDescription] = React.useState(false);
+  const [selectedVideo, setSelectedVideo] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     const fetchCourse = async () => {
@@ -177,17 +382,14 @@ export default function CourseDetail() {
           <div className="lg:col-span-2 space-y-8">
             {/* Course Preview Video */}
             {course.previewVideo && (
-              <div className="relative aspect-video rounded-xl overflow-hidden">
-                <iframe
-                  src={`https://www.youtube.com/embed/${course.previewVideo}`}
-                  title="Course Preview"
-                  className="absolute inset-0 w-full h-full"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen
-                />
-              </div>
+              <VideoModal
+                videoUrl={course.previewVideo}
+                title="Course Preview"
+                thumbnail={course.thumbnail}
+              />
             )}
 
+            {/* Description with Images */}
             <div>
               <h1 className="text-4xl font-bold text-white mb-6">
                 {course.title}
@@ -198,11 +400,33 @@ export default function CourseDetail() {
                   : `${course.description.slice(0, 200)}...`}
               </p>
               <button
-                className="text-blue-400 hover:text-blue-300 transition-colors"
+                className="text-blue-400 hover:text-blue-300 transition-colors mb-6"
                 onClick={() => setShowFullDescription(!showFullDescription)}
               >
                 {showFullDescription ? "Daha Az Göster" : "Devamını Oku"}
               </button>
+
+              {course.descriptionImages &&
+                course.descriptionImages.length > 0 && (
+                  <Carousel className="w-full">
+                    <CarouselContent>
+                      {course.descriptionImages.map((image, index) => (
+                        <CarouselItem key={index}>
+                          <div className="relative aspect-video rounded-xl overflow-hidden">
+                            <Image
+                              src={image}
+                              alt={`Course description ${index + 1}`}
+                              fill
+                              className="object-cover"
+                            />
+                          </div>
+                        </CarouselItem>
+                      ))}
+                    </CarouselContent>
+                    <CarouselPrevious />
+                    <CarouselNext />
+                  </Carousel>
+                )}
             </div>
 
             {/* Course Stats */}
@@ -260,7 +484,7 @@ export default function CourseDetail() {
               </div>
             </Card>
 
-            {/* Curriculum with Video Previews */}
+            {/* Curriculum with Enhanced Content Types */}
             <div className="space-y-4">
               <h2 className="text-2xl font-bold text-white mb-6">Müfredat</h2>
               {course.curriculum.map((section, sectionIndex) => (
@@ -287,40 +511,11 @@ export default function CourseDetail() {
                   {expandedSections.includes(sectionIndex) && (
                     <div className="border-t border-gray-700/50">
                       {section.lessons.map((lesson, lessonIndex) => (
-                        <div key={lessonIndex}>
-                          <div className="flex items-center justify-between p-4 hover:bg-gray-700/30 transition-colors cursor-pointer">
-                            <div className="flex items-center gap-3">
-                              {lesson.isPreview ? (
-                                <Play className="w-5 h-5 text-blue-400" />
-                              ) : (
-                                <Lock className="w-5 h-5 text-gray-500" />
-                              )}
-                              <span className="text-gray-300">
-                                {lesson.title}
-                              </span>
-                              {lesson.isCompleted && (
-                                <Check className="w-5 h-5 text-green-500" />
-                              )}
-                            </div>
-                            <span className="text-gray-500">
-                              {lesson.duration}
-                            </span>
-                          </div>
-                          {lesson.isPreview &&
-                            lesson.videoUrl &&
-                            expandedSections.includes(sectionIndex) && (
-                              <div className="px-4 pb-4">
-                                <div className="relative aspect-video rounded-lg overflow-hidden">
-                                  <iframe
-                                    src={`https://www.youtube.com/embed/${lesson.videoUrl}`}
-                                    title={lesson.title}
-                                    className="absolute inset-0 w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                  />
-                                </div>
-                              </div>
-                            )}
+                        <div
+                          key={lessonIndex}
+                          className="border-b border-gray-700/50 last:border-0"
+                        >
+                          <LessonRow lesson={lesson} />
                         </div>
                       ))}
                     </div>
@@ -428,11 +623,9 @@ export default function CourseDetail() {
                           <div className="flex items-center gap-1">
                             <Clock2 className="w-4 h-4" />
                             <span>
-                              {relatedCourse.lessons.reduce(
-                                (acc, lesson) =>
-                                  acc + parseInt(lesson.duration.split(":")[0]),
-                                0
-                              )}{" "}
+                              {relatedCourse.lessons.reduce((acc, lesson) => {
+                                return acc + parseDuration(lesson.duration);
+                              }, 0)}{" "}
                               saat
                             </span>
                           </div>
