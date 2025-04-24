@@ -181,6 +181,424 @@ export class MockDbService implements DbService {
     return MockDbService.instance;
   }
 
+  private courses = [
+    {
+      id: 1,
+      title: "Unity Game Development Fundamentals",
+      description:
+        "Learn the basics of Unity game development, from setting up your first project to creating simple games.",
+      thumbnail: "/Education/course1.jpg",
+      field: "Game Development",
+      difficulty: "Beginner",
+      duration: "8 weeks",
+      rating: 4.8,
+      price: 49.99,
+      originalPrice: 199.99,
+      lectures: 48,
+      language: "English",
+      technologies: ["Unity", "C#"],
+      previewVideo: "LOhfqjmasi0?si=6ut0e6CdPm0f2l7j", // Example YouTube video ID
+      learningObjectives: [
+        "Build your own RTS game in Unity, from units to buildings to upgrades and more",
+        "Create unit AI that reacts to player input using behaviour trees (no magic, just logic)",
+        "Develop a config-driven setup to add new units fast—no spaghetti code here",
+        "Hook up an event bus system so your units can talk without yelling across the codebase",
+      ],
+      benefits: [
+        {
+          title: "30 Day Money-Back Guarantee",
+          description: "100% refund, no questions asked.",
+        },
+        {
+          title: "Lifetime Access",
+          description: "Access your content on any device, at any time.",
+        },
+        {
+          title: "Teaching Support",
+          description: "Never get stuck with our teaching assistants on call.",
+        },
+      ],
+      curriculum: [
+        {
+          title: "Introduction and Setup",
+          lessons: [
+            {
+              title: "Welcome to the Course",
+              duration: "01:39",
+              isPreview: true,
+              isCompleted: true,
+              videoUrl: "ke5KpqcoiIU?si=h64b5ALBjULqYcoM", // Example YouTube video ID
+            },
+            {
+              title: "Initial Project Setup",
+              duration: "06:27",
+              isPreview: false,
+            },
+          ],
+        },
+        {
+          title: "Building Units",
+          lessons: [
+            {
+              title: "Unit Creation Basics",
+              duration: "12:15",
+              isPreview: true,
+              videoUrl: "ke5KpqcoiIU?si=h64b5ALBjULqYcoM", // Example YouTube video ID
+            },
+            {
+              title: "Unit Movement System",
+              duration: "15:45",
+              isPreview: false,
+            },
+          ],
+        },
+      ],
+      reviews: [
+        {
+          id: 1,
+          user: {
+            name: "Ahmet Yılmaz",
+            avatar: "/avatars/user1.jpg",
+          },
+          rating: 5,
+          comment:
+            "Harika bir kurs! Unity'de RTS oyun geliştirme konusunda çok şey öğrendim. Özellikle yapay zeka ve davranış ağaçları bölümleri çok faydalıydı.",
+          date: "2024-03-15",
+          likes: 24,
+          helpful: true,
+        },
+        {
+          id: 2,
+          user: {
+            name: "Mehmet Demir",
+            avatar: "/avatars/user2.jpg",
+          },
+          rating: 4,
+          comment:
+            "Detaylı ve kapsamlı bir kurs. Eğitmenin anlatım tarzı çok iyi. Sadece bazı konular biraz daha detaylı anlatılabilirdi.",
+          date: "2024-03-10",
+          likes: 12,
+          helpful: false,
+        },
+      ],
+      tutor: {
+        name: "John Smith",
+        avatar: "/tutors/john-smith.jpg",
+        expertise: "Game Developer with 10+ years of experience",
+        bio: "I graduated college with a Software Engineering degree after always tinkering with custom map editors in games like StarCraft and CounterStrike. I've been programming since I was old enough to understand how to piece together some Visual Basic.",
+      },
+      students: 1234,
+    },
+    {
+      id: 2,
+      title: "Advanced Unity Game Development",
+      description:
+        "Take your Unity skills to the next level with advanced game development techniques and patterns.",
+      thumbnail: "/Education/course2.jpg",
+      field: "Game Development",
+      difficulty: "Advanced",
+      duration: "12 weeks",
+      rating: 4.9,
+      price: 79.99,
+      originalPrice: 299.99,
+      lectures: 72,
+      language: "English",
+      technologies: ["Unity", "C#", "Shader Graph"],
+      previewVideo: "LOhfqjmasi0?si=6ut0e6CdPm0f2l7j",
+      learningObjectives: [
+        "Master advanced Unity features and optimization techniques",
+        "Create custom shaders and visual effects",
+        "Implement advanced AI and pathfinding systems",
+        "Build a complete multiplayer game framework",
+      ],
+      benefits: [
+        {
+          title: "30 Day Money-Back Guarantee",
+          description: "100% refund, no questions asked.",
+        },
+        {
+          title: "Lifetime Access",
+          description: "Access your content on any device, at any time.",
+        },
+        {
+          title: "Teaching Support",
+          description: "Never get stuck with our teaching assistants on call.",
+        },
+      ],
+      curriculum: [
+        {
+          title: "Advanced Unity Features",
+          lessons: [
+            {
+              title: "Custom Shader Development",
+              duration: "15:20",
+              isPreview: true,
+              videoUrl: "dQw4w9WgXcQ",
+            },
+            {
+              title: "Advanced Particle Systems",
+              duration: "18:45",
+              isPreview: false,
+            },
+          ],
+        },
+      ],
+      reviews: [
+        {
+          id: 3,
+          user: {
+            name: "Zeynep Kaya",
+            avatar: "/avatars/user3.jpg",
+          },
+          rating: 5,
+          comment:
+            "İleri seviye Unity teknikleri için mükemmel bir kaynak. Shader Graph konusu özellikle etkileyiciydi.",
+          date: "2024-03-18",
+          likes: 31,
+          helpful: true,
+        },
+      ],
+      tutor: {
+        name: "Sarah Johnson",
+        avatar: "/tutors/sarah-johnson.jpg",
+        expertise: "Senior Game Developer & Technical Artist",
+        bio: "With over 12 years in the gaming industry, I've worked on multiple AAA titles and indie games. I specialize in graphics programming and technical art.",
+      },
+      students: 856,
+    },
+    {
+      id: 3,
+      title: "Unity Mobile Game Development",
+      description:
+        "Learn to create and optimize games for mobile platforms using Unity.",
+      thumbnail: "/Education/course3.jpg",
+      field: "Game Development",
+      difficulty: "Intermediate",
+      duration: "10 weeks",
+      rating: 4.7,
+      price: 59.99,
+      originalPrice: 249.99,
+      lectures: 56,
+      language: "English",
+      technologies: ["Unity", "C#", "Mobile"],
+      previewVideo: "ke5KpqcoiIU?si=h64b5ALBjULqYcoM",
+      learningObjectives: [
+        "Design and develop games for mobile platforms",
+        "Implement touch controls and mobile-specific features",
+        "Optimize performance for mobile devices",
+        "Integrate mobile ads and in-app purchases",
+      ],
+      benefits: [
+        {
+          title: "30 Day Money-Back Guarantee",
+          description: "100% refund, no questions asked.",
+        },
+        {
+          title: "Lifetime Access",
+          description: "Access your content on any device, at any time.",
+        },
+        {
+          title: "Teaching Support",
+          description: "Never get stuck with our teaching assistants on call.",
+        },
+      ],
+      curriculum: [
+        {
+          title: "Mobile Game Fundamentals",
+          lessons: [
+            {
+              title: "Touch Input Systems",
+              duration: "12:30",
+              isPreview: true,
+              videoUrl: "dQw4w9WgXcQ",
+            },
+            {
+              title: "Mobile UI Design",
+              duration: "14:15",
+              isPreview: false,
+            },
+          ],
+        },
+      ],
+      reviews: [
+        {
+          id: 4,
+          user: {
+            name: "Can Yıldız",
+            avatar: "/avatars/user4.jpg",
+          },
+          rating: 4,
+          comment:
+            "Mobil oyun geliştirme sürecini çok iyi anlatan bir kurs. Optimizasyon teknikleri özellikle faydalı oldu.",
+          date: "2024-03-20",
+          likes: 18,
+          helpful: true,
+        },
+      ],
+      tutor: {
+        name: "Mike Chen",
+        avatar: "/tutors/mike-chen.jpg",
+        expertise: "Mobile Game Developer",
+        bio: "Former lead mobile developer at major game studios, now teaching others how to create successful mobile games.",
+      },
+      students: 1102,
+    },
+    {
+      id: 4,
+      title: "Game Design Principles",
+      description:
+        "Master the fundamentals of game design, from concept to player experience.",
+      thumbnail: "/Education/course4.jpg",
+      field: "Game Design",
+      difficulty: "Beginner",
+      duration: "6 weeks",
+      rating: 4.6,
+      price: 39.99,
+      originalPrice: 159.99,
+      lectures: 36,
+      language: "English",
+      technologies: ["Unity", "Game Design"],
+      previewVideo: "LOhfqjmasi0?si=6ut0e6CdPm0f2l7j",
+      learningObjectives: [
+        "Understand core game design principles",
+        "Create engaging player experiences",
+        "Design balanced game mechanics",
+        "Develop compelling game narratives",
+      ],
+      benefits: [
+        {
+          title: "30 Day Money-Back Guarantee",
+          description: "100% refund, no questions asked.",
+        },
+        {
+          title: "Lifetime Access",
+          description: "Access your content on any device, at any time.",
+        },
+        {
+          title: "Teaching Support",
+          description: "Never get stuck with our teaching assistants on call.",
+        },
+      ],
+      curriculum: [
+        {
+          title: "Game Design Fundamentals",
+          lessons: [
+            {
+              title: "What Makes Games Fun?",
+              duration: "10:15",
+              isPreview: true,
+              videoUrl: "ke5KpqcoiIU?si=h64b5ALBjULqYcoM",
+            },
+            {
+              title: "Core Game Loops",
+              duration: "12:30",
+              isPreview: false,
+            },
+          ],
+        },
+      ],
+      reviews: [
+        {
+          id: 5,
+          user: {
+            name: "Ayşe Kara",
+            avatar: "/avatars/user5.jpg",
+          },
+          rating: 5,
+          comment:
+            "Oyun tasarımının temellerini çok iyi anlatan bir kurs. Örnekler ve uygulamalar çok faydalı.",
+          date: "2024-03-22",
+          likes: 15,
+          helpful: true,
+        },
+      ],
+      tutor: {
+        name: "Emily Parker",
+        avatar: "/tutors/emily-parker.jpg",
+        expertise: "Game Designer & Creative Director",
+        bio: "With a background in psychology and 8 years of game design experience, I help students understand what makes games truly engaging.",
+      },
+      students: 945,
+    },
+    {
+      id: 5,
+      title: "3D Character Animation",
+      description:
+        "Learn professional character animation techniques for games using industry-standard tools.",
+      thumbnail: "/Education/course5.jpg",
+      field: "Animation",
+      difficulty: "Intermediate",
+      duration: "10 weeks",
+      rating: 4.8,
+      price: 69.99,
+      originalPrice: 279.99,
+      lectures: 52,
+      language: "English",
+      technologies: ["Unity", "Blender", "Animation"],
+      previewVideo: "ke5KpqcoiIU?si=h64b5ALBjULqYcoM",
+      learningObjectives: [
+        "Master character animation principles",
+        "Create smooth and natural movements",
+        "Implement animation state machines",
+        "Optimize animations for games",
+      ],
+      benefits: [
+        {
+          title: "30 Day Money-Back Guarantee",
+          description: "100% refund, no questions asked.",
+        },
+        {
+          title: "Lifetime Access",
+          description: "Access your content on any device, at any time.",
+        },
+        {
+          title: "Teaching Support",
+          description: "Never get stuck with our teaching assistants on call.",
+        },
+      ],
+      curriculum: [
+        {
+          title: "Animation Basics",
+          lessons: [
+            {
+              title: "12 Principles of Animation",
+              duration: "14:20",
+              isPreview: true,
+              videoUrl: "LOhfqjmasi0?si=6ut0e6CdPm0f2l7j",
+            },
+            {
+              title: "Character Rigging",
+              duration: "16:45",
+              isPreview: false,
+            },
+          ],
+        },
+      ],
+      reviews: [
+        {
+          id: 6,
+          user: {
+            name: "Burak Yılmaz",
+            avatar: "/avatars/user6.jpg",
+          },
+          rating: 5,
+          comment:
+            "Animasyon konusunda harika bir kaynak. Özellikle karakter hareketleri konusunda çok şey öğrendim.",
+          date: "2024-03-25",
+          likes: 28,
+          helpful: true,
+        },
+      ],
+      tutor: {
+        name: "David Anderson",
+        avatar: "/tutors/david-anderson.jpg",
+        expertise: "Senior Character Animator",
+        bio: "15 years of experience in character animation for games and film. Previously worked at major animation studios and game companies.",
+      },
+      students: 782,
+    },
+  ];
+
   async getJobs() {
     return jobs.jobs;
   }
@@ -295,23 +713,27 @@ export class MockDbService implements DbService {
 
   // Courses methods
   async getCourses() {
-    return courses.courses;
+    return this.courses;
   }
 
   async getCourseById(id: number) {
-    return courses.courses.find((course) => course.id === id);
+    const course = this.courses.find((course) => course.id === id);
+    if (!course) {
+      throw new Error(`Course with id ${id} not found`);
+    }
+    return course;
   }
 
   async getCoursesByField(field: string) {
-    return courses.courses.filter((course) => course.field === field);
+    return this.courses.filter((course) => course.field === field);
   }
 
   async getCoursesByDifficulty(difficulty: string) {
-    return courses.courses.filter((course) => course.difficulty === difficulty);
+    return this.courses.filter((course) => course.difficulty === difficulty);
   }
 
   async getCoursesByTutor(tutorName: string) {
-    return courses.courses.filter((course) => course.tutor.name === tutorName);
+    return this.courses.filter((course) => course.tutor.name === tutorName);
   }
 
   // Developers methods

@@ -9,6 +9,17 @@
       "difficulty": "Beginner",
       "duration": "8 weeks",
       "rating": 4.8,
+      "keywords": [
+        "unity",
+        "game development",
+        "beginner",
+        "c#",
+        "2d",
+        "3d",
+        "game engine",
+        "programming",
+        "basics"
+      ],
       "tutor": {
         "name": "John Smith",
         "avatar": "/tutors/john-smith.jpg",
@@ -24,6 +35,16 @@
       "difficulty": "Advanced",
       "duration": "12 weeks",
       "rating": 4.9,
+      "keywords": [
+        "c#",
+        "programming",
+        "advanced",
+        "design patterns",
+        "algorithms",
+        "unity",
+        "game development",
+        "optimization"
+      ],
       "tutor": {
         "name": "Sarah Johnson",
         "avatar": "/tutors/sarah-johnson.jpg",
@@ -39,6 +60,15 @@
       "difficulty": "Intermediate",
       "duration": "6 weeks",
       "rating": 4.7,
+      "keywords": [
+        "game design",
+        "level design",
+        "mechanics",
+        "gameplay",
+        "user experience",
+        "balance",
+        "prototyping"
+      ],
       "tutor": {
         "name": "Michael Chen",
         "avatar": "/tutors/michael-chen.jpg",
@@ -54,6 +84,16 @@
       "difficulty": "Intermediate",
       "duration": "10 weeks",
       "rating": 4.6,
+      "keywords": [
+        "3d modeling",
+        "character design",
+        "blender",
+        "maya",
+        "zbrush",
+        "texturing",
+        "rigging",
+        "animation"
+      ],
       "tutor": {
         "name": "Emily Rodriguez",
         "avatar": "/tutors/emily-rodriguez.jpg",
@@ -69,6 +109,16 @@
       "difficulty": "Beginner",
       "duration": "8 weeks",
       "rating": 4.5,
+      "keywords": [
+        "audio",
+        "sound effects",
+        "music",
+        "sound design",
+        "fmod",
+        "wwise",
+        "mixing",
+        "implementation"
+      ],
       "tutor": {
         "name": "David Wilson",
         "avatar": "/tutors/david-wilson.jpg",

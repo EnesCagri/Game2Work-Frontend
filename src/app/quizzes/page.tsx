@@ -10,6 +10,7 @@ import { SiCodeforces } from "react-icons/si";
 import { GiTrophy } from "react-icons/gi";
 import { Quiz, QuizDifficulty, QuizCategory } from "@/types/quiz";
 import { quizzes } from "@/data/quizzes";
+import MysteryBox from "@/components/quizzes/MysteryBox";
 
 const difficultyColors: Record<QuizDifficulty, string> = {
   Başlangıç: "bg-green-500/10 text-green-500",
@@ -56,6 +57,10 @@ export default function QuizzesPage() {
           başarılarınızı belgeleyin.
         </p>
       </motion.div>
+
+      <div>
+        <MysteryBox />
+      </div>
 
       {/* Filters */}
       <div className="mb-8 flex flex-wrap gap-4">

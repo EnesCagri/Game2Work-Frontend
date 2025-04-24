@@ -46,6 +46,7 @@ import { toast } from "sonner";
 import Link from "next/link";
 import JobsForYouCarousel from "@/components/JobsForYouCarousel";
 import { HeroAnimSection } from "@/components/HeroAnimSection";
+import { JobCard } from "@/components/JobCard";
 
 const ITEMS_PER_PAGE = 12;
 
@@ -713,115 +714,12 @@ export default function JobsPage() {
             className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           >
             {paginatedJobs.map((job) => (
-              <div
+              <JobCard
                 key={job.id}
-                className="group relative rounded-lg border p-5 transition-all hover:border-primary"
-              >
-                <Link
-                  href={`/jobs/${job.id}`}
-                  className="absolute inset-0 z-10"
-                  aria-label={`${job.title} pozisyonu, ${job.company} şirketinde`}
-                />
-                <div className="flex flex-col space-y-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center space-x-4">
-                      <div className="h-12 w-12 flex-shrink-0 overflow-hidden rounded-lg bg-gray-100">
-                        <Image
-                          src={job.logo || "/placeholder-logo.png"}
-                          alt={job.company}
-                          width={48}
-                          height={48}
-                          className="h-full w-full object-cover"
-                        />
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">
-                          {job.title}
-                        </h3>
-                        <p className="text-sm text-muted-foreground">
-                          {job.company}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Özel Rozetler */}
-                  <div className="flex flex-wrap gap-2">
-                    {job.isHot && (
-                      <span
-                        className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium ${JOB_BADGES.HOT.className}`}
-                      >
-                        {JOB_BADGES.HOT.icon} {JOB_BADGES.HOT.label}
-                      </span>
-                    )}
-                    {job.isTrending && (
-                      <span
-                        className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium ${JOB_BADGES.TRENDING.className}`}
-                      >
-                        {JOB_BADGES.TRENDING.icon} {JOB_BADGES.TRENDING.label}
-                      </span>
-                    )}
-                    {job.isPremium && (
-                      <span
-                        className={`inline-flex items-center gap-1 rounded-full px-2 py-1 text-xs font-medium ${JOB_BADGES.PREMIUM.className}`}
-                      >
-                        {JOB_BADGES.PREMIUM.icon} {JOB_BADGES.PREMIUM.label}
-                      </span>
-                    )}
-                  </div>
-
-                  <div className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground">
-                    <div className="flex items-center gap-1">
-                      <MapPin className="h-4 w-4" />
-                      <span>{job.location}</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <Clock className="h-4 w-4" />
-                      <span>{job.type}</span>
-                    </div>
-                  </div>
-
-                  <div className="mt-4">
-                    <div className="flex flex-wrap gap-2">
-                      {(job.skills || []).map((skill, index) => (
-                        <span
-                          key={index}
-                          className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-medium ${getSkillColor(
-                            typeof skill === "string" ? skill : skill.name
-                          )}`}
-                        >
-                          {typeof skill === "string" ? skill : skill.name}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-
-                  <p className="mt-4 text-sm text-muted-foreground line-clamp-2">
-                    {job.description}
-                  </p>
-
-                  <div className="flex gap-2 mt-4 relative z-20">
-                    <Button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleApply(job.id);
-                      }}
-                      className="flex-1"
-                      variant="outline"
-                    >
-                      Hemen Başvur
-                    </Button>
-                    <Button
-                      variant="outline"
-                      size="icon"
-                      className="rounded-full hover:text-yellow-500 hover:border-yellow-500"
-                      onClick={() => handleSave(job.id)}
-                    >
-                      <Bookmark className="h-4 w-4" />
-                    </Button>
-                  </div>
-                </div>
-              </div>
+                job={job}
+                onApply={handleApply}
+                onSave={handleSave}
+              />
             ))}
           </div>
 

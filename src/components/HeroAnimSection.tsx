@@ -181,7 +181,7 @@ export function HeroAnimSection() {
           }}
         >
           <div
-            className={`w-full h-full bg-white rounded-lg shadow-lg p-4 flex flex-col items-center justify-center border-2 border-gray-300 relative overflow-hidden
+            className={`w-full h-full bg-white rounded-lg shadow-lg p-4 flex flex-col items-center justify-center border-4 border-black relative overflow-hidden pixel-border
             ${showHitEffect ? "animate-[hit-flash_0.3s_ease-in-out]" : ""}`}
           >
             {showHitEffect && (
@@ -258,6 +258,7 @@ export function HeroAnimSection() {
         .pixel-border {
           border: 4px solid #000;
           image-rendering: pixelated;
+          box-shadow: 4px 4px 0 #000;
         }
 
         .pixel-border:hover {

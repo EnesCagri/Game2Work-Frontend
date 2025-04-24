@@ -124,6 +124,12 @@ const groupedLinks = [
         icon: CalendarIcon,
         description: "Oyun dünyasındaki etkinlikleri keşfedin",
       },
+      {
+        name: "Quizler",
+        href: "/quizzes",
+        icon: SparklesIcon,
+        description: "Oyun sektöründe kendinizi test edin",
+      },
     ],
   },
 ];
