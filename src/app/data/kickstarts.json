@@ -1,0 +1,100 @@
+{
+  "kickstarts": [
+    {
+      "id": 1,
+      "title": "Project Nexus: Next-Gen Gaming Engine",
+      "description": "A revolutionary game engine built for the next generation of indie developers. Features include real-time ray tracing, advanced physics simulation, and an intuitive visual scripting system.",
+      "image": "/images/kickstarts/game-engine.jpg",
+      "status": "Active",
+      "category": "Software",
+      "currentFunding": 850000,
+      "goal": 1000000,
+      "backers": 3240,
+      "endDate": "2024-06-30"
+    },
+    {
+      "id": 2,
+      "title": "Cyberpunk Chronicles: The Virtual Reality Experience",
+      "description": "Immerse yourself in a dystopian cyberpunk world with our cutting-edge VR game. Features include full body tracking, neural feedback, and multiplayer support.",
+      "image": "/images/kickstarts/vr-game.jpg",
+      "status": "Active",
+      "category": "Game",
+      "currentFunding": 250000,
+      "goal": 500000,
+      "backers": 1850,
+      "endDate": "2024-05-15"
+    },
+    {
+      "id": 3,
+      "title": "EcoVerse: Sustainable Gaming Platform",
+      "description": "A revolutionary gaming platform that rewards players for real-world environmental actions. Integrate your daily eco-friendly activities into gaming achievements.",
+      "image": "/images/kickstarts/eco-gaming.jpg",
+      "status": "Active",
+      "category": "Platform",
+      "currentFunding": 120000,
+      "goal": 300000,
+      "backers": 980,
+      "endDate": "2024-07-20"
+    },
+    {
+      "id": 4,
+      "title": "RetroWave Arcade Console",
+      "description": "A modern console with retro aesthetics, featuring built-in classic games and wireless controllers with haptic feedback.",
+      "image": "/images/kickstarts/retro-console.jpg",
+      "status": "Upcoming",
+      "category": "Hardware",
+      "currentFunding": 0,
+      "goal": 750000,
+      "backers": 0,
+      "endDate": "2024-08-01"
+    },
+    {
+      "id": 5,
+      "title": "AI Game Master: Tabletop RPG Assistant",
+      "description": "An AI-powered digital assistant for tabletop RPG games, helping game masters create dynamic storylines and manage complex game mechanics.",
+      "image": "/images/kickstarts/rpg-assistant.jpg",
+      "status": "Active",
+      "category": "Software",
+      "currentFunding": 45000,
+      "goal": 100000,
+      "backers": 890,
+      "endDate": "2024-06-15"
+    },
+    {
+      "id": 6,
+      "title": "Project Dreamscape: Lucid Gaming",
+      "description": "A revolutionary brain-computer interface that allows players to experience games through lucid dream-like states.",
+      "image": "/images/kickstarts/dreamscape.jpg",
+      "status": "Completed",
+      "category": "Hardware",
+      "currentFunding": 2000000,
+      "goal": 1500000,
+      "backers": 12500,
+      "endDate": "2024-02-28"
+    },
+    {
+      "id": 7,
+      "title": "GameCraft: No-Code Game Creator",
+      "description": "An intuitive platform that allows anyone to create professional-quality games without writing a single line of code.",
+      "image": "/images/kickstarts/game-creator.jpg",
+      "status": "Active",
+      "category": "Software",
+      "currentFunding": 180000,
+      "goal": 400000,
+      "backers": 2100,
+      "endDate": "2024-07-10"
+    },
+    {
+      "id": 8,
+      "title": "HoloArena: Mixed Reality Gaming Space",
+      "description": "A dedicated mixed reality gaming space that combines physical props with holographic technology for immersive gaming experiences.",
+      "image": "/images/kickstarts/holo-arena.jpg",
+      "status": "Upcoming",
+      "category": "Hardware",
+      "currentFunding": 0,
+      "goal": 2000000,
+      "backers": 0,
+      "endDate": "2024-09-15"
+    }
+  ]
+}

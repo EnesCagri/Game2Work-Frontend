@@ -1,0 +1,176 @@
+{
+  "games": [
+    {
+      "id": "1",
+      "title": "Red Dead Redemption 2",
+      "description": "Red Dead Redemption 2, Rockstar Games'in yarattığı destansı bir western macera oyunudur. 1899 yılında geçen oyun, Arthur Morgan ve Van der Linde çetesinin hikayesini anlatır.",
+      "image": "/games/rdr2.png",
+      "genres": ["Action", "Adventure", "Open World", "Western"],
+      "platforms": ["PC", "PS4", "Xbox One", "Stadia"],
+      "price": "59.99",
+      "rating": 4.8,
+      "tags": [
+        "Geniş Açık Dünya",
+        "Detaylı Karakter Özelleştirme",
+        "Gerçekçi Fizik Motoru"
+      ],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Counter-Strike 2",
+      "description": "Counter-Strike 2, efsanevi taktiksel nişancı oyununun en son evrimi. Source 2 motoru üzerinde geliştirilen oyun, yenilenmiş grafikleri, geliştirilmiş fizik motoru ve yeni nesil sis sistemleriyle CS:GO'nun mirasını bir adım öteye taşıyor.",
+      "image": "/games/cs2.png",
+      "genres": ["FPS", "Tactical Shooter", "Multiplayer", "Competitive"],
+      "platforms": ["PC"],
+      "price": "Free to Play",
+      "rating": 4.7,
+      "tags": ["Source 2 Engine", "128-tick Sunucular", "Rekabetçi Modlar"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Elden Ring",
+      "description": "Elden Ring, FromSoftware'in yarattığı açık dünya aksiyon RPG oyunu. Karanlık ve fantastik bir evrende geçen oyun, zorlu boss dövüşleri ve derin hikayesiyle dikkat çekiyor.",
+      "image": "/games/elden-ring.png",
+      "genres": ["Action", "RPG", "Open World", "Fantasy"],
+      "platforms": ["PC", "PS5", "Xbox Series X"],
+      "price": "69.99",
+      "rating": 4.9,
+      "tags": ["Souls-like", "Zorlu Oynanış", "Zengin Dünya"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "4",
+      "title": "Baldur's Gate 3",
+      "description": "Larian Studios'un geliştirdiği efsanevi RPG serisinin son oyunu. D&D kuralları ile harmanlanan derin hikaye ve karakter özelleştirme sistemi sunuyor.",
+      "image": "/games/bg3.png",
+      "genres": ["RPG", "Strategy", "Fantasy"],
+      "platforms": ["PC", "PS5"],
+      "price": "59.99",
+      "rating": 4.9,
+      "tags": ["Turn-based Combat", "Character Customization", "Multiplayer"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "5",
+      "title": "Cyberpunk 2077",
+      "description": "Night City'nin distopik dünyasında geçen bir açık dünya RPG oyunu. Gelişmiş karakter özelleştirme ve zengin yan görevlerle dolu.",
+      "image": "/games/cyberpunk.png",
+      "genres": ["RPG", "Open World", "Cyberpunk"],
+      "platforms": ["PC", "PS5", "Xbox Series X"],
+      "price": "49.99",
+      "rating": 4.5,
+      "tags": ["Story Rich", "Character Customization", "First Person"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "6",
+      "title": "Starfield",
+      "description": "Bethesda'nın uzay temalı RPG oyunu. Yüzlerce gezegen, uzay gemisi özelleştirme ve keşfedilecek geniş bir evren sunuyor.",
+      "image": "/games/starfield.png",
+      "genres": ["RPG", "Space", "Open World"],
+      "platforms": ["PC", "Xbox Series X"],
+      "price": "69.99",
+      "rating": 4.4,
+      "tags": ["Space Exploration", "Base Building", "Character Creation"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "7",
+      "title": "Diablo IV",
+      "description": "Blizzard'ın efsanevi hack-and-slash RPG serisinin son oyunu. Karanlık fantezi dünyasında geçen oyun, çevrimiçi özellikleri ve sürekli güncellenen içeriğiyle öne çıkıyor.",
+      "image": "/games/diablo4.png",
+      "genres": ["Action RPG", "Hack and Slash", "Fantasy"],
+      "platforms": ["PC", "PS5", "Xbox Series X"],
+      "price": "69.99",
+      "rating": 4.6,
+      "tags": ["Multiplayer", "Loot System", "Character Classes"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    },
+    {
+      "id": "8",
+      "title": "Palworld",
+      "description": "Survival ve koleksiyon elementlerini birleştiren benzersiz bir oyun. Pokémon benzeri yaratıkları toplayıp onlarla dünyayı keşfediyorsunuz.",
+      "image": "/games/palworld.png",
+      "genres": ["Survival", "Adventure", "Multiplayer"],
+      "platforms": ["PC", "Xbox Series X"],
+      "price": "29.99",
+      "rating": 4.7,
+      "tags": ["Creature Collection", "Base Building", "Open World"],
+      "kickstart": {
+        "isOngoing": false,
+        "collectedFund": 0,
+        "goal": 0,
+        "followers": 0,
+        "donations": [],
+        "startDate": null,
+        "endDate": null,
+        "status": "Completed"
+      }
+    }
+  ]
+}
