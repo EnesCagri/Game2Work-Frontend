@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "GameToWork - Oyun Dünyasını Bir Araya Getiren Platform",
   description:
     "Oyun geliştiricileri, şirketler, yatırımcılar ve oyun tutkunları için bir araya gelme platformu.",
+  verification: {
+    google: "rIPiiHDp9cRBnCjv4iJo6fN-s49FSeJUMC44rSjpMSQ",
+  },
 };
 
 export default function RootLayout({
